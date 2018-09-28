@@ -15,6 +15,7 @@
 // Headers
 #include <array>
 #include <stdint.h>
+#include "enum_tags.h"
 
 /**
  * RPG::EventPageCondition class.
@@ -30,6 +31,14 @@ namespace RPG {
 			Comparison_less = 4,
 			Comparison_not_equal = 5
 		};
+		static constexpr auto kComparisonTags = makeEnumTags<Comparison>(
+			"equal",
+			"greater_equal",
+			"less_equal",
+			"greater",
+			"less",
+			"not_equal"
+		);
 
 		struct Flags {
 			union {
