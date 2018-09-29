@@ -164,6 +164,8 @@ namespace RPG {
 			"pincers"
 		);
 
+		System();
+		void Init();
 		int32_t ldb_id = 0;
 		std::string boat_name;
 		std::string ship_name;
