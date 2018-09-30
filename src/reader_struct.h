@@ -33,6 +33,7 @@
 #include "rpg_rect.h"
 #include "rpg_savepicture.h"
 #include "rpg_terms.h"
+#include "data.h"
 
 // Forward declarations
 
@@ -449,6 +450,14 @@ struct DatabaseVersionField : public TypedField<S,T> {
 			return 0;
 		}
 		return TypedField<S,T>::LcfSize(obj, stream);
+	}
+	bool IsDefault(const S& a, const S& b) const {
+		if (Data::system.ldb_id == 2003) {
+			//DB Version always present in 2k3 db
+			return false;
+		}
+		//Only present if not 0 in 2k db.
+		return TypedField<S,T>::IsDefault(a, b);
 	}
 };
 
