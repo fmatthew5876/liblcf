@@ -195,7 +195,6 @@ void RPG::Chipset::Init() {
 
 void RPG::System::Init() {
 	party.resize(1, 1);
-	menu_commands.resize(1, 1);
 }
 
 void RPG::Parameters::Setup(int final_level) {
