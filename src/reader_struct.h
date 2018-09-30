@@ -307,8 +307,8 @@ struct Field {
 	virtual void ParseXml(S& obj, const std::string& data) const = 0;
 
 	bool isPresentIfDefault(bool db_is2k3) const {
-		if (std::is_same<S,RPG::Terms>::value && db_is2k3 && id == 0x3) {
-			//Special case - only known field that is 2k specific and not
+		if (std::is_same<S,RPG::Terms>::value && db_is2k3 && (id == 0x3 || id == 0x1)) {
+			//Special case - only known fields that are 2k specific and not
 			//written to a 2k3 db if defaulted.
 			return false;
 		}
