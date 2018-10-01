@@ -12,6 +12,7 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include <map>
 #include <memory>
 #include <cstring>
@@ -610,7 +611,7 @@ struct StringComparator {
 template <class S>
 class Struct {
 private:
-	typedef std::map<int, const Field<S>* > field_map_type;
+	typedef std::unordered_map<int, const Field<S>* > field_map_type;
 	typedef std::map<const char* const, const Field<S>*, StringComparator> tag_map_type;
 	typedef IDReaderT<S, IDChecker<S>::value > IDReader;
 	static const Field<S>* fields[];
@@ -640,7 +641,7 @@ public:
 };
 
 template <class S>
-std::map<int, const Field<S>* > Struct<S>::field_map;
+typename Struct<S>::field_map_type Struct<S>::field_map;
 
 template <class S>
 std::map<const char* const, const Field<S>*, StringComparator> Struct<S>::tag_map;
