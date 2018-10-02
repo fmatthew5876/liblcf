@@ -33,7 +33,7 @@ LCF_STRUCT_FIELDS_BEGIN()
 	LCF_STRUCT_TYPED_FIELD(std::string, system2_name, 0, 1),
 	LCF_STRUCT_COUNT_FIELD(int16_t, party, 0, 0),
 	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, party, 1, 0),
-	LCF_STRUCT_COUNT_FIELD(int16_t, menu_commands, 1, 1),
+	LCF_STRUCT_COUNT_FIELD(int16_t, menu_commands, 0, 1),
 	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, menu_commands, 1, 1),
 	LCF_STRUCT_TYPED_FIELD(RPG::Music, title_music, 0, 0),
 	LCF_STRUCT_TYPED_FIELD(RPG::Music, battle_music, 0, 0),
