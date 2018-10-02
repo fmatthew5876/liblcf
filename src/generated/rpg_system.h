@@ -216,6 +216,7 @@ namespace RPG {
 		int32_t battletest_formation = 0;
 		int32_t battletest_condition = 0;
 		int32_t unknown_61 = -1;
+		int32_t unknown_62 = -1;
 		bool show_frame = false;
 		std::string frame_name;
 		bool invert_animations = false;

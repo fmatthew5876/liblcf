@@ -568,6 +568,7 @@ System,battletest_terrain,f,Ref<Terrain>,0x5E,0,0,0,Integer
 System,battletest_formation,f,Enum<System_BattleFormation>,0x5F,0,0,0,Integer
 System,battletest_condition,f,Enum<System_BattleCondition>,0x60,0,0,0,Integer
 System,unknown_61,f,Int32,0x61,-1,0,0,?
+System,unknown_62,f,Int32,0x62,-1,0,0,?
 System,show_frame,f,Boolean,0x63,FALSE,0,1,Flag - RPG2003
 System,frame_name,f,String,0x64,'',0,1,String - RPG2003
 System,invert_animations,f,Boolean,0x65,FALSE,0,1,Flag - RPG2003

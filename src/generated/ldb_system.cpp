@@ -72,6 +72,7 @@ LCF_STRUCT_FIELDS_BEGIN()
 	LCF_STRUCT_TYPED_FIELD(int32_t, battletest_formation, 0, 0),
 	LCF_STRUCT_TYPED_FIELD(int32_t, battletest_condition, 0, 0),
 	LCF_STRUCT_TYPED_FIELD(int32_t, unknown_61, 0, 0),
+	LCF_STRUCT_TYPED_FIELD(int32_t, unknown_62, 0, 0),
 	LCF_STRUCT_TYPED_FIELD(bool, show_frame, 0, 1),
 	LCF_STRUCT_TYPED_FIELD(std::string, frame_name, 0, 1),
 	LCF_STRUCT_TYPED_FIELD(bool, invert_animations, 0, 1),
