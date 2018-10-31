@@ -10,6 +10,8 @@
 #ifndef LCF_READER_STRUCT_H
 #define LCF_READER_STRUCT_H
 
+extern int g_filter_chunk;
+
 #include <string>
 #include <vector>
 #include <map>

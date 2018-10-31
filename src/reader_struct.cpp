@@ -21,6 +21,8 @@
 
 // Read/Write Struct
 
+int g_filter_chunk = 0;
+
 template <class S>
 void Struct<S>::MakeFieldMap() {
 	if (!field_map.empty())
@@ -65,6 +67,15 @@ void Struct<S>::ReadLcf(S& obj, LcfReader& stream) {
 			break;
 
 		chunk_info.length = stream.ReadInt();
+
+		if (std::is_same<S,RPG::Database>::value
+				&& g_filter_chunk != 0
+				&& chunk_info.ID != g_filter_chunk) {
+			stream.Skip(chunk_info);
+			printf("Skipping 0x%02x (size: %d, pos: 0x%x): \n", chunk_info.ID, chunk_info.length, stream.Tell());
+			continue;
+		}
+
 
 		auto it = field_map.find(chunk_info.ID);
 		if (it != field_map.end()) {
