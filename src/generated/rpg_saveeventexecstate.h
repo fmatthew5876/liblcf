@@ -28,7 +28,7 @@ namespace RPG {
 		bool abort_on_escape = false;
 		bool wait_movement = false;
 		bool keyinput_wait = false;
-		uint8_t keyinput_variable = 0;
+		int32_t keyinput_variable = 0;
 		bool keyinput_all_directions = false;
 		bool keyinput_decision = false;
 		bool keyinput_cancel = false;

@@ -920,7 +920,7 @@ SaveEventExecState,show_message,f,Boolean,0x04,False,0,0,Show Message command ha
 SaveEventExecState,abort_on_escape,f,Boolean,0x0B,False,0,0,Flag which is set before a fight if the EnemyEncounter event command had battle_escape_mode set to 1 (abort event on escape). After the fight; the interpreter checks if the battle result was an escape and this flag was set and abort the event in that case.
 SaveEventExecState,wait_movement,f,Boolean,0x0D,False,0,0,Whether Wait for all movement is in effect
 SaveEventExecState,keyinput_wait,f,Boolean,0x15,False,0,0,
-SaveEventExecState,keyinput_variable,f,UInt8,0x16,0,0,0,
+SaveEventExecState,keyinput_variable,f,Int32,0x16,0,0,0,
 SaveEventExecState,keyinput_all_directions,f,Boolean,0x17,False,0,0,
 SaveEventExecState,keyinput_decision,f,Boolean,0x18,False,0,0,
 SaveEventExecState,keyinput_cancel,f,Boolean,0x19,False,0,0,

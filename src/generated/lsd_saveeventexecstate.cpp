@@ -56,7 +56,7 @@ Field<RPG::SaveEventExecState> const* Struct<RPG::SaveEventExecState>::fields[] 
 		0,
 		0
 	),
-	new TypedField<RPG::SaveEventExecState, uint8_t>(
+	new TypedField<RPG::SaveEventExecState, int32_t>(
 		&RPG::SaveEventExecState::keyinput_variable,
 		LSD_Reader::ChunkSaveEventExecState::keyinput_variable,
 		"keyinput_variable",
