@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_EVENTPAGECONDITION_H
 #define LCF_RPG_EVENTPAGECONDITION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <array>
 #include <stdint.h>
@@ -103,6 +105,101 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const EventPageCondition& obj);
+
+	template <> struct ReflectStruct<EventPageCondition> {
+		using type_t = EventPageCondition;
+		static constexpr const auto& = "EventPageCondition";
+	};
+	// Bitflag
+	template <> struct ReflectMember<EventPageCondition,EventPageCondition::Flags,&EventPageCondition::flags> {
+		using struct_t = EventPageCondition;
+		using type_t = EventPageCondition::Flags;
+		static constexpr const auto& name[] = "flags";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::switch_a_id> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_a_id";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::switch_b_id> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_b_id";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::variable_id> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "variable_id";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::variable_value> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "variable_value";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::item_id> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "item_id";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::actor_id> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "actor_id";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::timer_sec> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "timer_sec";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::timer2_sec> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "timer2_sec";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::compare_operator> {
+		using struct_t = EventPageCondition;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "compare_operator";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

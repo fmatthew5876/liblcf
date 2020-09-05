@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVEACTOR_H
 #define LCF_RPG_SAVEACTOR_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <string>
@@ -112,6 +114,272 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveActor& obj);
+
+	template <> struct ReflectStruct<SaveActor> {
+		using type_t = SaveActor;
+		static constexpr const auto& = "SaveActor";
+	};
+	// string
+	template <> struct ReflectMember<SaveActor,std::string,&SaveActor::name> {
+		using struct_t = SaveActor;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// string
+	template <> struct ReflectMember<SaveActor,std::string,&SaveActor::title> {
+		using struct_t = SaveActor;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "title";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// string
+	template <> struct ReflectMember<SaveActor,std::string,&SaveActor::sprite_name> {
+		using struct_t = SaveActor;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "sprite_name";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::sprite_id> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sprite_id";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// transparency value. 0 means opaque; 3 is the value used when actor is transparent.
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::transparency> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "transparency";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// string
+	template <> struct ReflectMember<SaveActor,std::string,&SaveActor::face_name> {
+		using struct_t = SaveActor;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "face_name";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::face_id> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "face_id";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::level> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "level";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::exp> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "exp";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// ?
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::hp_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "hp_mod";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// ?
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::sp_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sp_mod";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::attack_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "attack_mod";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::defense_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "defense_mod";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::spirit_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "spirit_mod";
+		static constexpr const int id = 0x2B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::agility_mod> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "agility_mod";
+		static constexpr const int id = 0x2C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// short[]
+	template <> struct ReflectMember<SaveActor,std::vector<int16_t>,&SaveActor::skills> {
+		using struct_t = SaveActor;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "skills";
+		static constexpr const int id = 0x34;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// short[5]
+	template <> struct ReflectMember<SaveActor,std::vector<int16_t>,&SaveActor::equipped> {
+		using struct_t = SaveActor;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "equipped";
+		static constexpr const int id = 0x3D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::current_hp> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "current_hp";
+		static constexpr const int id = 0x47;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::current_sp> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "current_sp";
+		static constexpr const int id = 0x48;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// array of (uncompressed) int32
+	template <> struct ReflectMember<SaveActor,std::vector<int32_t>,&SaveActor::battle_commands> {
+		using struct_t = SaveActor;
+		using type_t = std::vector<int32_t>;
+		static constexpr const auto& name[] = "battle_commands";
+		static constexpr const int id = 0x50;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// array of short
+	template <> struct ReflectMember<SaveActor,std::vector<int16_t>,&SaveActor::status> {
+		using struct_t = SaveActor;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "status";
+		static constexpr const int id = 0x52;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// bool
+	template <> struct ReflectMember<SaveActor,bool,&SaveActor::changed_battle_commands> {
+		using struct_t = SaveActor;
+		using type_t = bool;
+		static constexpr const auto& name[] = "changed_battle_commands";
+		static constexpr const int id = 0x53;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int class-id
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::class_id> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "class_id";
+		static constexpr const int id = 0x5A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// RPG2003 Battle row
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::row> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "row";
+		static constexpr const int id = 0x5B;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveActor,bool,&SaveActor::two_weapon> {
+		using struct_t = SaveActor;
+		using type_t = bool;
+		static constexpr const auto& name[] = "two_weapon";
+		static constexpr const int id = 0x5C;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveActor,bool,&SaveActor::lock_equipment> {
+		using struct_t = SaveActor;
+		using type_t = bool;
+		static constexpr const auto& name[] = "lock_equipment";
+		static constexpr const int id = 0x5D;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveActor,bool,&SaveActor::auto_battle> {
+		using struct_t = SaveActor;
+		using type_t = bool;
+		static constexpr const auto& name[] = "auto_battle";
+		static constexpr const int id = 0x5E;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveActor,bool,&SaveActor::super_guard> {
+		using struct_t = SaveActor;
+		using type_t = bool;
+		static constexpr const auto& name[] = "super_guard";
+		static constexpr const int id = 0x5F;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<SaveActor,int32_t,&SaveActor::battler_animation> {
+		using struct_t = SaveActor;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "battler_animation";
+		static constexpr const int id = 0x60;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

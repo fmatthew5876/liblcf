@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_TROOPPAGE_H
 #define LCF_RPG_TROOPPAGE_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <vector>
 #include "lcf/rpg/eventcommand.h"
@@ -41,6 +43,29 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const TroopPage& obj);
+
+	template <> struct ReflectStruct<TroopPage> {
+		using type_t = TroopPage;
+		static constexpr const auto& = "TroopPage";
+	};
+	// rpg::TroopPageCondition
+	template <> struct ReflectMember<TroopPage,TroopPageCondition,&TroopPage::condition> {
+		using struct_t = TroopPage;
+		using type_t = TroopPageCondition;
+		static constexpr const auto& name[] = "condition";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - rpg::EventCommand
+	template <> struct ReflectMember<TroopPage,std::vector<EventCommand>,&TroopPage::event_commands> {
+		using struct_t = TroopPage;
+		using type_t = std::vector<EventCommand>;
+		static constexpr const auto& name[] = "event_commands";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_BATTLERANIMATIONDATA_H
 #define LCF_RPG_BATTLERANIMATIONDATA_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/enum_tags.h"
@@ -71,6 +73,38 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const BattlerAnimationData& obj);
+
+	template <> struct ReflectStruct<BattlerAnimationData> {
+		using type_t = BattlerAnimationData;
+		static constexpr const auto& = "BattlerAnimationData";
+	};
+	// Integer
+	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::move> {
+		using struct_t = BattlerAnimationData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "move";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::after_image> {
+		using struct_t = BattlerAnimationData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "after_image";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::pose> {
+		using struct_t = BattlerAnimationData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "pose";
+		static constexpr const int id = 0x0E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

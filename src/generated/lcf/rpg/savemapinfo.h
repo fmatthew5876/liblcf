@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVEMAPINFO_H
 #define LCF_RPG_SAVEMAPINFO_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <string>
@@ -73,6 +75,137 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveMapInfo& obj);
+
+	template <> struct ReflectStruct<SaveMapInfo> {
+		using type_t = SaveMapInfo;
+		static constexpr const auto& = "SaveMapInfo";
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::position_x> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "position_x";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::position_y> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "position_y";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::encounter_rate> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "encounter_rate";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::chipset_id> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "chipset_id";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// ? array
+	template <> struct ReflectMember<SaveMapInfo,std::vector<SaveMapEvent>,&SaveMapInfo::events> {
+		using struct_t = SaveMapInfo;
+		using type_t = std::vector<SaveMapEvent>;
+		static constexpr const auto& name[] = "events";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// ? [00 01 02 ... 8E 8F]
+	template <> struct ReflectMember<SaveMapInfo,std::vector<uint8_t>,&SaveMapInfo::lower_tiles> {
+		using struct_t = SaveMapInfo;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "lower_tiles";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveMapInfo,std::vector<uint8_t>,&SaveMapInfo::upper_tiles> {
+		using struct_t = SaveMapInfo;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "upper_tiles";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// string
+	template <> struct ReflectMember<SaveMapInfo,std::string,&SaveMapInfo::parallax_name> {
+		using struct_t = SaveMapInfo;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "parallax_name";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveMapInfo,bool,&SaveMapInfo::parallax_horz> {
+		using struct_t = SaveMapInfo;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_horz";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveMapInfo,bool,&SaveMapInfo::parallax_vert> {
+		using struct_t = SaveMapInfo;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_vert";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveMapInfo,bool,&SaveMapInfo::parallax_horz_auto> {
+		using struct_t = SaveMapInfo;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_horz_auto";
+		static constexpr const int id = 0x23;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::parallax_horz_speed> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parallax_horz_speed";
+		static constexpr const int id = 0x24;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveMapInfo,bool,&SaveMapInfo::parallax_vert_auto> {
+		using struct_t = SaveMapInfo;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_vert_auto";
+		static constexpr const int id = 0x25;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// int
+	template <> struct ReflectMember<SaveMapInfo,int32_t,&SaveMapInfo::parallax_vert_speed> {
+		using struct_t = SaveMapInfo;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parallax_vert_speed";
+		static constexpr const int id = 0x26;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

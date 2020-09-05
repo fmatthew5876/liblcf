@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_BATTLECOMMAND_H
 #define LCF_RPG_BATTLECOMMAND_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
@@ -63,6 +65,29 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const BattleCommand& obj);
+
+	template <> struct ReflectStruct<BattleCommand> {
+		using type_t = BattleCommand;
+		static constexpr const auto& = "BattleCommand";
+	};
+	// String
+	template <> struct ReflectMember<BattleCommand,DBString,&BattleCommand::name> {
+		using struct_t = BattleCommand;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<BattleCommand,int32_t,&BattleCommand::type> {
+		using struct_t = BattleCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "type";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

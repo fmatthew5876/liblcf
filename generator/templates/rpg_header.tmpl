@@ -2,6 +2,7 @@
 #ifndef LCF_RPG_{{ struct_name|upper }}_H
 #define LCF_RPG_{{ struct_name|upper }}_H
 
+#include <lcf/rpg/reflect.h>
 {%- for header in headers[struct_name] %}
 {%- if loop.first %}
 
@@ -128,6 +129,33 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const {{ struct_name }}& obj);
+
+	template <> struct ReflectStruct<{{ struct_name }}> {
+		using type_t = {{ struct_name }};
+		static constexpr const auto& = "{{ struct_name }}";
+	};
+
+	{%- for field in fields[struct_name]|field_is_used %}
+	{%- if not field.size %}
+	// {{ field.comment }}
+	{%- if field.type.endswith("_Flags") %}
+	template <> struct ReflectMember<{{ struct_name }},{{ struct_name }}::Flags,&{{ struct_name }}::{{ field.name }}> {
+	{%- else %}
+	template <> struct ReflectMember<{{ struct_name }},{{ field.type|cpp_type(prefix=False) }},&{{ struct_name }}::{{ field.name }}> {
+	{%- endif %}
+		using struct_t = {{ struct_name }};
+	{%- if field.type.endswith("_Flags") %}
+		using type_t = {{ struct_name }}::Flags;
+	{%- else %}
+		using type_t = {{ field.type|cpp_type(prefix=False) }};
+	{%- endif %}
+		static constexpr const auto& name[] = "{{ field.name }}";
+		static constexpr const int id = 0x{{ "%02X"|format(field.code) }};
+		static constexpr const bool is2k3 = {{ field.is2k3 }};
+		static constexpr const bool present_if_default = {{ field.presentifdefault }};
+	};
+	{%- endif %}
+	{%- endfor %}
 } // namespace rpg
 } // namespace lcf
 

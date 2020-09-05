@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SOUND_H
 #define LCF_RPG_SOUND_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <string>
@@ -43,6 +45,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Sound& obj);
+
+	template <> struct ReflectStruct<Sound> {
+		using type_t = Sound;
+		static constexpr const auto& = "Sound";
+	};
+	// String
+	template <> struct ReflectMember<Sound,std::string,&Sound::name> {
+		using struct_t = Sound;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Sound,int32_t,&Sound::volume> {
+		using struct_t = Sound;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "volume";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Sound,int32_t,&Sound::tempo> {
+		using struct_t = Sound;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "tempo";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Sound,int32_t,&Sound::balance> {
+		using struct_t = Sound;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "balance";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

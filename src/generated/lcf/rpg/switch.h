@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SWITCH_H
 #define LCF_RPG_SWITCH_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include "lcf/dbstring.h"
 #include <ostream>
@@ -37,6 +39,20 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Switch& obj);
+
+	template <> struct ReflectStruct<Switch> {
+		using type_t = Switch;
+		static constexpr const auto& = "Switch";
+	};
+	// String
+	template <> struct ReflectMember<Switch,DBString,&Switch::name> {
+		using struct_t = Switch;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

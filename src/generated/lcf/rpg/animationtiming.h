@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ANIMATIONTIMING_H
 #define LCF_RPG_ANIMATIONTIMING_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/enum_tags.h"
@@ -82,6 +84,83 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const AnimationTiming& obj);
+
+	template <> struct ReflectStruct<AnimationTiming> {
+		using type_t = AnimationTiming;
+		static constexpr const auto& = "AnimationTiming";
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::frame> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "frame";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// rpg::Sound
+	template <> struct ReflectMember<AnimationTiming,Sound,&AnimationTiming::se> {
+		using struct_t = AnimationTiming;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "se";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_scope> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "flash_scope";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_red> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "flash_red";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_green> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "flash_green";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_blue> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "flash_blue";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_power> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "flash_power";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - This field RPG2003 only but commonly found in some 2k LDB's. We disable the is2k3 field on purpose because if its defaulted in 2k it won't be written anyway.
+	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::screen_shake> {
+		using struct_t = AnimationTiming;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "screen_shake";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVEVEHICLELOCATION_H
 #define LCF_RPG_SAVEVEHICLELOCATION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include "lcf/rpg/savemapeventbase.h"
 #include <stdint.h>
@@ -64,6 +66,56 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveVehicleLocation& obj);
+
+	template <> struct ReflectStruct<SaveVehicleLocation> {
+		using type_t = SaveVehicleLocation;
+		static constexpr const auto& = "SaveVehicleLocation";
+	};
+	// Which vehicle
+	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::vehicle> {
+		using struct_t = SaveVehicleLocation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "vehicle";
+		static constexpr const int id = 0x65;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// From 0 to 255 - In flying vehicles; remaining distance to ascend
+	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::remaining_ascent> {
+		using struct_t = SaveVehicleLocation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "remaining_ascent";
+		static constexpr const int id = 0x6A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// From 0 to 255 - In flying vehicles; remaining distance to descend
+	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::remaining_descent> {
+		using struct_t = SaveVehicleLocation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "remaining_descent";
+		static constexpr const int id = 0x6B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Set by ChangeVehicleGraphic command
+	template <> struct ReflectMember<SaveVehicleLocation,std::string,&SaveVehicleLocation::orig_sprite_name> {
+		using struct_t = SaveVehicleLocation;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "orig_sprite_name";
+		static constexpr const int id = 0x6F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Set by ChangeVehicleGraphic command
+	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::orig_sprite_id> {
+		using struct_t = SaveVehicleLocation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "orig_sprite_id";
+		static constexpr const int id = 0x70;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

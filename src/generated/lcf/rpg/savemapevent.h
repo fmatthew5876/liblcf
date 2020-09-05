@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVEMAPEVENT_H
 #define LCF_RPG_SAVEMAPEVENT_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include "lcf/rpg/savemapeventbase.h"
 #include <stdint.h>
@@ -47,6 +49,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveMapEvent& obj);
+
+	template <> struct ReflectStruct<SaveMapEvent> {
+		using type_t = SaveMapEvent;
+		static constexpr const auto& = "SaveMapEvent";
+	};
+	// If true; this event is waiting for foreground execution.
+	template <> struct ReflectMember<SaveMapEvent,bool,&SaveMapEvent::waiting_execution> {
+		using struct_t = SaveMapEvent;
+		using type_t = bool;
+		static constexpr const auto& name[] = "waiting_execution";
+		static constexpr const int id = 0x65;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Index of custom move route
+	template <> struct ReflectMember<SaveMapEvent,int32_t,&SaveMapEvent::original_move_route_index> {
+		using struct_t = SaveMapEvent;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "original_move_route_index";
+		static constexpr const int id = 0x66;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// If true; this event was started by the decision key.
+	template <> struct ReflectMember<SaveMapEvent,bool,&SaveMapEvent::triggered_by_decision_key> {
+		using struct_t = SaveMapEvent;
+		using type_t = bool;
+		static constexpr const auto& name[] = "triggered_by_decision_key";
+		static constexpr const int id = 0x67;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// chunks
+	template <> struct ReflectMember<SaveMapEvent,SaveEventExecState,&SaveMapEvent::parallel_event_execstate> {
+		using struct_t = SaveMapEvent;
+		using type_t = SaveEventExecState;
+		static constexpr const auto& name[] = "parallel_event_execstate";
+		static constexpr const int id = 0x6C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

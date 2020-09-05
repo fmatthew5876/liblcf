@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_CHIPSET_H
 #define LCF_RPG_CHIPSET_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -67,6 +69,74 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Chipset& obj);
+
+	template <> struct ReflectStruct<Chipset> {
+		using type_t = Chipset;
+		static constexpr const auto& = "Chipset";
+	};
+	// String
+	template <> struct ReflectMember<Chipset,DBString,&Chipset::name> {
+		using struct_t = Chipset;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Chipset,DBString,&Chipset::chipset_name> {
+		using struct_t = Chipset;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "chipset_name";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Short x 162
+	template <> struct ReflectMember<Chipset,std::vector<int16_t>,&Chipset::terrain_data> {
+		using struct_t = Chipset;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "terrain_data";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Bitflag x 162
+	template <> struct ReflectMember<Chipset,std::vector<uint8_t>,&Chipset::passable_data_lower> {
+		using struct_t = Chipset;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "passable_data_lower";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Bitflag x 144
+	template <> struct ReflectMember<Chipset,std::vector<uint8_t>,&Chipset::passable_data_upper> {
+		using struct_t = Chipset;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "passable_data_upper";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Chipset,int32_t,&Chipset::animation_type> {
+		using struct_t = Chipset;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "animation_type";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Chipset,int32_t,&Chipset::animation_speed> {
+		using struct_t = Chipset;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "animation_speed";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

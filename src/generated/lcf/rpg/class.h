@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_CLASS_H
 #define LCF_RPG_CLASS_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -67,6 +69,137 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Class& obj);
+
+	template <> struct ReflectStruct<Class> {
+		using type_t = Class;
+		static constexpr const auto& = "Class";
+	};
+	// String
+	template <> struct ReflectMember<Class,DBString,&Class::name> {
+		using struct_t = Class;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Class,bool,&Class::two_weapon> {
+		using struct_t = Class;
+		using type_t = bool;
+		static constexpr const auto& name[] = "two_weapon";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Class,bool,&Class::lock_equipment> {
+		using struct_t = Class;
+		using type_t = bool;
+		static constexpr const auto& name[] = "lock_equipment";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Class,bool,&Class::auto_battle> {
+		using struct_t = Class;
+		using type_t = bool;
+		static constexpr const auto& name[] = "auto_battle";
+		static constexpr const int id = 0x17;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Class,bool,&Class::super_guard> {
+		using struct_t = Class;
+		using type_t = bool;
+		static constexpr const auto& name[] = "super_guard";
+		static constexpr const int id = 0x18;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array x 6 - Short
+	template <> struct ReflectMember<Class,Parameters,&Class::parameters> {
+		using struct_t = Class;
+		using type_t = Parameters;
+		static constexpr const auto& name[] = "parameters";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Class,int32_t,&Class::exp_base> {
+		using struct_t = Class;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "exp_base";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Class,int32_t,&Class::exp_inflation> {
+		using struct_t = Class;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "exp_inflation";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Class,int32_t,&Class::exp_correction> {
+		using struct_t = Class;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "exp_correction";
+		static constexpr const int id = 0x2B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Class,int32_t,&Class::battler_animation> {
+		using struct_t = Class;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "battler_animation";
+		static constexpr const int id = 0x3E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - rpg::Learning
+	template <> struct ReflectMember<Class,std::vector<Learning>,&Class::skills> {
+		using struct_t = Class;
+		using type_t = std::vector<Learning>;
+		static constexpr const auto& name[] = "skills";
+		static constexpr const int id = 0x3F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Class,std::vector<uint8_t>,&Class::state_ranks> {
+		using struct_t = Class;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "state_ranks";
+		static constexpr const int id = 0x48;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Class,std::vector<uint8_t>,&Class::attribute_ranks> {
+		using struct_t = Class;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "attribute_ranks";
+		static constexpr const int id = 0x4A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Uint32
+	template <> struct ReflectMember<Class,std::vector<int32_t>,&Class::battle_commands> {
+		using struct_t = Class;
+		using type_t = std::vector<int32_t>;
+		static constexpr const auto& name[] = "battle_commands";
+		static constexpr const int id = 0x50;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

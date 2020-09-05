@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ITEMANIMATION_H
 #define LCF_RPG_ITEMANIMATION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/enum_tags.h"
@@ -97,6 +99,92 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const ItemAnimation& obj);
+
+	template <> struct ReflectStruct<ItemAnimation> {
+		using type_t = ItemAnimation;
+		static constexpr const auto& = "ItemAnimation";
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::type> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "type";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::weapon_anim> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "weapon_anim";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::movement> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "movement";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::after_image> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "after_image";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::attacks> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "attacks";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,bool,&ItemAnimation::ranged> {
+		using struct_t = ItemAnimation;
+		using type_t = bool;
+		static constexpr const auto& name[] = "ranged";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::ranged_anim> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "ranged_anim";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::ranged_speed> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "ranged_speed";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::battle_anim> {
+		using struct_t = ItemAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "battle_anim";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

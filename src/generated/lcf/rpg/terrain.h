@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_TERRAIN_H
 #define LCF_RPG_TERRAIN_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <array>
 #include <stdint.h>
@@ -155,6 +157,299 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Terrain& obj);
+
+	template <> struct ReflectStruct<Terrain> {
+		using type_t = Terrain;
+		static constexpr const auto& = "Terrain";
+	};
+	// String
+	template <> struct ReflectMember<Terrain,DBString,&Terrain::name> {
+		using struct_t = Terrain;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::damage> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "damage";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::encounter_rate> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "encounter_rate";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Terrain,DBString,&Terrain::background_name> {
+		using struct_t = Terrain;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "background_name";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Terrain,bool,&Terrain::boat_pass> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "boat_pass";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Terrain,bool,&Terrain::ship_pass> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "ship_pass";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Terrain,bool,&Terrain::airship_pass> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "airship_pass";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Terrain,bool,&Terrain::airship_land> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "airship_land";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::bush_depth> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "bush_depth";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// rpg::Sound - RPG2003
+	template <> struct ReflectMember<Terrain,Sound,&Terrain::footstep> {
+		using struct_t = Terrain;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "footstep";
+		static constexpr const int id = 0x0F;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::on_damage_se> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "on_damage_se";
+		static constexpr const int id = 0x10;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::background_type> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "background_type";
+		static constexpr const int id = 0x11;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String - RPG2003
+	template <> struct ReflectMember<Terrain,DBString,&Terrain::background_a_name> {
+		using struct_t = Terrain;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "background_a_name";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::background_a_scrollh> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "background_a_scrollh";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::background_a_scrollv> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "background_a_scrollv";
+		static constexpr const int id = 0x17;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::background_a_scrollh_speed> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "background_a_scrollh_speed";
+		static constexpr const int id = 0x18;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::background_a_scrollv_speed> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "background_a_scrollv_speed";
+		static constexpr const int id = 0x19;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::background_b> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "background_b";
+		static constexpr const int id = 0x1E;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String - RPG2003
+	template <> struct ReflectMember<Terrain,DBString,&Terrain::background_b_name> {
+		using struct_t = Terrain;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "background_b_name";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::background_b_scrollh> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "background_b_scrollh";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Terrain,bool,&Terrain::background_b_scrollv> {
+		using struct_t = Terrain;
+		using type_t = bool;
+		static constexpr const auto& name[] = "background_b_scrollv";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::background_b_scrollh_speed> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "background_b_scrollh_speed";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::background_b_scrollv_speed> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "background_b_scrollv_speed";
+		static constexpr const int id = 0x23;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Bitflag - RPG2003
+	template <> struct ReflectMember<Terrain,Terrain::Flags,&Terrain::special_flags> {
+		using struct_t = Terrain;
+		using type_t = Terrain::Flags;
+		static constexpr const auto& name[] = "special_flags";
+		static constexpr const int id = 0x28;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::special_back_party> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "special_back_party";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::special_back_enemies> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "special_back_enemies";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::special_lateral_party> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "special_lateral_party";
+		static constexpr const int id = 0x2B;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::special_lateral_enemies> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "special_lateral_enemies";
+		static constexpr const int id = 0x2C;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::grid_location> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "grid_location";
+		static constexpr const int id = 0x2D;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::grid_top_y> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "grid_top_y";
+		static constexpr const int id = 0x2E;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::grid_elongation> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "grid_elongation";
+		static constexpr const int id = 0x2F;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Terrain,int32_t,&Terrain::grid_inclination> {
+		using struct_t = Terrain;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "grid_inclination";
+		static constexpr const int id = 0x30;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

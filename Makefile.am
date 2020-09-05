@@ -304,7 +304,8 @@ lcfrpginclude_HEADERS = \
 	src/generated/lcf/rpg/troopmember.h \
 	src/generated/lcf/rpg/trooppage.h \
 	src/generated/lcf/rpg/trooppagecondition.h \
-	src/generated/lcf/rpg/variable.h
+	src/generated/lcf/rpg/variable.h \
+	src/lcf/rpg/reflect.h
 
 lcfthirdpartyinclude_HEADERS = \
 	src/lcf/third_party/span.h \

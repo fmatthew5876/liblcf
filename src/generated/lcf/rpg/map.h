@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_MAP_H
 #define LCF_RPG_MAP_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -148,6 +150,299 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Map& obj);
+
+	template <> struct ReflectStruct<Map> {
+		using type_t = Map;
+		static constexpr const auto& = "Map";
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::chipset_id> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "chipset_id";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::width> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "width";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::height> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "height";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::scroll_type> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "scroll_type";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::parallax_flag> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_flag";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Map,DBString,&Map::parallax_name> {
+		using struct_t = Map;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "parallax_name";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::parallax_loop_x> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_loop_x";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::parallax_loop_y> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_loop_y";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::parallax_auto_loop_x> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_auto_loop_x";
+		static constexpr const int id = 0x23;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::parallax_sx> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parallax_sx";
+		static constexpr const int id = 0x24;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::parallax_auto_loop_y> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "parallax_auto_loop_y";
+		static constexpr const int id = 0x25;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::parallax_sy> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parallax_sy";
+		static constexpr const int id = 0x26;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_flag> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_flag";
+		static constexpr const int id = 0x28;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::generator_mode> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "generator_mode";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Bool
+	template <> struct ReflectMember<Map,bool,&Map::top_level> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "top_level";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::generator_tiles> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "generator_tiles";
+		static constexpr const int id = 0x30;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::generator_width> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "generator_width";
+		static constexpr const int id = 0x31;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::generator_height> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "generator_height";
+		static constexpr const int id = 0x32;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_surround> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_surround";
+		static constexpr const int id = 0x33;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_upper_wall> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_upper_wall";
+		static constexpr const int id = 0x34;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_floor_b> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_floor_b";
+		static constexpr const int id = 0x35;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_floor_c> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_floor_c";
+		static constexpr const int id = 0x36;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_extra_b> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_extra_b";
+		static constexpr const int id = 0x37;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Map,bool,&Map::generator_extra_c> {
+		using struct_t = Map;
+		using type_t = bool;
+		static constexpr const auto& name[] = "generator_extra_c";
+		static constexpr const int id = 0x38;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Uint32 x 9 RPG2003
+	template <> struct ReflectMember<Map,std::vector<uint32_t>,&Map::generator_x> {
+		using struct_t = Map;
+		using type_t = std::vector<uint32_t>;
+		static constexpr const auto& name[] = "generator_x";
+		static constexpr const int id = 0x3C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Uint32 x 9 RPG2003
+	template <> struct ReflectMember<Map,std::vector<uint32_t>,&Map::generator_y> {
+		using struct_t = Map;
+		using type_t = std::vector<uint32_t>;
+		static constexpr const auto& name[] = "generator_y";
+		static constexpr const int id = 0x3D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Short RPG2003
+	template <> struct ReflectMember<Map,std::vector<int16_t>,&Map::generator_tile_ids> {
+		using struct_t = Map;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "generator_tile_ids";
+		static constexpr const int id = 0x3E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Map,std::vector<int16_t>,&Map::lower_layer> {
+		using struct_t = Map;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "lower_layer";
+		static constexpr const int id = 0x47;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Map,std::vector<int16_t>,&Map::upper_layer> {
+		using struct_t = Map;
+		using type_t = std::vector<int16_t>;
+		static constexpr const auto& name[] = "upper_layer";
+		static constexpr const int id = 0x48;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - rpg::Event
+	template <> struct ReflectMember<Map,std::vector<Event>,&Map::events> {
+		using struct_t = Map;
+		using type_t = std::vector<Event>;
+		static constexpr const auto& name[] = "events";
+		static constexpr const int id = 0x51;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer - Used by steam version of rm2k3 instead of 0x5B.
+	template <> struct ReflectMember<Map,int32_t,&Map::save_count_2k3e> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "save_count_2k3e";
+		static constexpr const int id = 0x5A;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Map,int32_t,&Map::save_count> {
+		using struct_t = Map;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "save_count";
+		static constexpr const int id = 0x5B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SKILL_H
 #define LCF_RPG_SKILL_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -158,6 +160,317 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Skill& obj);
+
+	template <> struct ReflectStruct<Skill> {
+		using type_t = Skill;
+		static constexpr const auto& = "Skill";
+	};
+	// String
+	template <> struct ReflectMember<Skill,DBString,&Skill::name> {
+		using struct_t = Skill;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Skill,DBString,&Skill::description> {
+		using struct_t = Skill;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "description";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String - RPG2000
+	template <> struct ReflectMember<Skill,DBString,&Skill::using_message1> {
+		using struct_t = Skill;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "using_message1";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String - RPG2000
+	template <> struct ReflectMember<Skill,DBString,&Skill::using_message2> {
+		using struct_t = Skill;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "using_message2";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2000
+	template <> struct ReflectMember<Skill,int32_t,&Skill::failure_message> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "failure_message";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::type> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "type";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Skill,int32_t,&Skill::sp_type> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sp_type";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Skill,int32_t,&Skill::sp_percent> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sp_percent";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::sp_cost> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sp_cost";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::scope> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "scope";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::switch_id> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_id";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::animation_id> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "animation_id";
+		static constexpr const int id = 0x0E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// rpg::Sound
+	template <> struct ReflectMember<Skill,Sound,&Skill::sound_effect> {
+		using struct_t = Skill;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "sound_effect";
+		static constexpr const int id = 0x10;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::occasion_field> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "occasion_field";
+		static constexpr const int id = 0x12;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::occasion_battle> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "occasion_battle";
+		static constexpr const int id = 0x13;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Skill,bool,&Skill::reverse_state_effect> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "reverse_state_effect";
+		static constexpr const int id = 0x14;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::physical_rate> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "physical_rate";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::magical_rate> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "magical_rate";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::variance> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "variance";
+		static constexpr const int id = 0x17;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::power> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "power";
+		static constexpr const int id = 0x18;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Skill,int32_t,&Skill::hit> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "hit";
+		static constexpr const int id = 0x19;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_hp> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_hp";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_sp> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_sp";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_attack> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_attack";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_defense> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_defense";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_spirit> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_spirit";
+		static constexpr const int id = 0x23;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_agility> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_agility";
+		static constexpr const int id = 0x24;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::absorb_damage> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "absorb_damage";
+		static constexpr const int id = 0x25;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::ignore_defense> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "ignore_defense";
+		static constexpr const int id = 0x26;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Flag
+	template <> struct ReflectMember<Skill,DBBitArray,&Skill::state_effects> {
+		using struct_t = Skill;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "state_effects";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Flag
+	template <> struct ReflectMember<Skill,DBBitArray,&Skill::attribute_effects> {
+		using struct_t = Skill;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "attribute_effects";
+		static constexpr const int id = 0x2C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Flag
+	template <> struct ReflectMember<Skill,bool,&Skill::affect_attr_defence> {
+		using struct_t = Skill;
+		using type_t = bool;
+		static constexpr const auto& name[] = "affect_attr_defence";
+		static constexpr const int id = 0x2D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Skill,int32_t,&Skill::battler_animation> {
+		using struct_t = Skill;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "battler_animation";
+		static constexpr const int id = 0x31;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// ? - RPG2003
+	template <> struct ReflectMember<Skill,std::vector<BattlerAnimationData>,&Skill::battler_animation_data> {
+		using struct_t = Skill;
+		using type_t = std::vector<BattlerAnimationData>;
+		static constexpr const auto& name[] = "battler_animation_data";
+		static constexpr const int id = 0x32;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

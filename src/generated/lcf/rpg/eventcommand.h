@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_EVENTCOMMAND_H
 #define LCF_RPG_EVENTCOMMAND_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <lcf/dbarray.h>
 #include <stdint.h>
@@ -199,6 +201,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const EventCommand& obj);
+
+	template <> struct ReflectStruct<EventCommand> {
+		using type_t = EventCommand;
+		static constexpr const auto& = "EventCommand";
+	};
+	// 
+	template <> struct ReflectMember<EventCommand,int32_t,&EventCommand::code> {
+		using struct_t = EventCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "code";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<EventCommand,int32_t,&EventCommand::indent> {
+		using struct_t = EventCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "indent";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<EventCommand,DBString,&EventCommand::string> {
+		using struct_t = EventCommand;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "string";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<EventCommand,DBArray<int32_t>,&EventCommand::parameters> {
+		using struct_t = EventCommand;
+		using type_t = DBArray<int32_t>;
+		static constexpr const auto& name[] = "parameters";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

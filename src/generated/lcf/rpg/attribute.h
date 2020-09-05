@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ATTRIBUTE_H
 #define LCF_RPG_ATTRIBUTE_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/dbstring.h"
@@ -64,6 +66,74 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Attribute& obj);
+
+	template <> struct ReflectStruct<Attribute> {
+		using type_t = Attribute;
+		static constexpr const auto& = "Attribute";
+	};
+	// String
+	template <> struct ReflectMember<Attribute,DBString,&Attribute::name> {
+		using struct_t = Attribute;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::type> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "type";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::a_rate> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "a_rate";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::b_rate> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "b_rate";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::c_rate> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "c_rate";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::d_rate> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "d_rate";
+		static constexpr const int id = 0x0E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Attribute,int32_t,&Attribute::e_rate> {
+		using struct_t = Attribute;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "e_rate";
+		static constexpr const int id = 0x0F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

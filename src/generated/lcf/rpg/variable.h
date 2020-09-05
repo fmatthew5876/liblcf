@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_VARIABLE_H
 #define LCF_RPG_VARIABLE_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include "lcf/dbstring.h"
 #include <ostream>
@@ -37,6 +39,20 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Variable& obj);
+
+	template <> struct ReflectStruct<Variable> {
+		using type_t = Variable;
+		static constexpr const auto& = "Variable";
+	};
+	// String
+	template <> struct ReflectMember<Variable,DBString,&Variable::name> {
+		using struct_t = Variable;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

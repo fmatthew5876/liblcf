@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ENEMY_H
 #define LCF_RPG_ENEMY_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -80,6 +82,200 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Enemy& obj);
+
+	template <> struct ReflectStruct<Enemy> {
+		using type_t = Enemy;
+		static constexpr const auto& = "Enemy";
+	};
+	// String
+	template <> struct ReflectMember<Enemy,DBString,&Enemy::name> {
+		using struct_t = Enemy;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Enemy,DBString,&Enemy::battler_name> {
+		using struct_t = Enemy;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "battler_name";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::battler_hue> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "battler_hue";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::max_hp> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "max_hp";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::max_sp> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "max_sp";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::attack> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "attack";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::defense> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "defense";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::spirit> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "spirit";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::agility> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "agility";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Enemy,bool,&Enemy::transparent> {
+		using struct_t = Enemy;
+		using type_t = bool;
+		static constexpr const auto& name[] = "transparent";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::exp> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "exp";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::gold> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "gold";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::drop_id> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "drop_id";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::drop_prob> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "drop_prob";
+		static constexpr const int id = 0x0E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Enemy,bool,&Enemy::critical_hit> {
+		using struct_t = Enemy;
+		using type_t = bool;
+		static constexpr const auto& name[] = "critical_hit";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Enemy,int32_t,&Enemy::critical_hit_chance> {
+		using struct_t = Enemy;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "critical_hit_chance";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Enemy,bool,&Enemy::miss> {
+		using struct_t = Enemy;
+		using type_t = bool;
+		static constexpr const auto& name[] = "miss";
+		static constexpr const int id = 0x1A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Enemy,bool,&Enemy::levitate> {
+		using struct_t = Enemy;
+		using type_t = bool;
+		static constexpr const auto& name[] = "levitate";
+		static constexpr const int id = 0x1C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Enemy,std::vector<uint8_t>,&Enemy::state_ranks> {
+		using struct_t = Enemy;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "state_ranks";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Short
+	template <> struct ReflectMember<Enemy,std::vector<uint8_t>,&Enemy::attribute_ranks> {
+		using struct_t = Enemy;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "attribute_ranks";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - rpg::EnemyAction
+	template <> struct ReflectMember<Enemy,std::vector<EnemyAction>,&Enemy::actions> {
+		using struct_t = Enemy;
+		using type_t = std::vector<EnemyAction>;
+		static constexpr const auto& name[] = "actions";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

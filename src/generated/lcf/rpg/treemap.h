@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_TREEMAP_H
 #define LCF_RPG_TREEMAP_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -61,6 +63,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const TreeMap& obj);
+
+	template <> struct ReflectStruct<TreeMap> {
+		using type_t = TreeMap;
+		static constexpr const auto& = "TreeMap";
+	};
+	// 
+	template <> struct ReflectMember<TreeMap,std::vector<MapInfo>,&TreeMap::maps> {
+		using struct_t = TreeMap;
+		using type_t = std::vector<MapInfo>;
+		static constexpr const auto& name[] = "maps";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<TreeMap,std::vector<int32_t>,&TreeMap::tree_order> {
+		using struct_t = TreeMap;
+		using type_t = std::vector<int32_t>;
+		static constexpr const auto& name[] = "tree_order";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<TreeMap,int32_t,&TreeMap::active_node> {
+		using struct_t = TreeMap;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "active_node";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<TreeMap,Start,&TreeMap::start> {
+		using struct_t = TreeMap;
+		using type_t = Start;
+		static constexpr const auto& name[] = "start";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVEEVENTEXECFRAME_H
 #define LCF_RPG_SAVEEVENTEXECFRAME_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -47,6 +49,56 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveEventExecFrame& obj);
+
+	template <> struct ReflectStruct<SaveEventExecFrame> {
+		using type_t = SaveEventExecFrame;
+		static constexpr const auto& = "SaveEventExecFrame";
+	};
+	// event command list
+	template <> struct ReflectMember<SaveEventExecFrame,std::vector<EventCommand>,&SaveEventExecFrame::commands> {
+		using struct_t = SaveEventExecFrame;
+		using type_t = std::vector<EventCommand>;
+		static constexpr const auto& name[] = "commands";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// int
+	template <> struct ReflectMember<SaveEventExecFrame,int32_t,&SaveEventExecFrame::current_command> {
+		using struct_t = SaveEventExecFrame;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "current_command";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 0 if it's common event or in other map
+	template <> struct ReflectMember<SaveEventExecFrame,int32_t,&SaveEventExecFrame::event_id> {
+		using struct_t = SaveEventExecFrame;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "event_id";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Event was triggered by the Action Key
+	template <> struct ReflectMember<SaveEventExecFrame,bool,&SaveEventExecFrame::triggered_by_decision_key> {
+		using struct_t = SaveEventExecFrame;
+		using type_t = bool;
+		static constexpr const auto& name[] = "triggered_by_decision_key";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// byte For each indention level in the script; an ID is stored there which corresponds to the branch to take in case a command allows multiple branches. For example; the Show Choice command would write the result of the choice (for example 2 for the third item) into the current indention level's entry in this array; and the script processor would later look for the Case subcommand with the corresponding ID; if any; and jump to that one (if none found; it would jump to the End Case subcommand). Once the jump is executed; the ID is set to 255 (probably a protection mechanism even though there should normally not be multiple subcommands with the same ID).
+	template <> struct ReflectMember<SaveEventExecFrame,std::vector<uint8_t>,&SaveEventExecFrame::subcommand_path> {
+		using struct_t = SaveEventExecFrame;
+		using type_t = std::vector<uint8_t>;
+		static constexpr const auto& name[] = "subcommand_path";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

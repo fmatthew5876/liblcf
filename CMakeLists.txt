@@ -288,6 +288,7 @@ set(LCF_HEADERS
 	src/generated/lcf/rpg/trooppage.h
 	src/generated/lcf/rpg/trooppagecondition.h
 	src/generated/lcf/rpg/variable.h
+	src/lcf/rpg/reflect.h
 	src/lcf/third_party/span.h
 	src/lcf/third_party/string_view.h
 )

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_SAVESYSTEM_H
 #define LCF_RPG_SAVESYSTEM_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <string>
@@ -191,6 +193,506 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const SaveSystem& obj);
+
+	template <> struct ReflectStruct<SaveSystem> {
+		using type_t = SaveSystem;
+		static constexpr const auto& = "SaveSystem";
+	};
+	// The current Scene for RPG_RT. Legacy field only used by RPG_RT and not by EasyRPG Player. Savegames always have a scene of 5 (filemenu).
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::scene> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "scene";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::frame_count> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "frame_count";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// string
+	template <> struct ReflectMember<SaveSystem,std::string,&SaveSystem::graphics_name> {
+		using struct_t = SaveSystem;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "graphics_name";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::message_stretch> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "message_stretch";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::font_id> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "font_id";
+		static constexpr const int id = 0x17;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,std::vector<bool>,&SaveSystem::switches> {
+		using struct_t = SaveSystem;
+		using type_t = std::vector<bool>;
+		static constexpr const auto& name[] = "switches";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,std::vector<int32_t>,&SaveSystem::variables> {
+		using struct_t = SaveSystem;
+		using type_t = std::vector<int32_t>;
+		static constexpr const auto& name[] = "variables";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::message_transparent> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "message_transparent";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::message_position> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "message_position";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::message_prevent_overlap> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "message_prevent_overlap";
+		static constexpr const int id = 0x2B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::message_continue_events> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "message_continue_events";
+		static constexpr const int id = 0x2C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,std::string,&SaveSystem::face_name> {
+		using struct_t = SaveSystem;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "face_name";
+		static constexpr const int id = 0x33;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::face_id> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "face_id";
+		static constexpr const int id = 0x34;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::face_right> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "face_right";
+		static constexpr const int id = 0x35;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// bool
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::face_flip> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "face_flip";
+		static constexpr const int id = 0x36;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// A flag set by RPG_RT when a message is spawned by ShowMessage; ShowChoices; or ShowNumberInput and cleared when message spawned for any other reason.
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::event_message_active> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "event_message_active";
+		static constexpr const int id = 0x37;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Music is being faded out or had been stopped (Play music with the same music as currently playing will restart the music when this flag is set)
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::music_stopping> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "music_stopping";
+		static constexpr const int id = 0x3D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::title_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "title_music";
+		static constexpr const int id = 0x47;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::battle_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "battle_music";
+		static constexpr const int id = 0x48;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::battle_end_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "battle_end_music";
+		static constexpr const int id = 0x49;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::inn_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "inn_music";
+		static constexpr const int id = 0x4A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::current_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "current_music";
+		static constexpr const int id = 0x4B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::before_vehicle_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "before_vehicle_music";
+		static constexpr const int id = 0x4C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::before_battle_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "before_battle_music";
+		static constexpr const int id = 0x4D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::stored_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "stored_music";
+		static constexpr const int id = 0x4E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::boat_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "boat_music";
+		static constexpr const int id = 0x4F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::ship_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "ship_music";
+		static constexpr const int id = 0x50;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::airship_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "airship_music";
+		static constexpr const int id = 0x51;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Music,&SaveSystem::gameover_music> {
+		using struct_t = SaveSystem;
+		using type_t = Music;
+		static constexpr const auto& name[] = "gameover_music";
+		static constexpr const int id = 0x52;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::cursor_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "cursor_se";
+		static constexpr const int id = 0x5B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::decision_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "decision_se";
+		static constexpr const int id = 0x5C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::cancel_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "cancel_se";
+		static constexpr const int id = 0x5D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::buzzer_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "buzzer_se";
+		static constexpr const int id = 0x5E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::battle_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "battle_se";
+		static constexpr const int id = 0x5F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::escape_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "escape_se";
+		static constexpr const int id = 0x60;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::enemy_attack_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "enemy_attack_se";
+		static constexpr const int id = 0x61;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::enemy_damaged_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "enemy_damaged_se";
+		static constexpr const int id = 0x62;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::actor_damaged_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "actor_damaged_se";
+		static constexpr const int id = 0x63;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::dodge_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "dodge_se";
+		static constexpr const int id = 0x64;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::enemy_death_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "enemy_death_se";
+		static constexpr const int id = 0x65;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,Sound,&SaveSystem::item_se> {
+		using struct_t = SaveSystem;
+		using type_t = Sound;
+		static constexpr const auto& name[] = "item_se";
+		static constexpr const int id = 0x66;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::transition_out> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "transition_out";
+		static constexpr const int id = 0x6F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::transition_in> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "transition_in";
+		static constexpr const int id = 0x70;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::battle_start_fadeout> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "battle_start_fadeout";
+		static constexpr const int id = 0x71;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::battle_start_fadein> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "battle_start_fadein";
+		static constexpr const int id = 0x72;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::battle_end_fadeout> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "battle_end_fadeout";
+		static constexpr const int id = 0x73;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int8_t,&SaveSystem::battle_end_fadein> {
+		using struct_t = SaveSystem;
+		using type_t = int8_t;
+		static constexpr const auto& name[] = "battle_end_fadein";
+		static constexpr const int id = 0x74;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::teleport_allowed> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "teleport_allowed";
+		static constexpr const int id = 0x79;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::escape_allowed> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "escape_allowed";
+		static constexpr const int id = 0x7A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::save_allowed> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "save_allowed";
+		static constexpr const int id = 0x7B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,bool,&SaveSystem::menu_allowed> {
+		using struct_t = SaveSystem;
+		using type_t = bool;
+		static constexpr const auto& name[] = "menu_allowed";
+		static constexpr const int id = 0x7C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// string
+	template <> struct ReflectMember<SaveSystem,std::string,&SaveSystem::background> {
+		using struct_t = SaveSystem;
+		using type_t = std::string;
+		static constexpr const auto& name[] = "background";
+		static constexpr const int id = 0x7D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::save_count> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "save_count";
+		static constexpr const int id = 0x83;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::save_slot> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "save_slot";
+		static constexpr const int id = 0x84;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// ATB mode of RPG 2003 battle system.
+	template <> struct ReflectMember<SaveSystem,int32_t,&SaveSystem::atb_mode> {
+		using struct_t = SaveSystem;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "atb_mode";
+		static constexpr const int id = 0x8C;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

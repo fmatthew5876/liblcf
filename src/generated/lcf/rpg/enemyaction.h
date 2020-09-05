@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ENEMYACTION_H
 #define LCF_RPG_ENEMYACTION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/enum_tags.h"
@@ -125,6 +127,128 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const EnemyAction& obj);
+
+	template <> struct ReflectStruct<EnemyAction> {
+		using type_t = EnemyAction;
+		static constexpr const auto& = "EnemyAction";
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::kind> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "kind";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::basic> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "basic";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::skill_id> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "skill_id";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::enemy_id> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "enemy_id";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_type> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "condition_type";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_param1> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "condition_param1";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_param2> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "condition_param2";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_id> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_id";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<EnemyAction,bool,&EnemyAction::switch_on> {
+		using struct_t = EnemyAction;
+		using type_t = bool;
+		static constexpr const auto& name[] = "switch_on";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_on_id> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_on_id";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<EnemyAction,bool,&EnemyAction::switch_off> {
+		using struct_t = EnemyAction;
+		using type_t = bool;
+		static constexpr const auto& name[] = "switch_off";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_off_id> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_off_id";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::rating> {
+		using struct_t = EnemyAction;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "rating";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

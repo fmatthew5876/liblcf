@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ANIMATION_H
 #define LCF_RPG_ANIMATION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <vector>
 #include "lcf/dbstring.h"
@@ -80,6 +82,74 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Animation& obj);
+
+	template <> struct ReflectStruct<Animation> {
+		using type_t = Animation;
+		static constexpr const auto& = "Animation";
+	};
+	// String
+	template <> struct ReflectMember<Animation,DBString,&Animation::name> {
+		using struct_t = Animation;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Animation,DBString,&Animation::animation_name> {
+		using struct_t = Animation;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "animation_name";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Battle2 animation when true
+	template <> struct ReflectMember<Animation,bool,&Animation::large> {
+		using struct_t = Animation;
+		using type_t = bool;
+		static constexpr const auto& name[] = "large";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - rpg::AnimationTiming
+	template <> struct ReflectMember<Animation,std::vector<AnimationTiming>,&Animation::timings> {
+		using struct_t = Animation;
+		using type_t = std::vector<AnimationTiming>;
+		static constexpr const auto& name[] = "timings";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Animation,int32_t,&Animation::scope> {
+		using struct_t = Animation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "scope";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Animation,int32_t,&Animation::position> {
+		using struct_t = Animation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "position";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - rpg::AnimationFrames
+	template <> struct ReflectMember<Animation,std::vector<AnimationFrame>,&Animation::frames> {
+		using struct_t = Animation;
+		using type_t = std::vector<AnimationFrame>;
+		static constexpr const auto& name[] = "frames";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

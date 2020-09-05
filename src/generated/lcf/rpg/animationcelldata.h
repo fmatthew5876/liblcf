@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ANIMATIONCELLDATA_H
 #define LCF_RPG_ANIMATIONCELLDATA_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <ostream>
@@ -55,6 +57,101 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const AnimationCellData& obj);
+
+	template <> struct ReflectStruct<AnimationCellData> {
+		using type_t = AnimationCellData;
+		static constexpr const auto& = "AnimationCellData";
+	};
+	// Bool
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::valid> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "valid";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::cell_id> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "cell_id";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::x> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "x";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::y> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "y";
+		static constexpr const int id = 0x04;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::zoom> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "zoom";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_red> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "tone_red";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_green> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "tone_green";
+		static constexpr const int id = 0x07;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_blue> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "tone_blue";
+		static constexpr const int id = 0x08;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_gray> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "tone_gray";
+		static constexpr const int id = 0x09;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::transparency> {
+		using struct_t = AnimationCellData;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "transparency";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

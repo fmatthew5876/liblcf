@@ -11,6 +11,8 @@
 
 #ifndef LCF_RPG_ENCOUNTER_H
 #define LCF_RPG_ENCOUNTER_H
+
+#include <lcf/rpg/reflect.h>
 #include <ostream>
 #include <type_traits>
 
@@ -34,6 +36,20 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Encounter& obj);
+
+	template <> struct ReflectStruct<Encounter> {
+		using type_t = Encounter;
+		static constexpr const auto& = "Encounter";
+	};
+	// Integer
+	template <> struct ReflectMember<Encounter,int32_t,&Encounter::troop_id> {
+		using struct_t = Encounter;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "troop_id";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

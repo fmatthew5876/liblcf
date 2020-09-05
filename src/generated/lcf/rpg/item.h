@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_ITEM_H
 #define LCF_RPG_ITEM_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <vector>
@@ -203,6 +205,479 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Item& obj);
+
+	template <> struct ReflectStruct<Item> {
+		using type_t = Item;
+		static constexpr const auto& = "Item";
+	};
+	// String
+	template <> struct ReflectMember<Item,DBString,&Item::name> {
+		using struct_t = Item;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// String
+	template <> struct ReflectMember<Item,DBString,&Item::description> {
+		using struct_t = Item;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "description";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::type> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "type";
+		static constexpr const int id = 0x03;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::price> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "price";
+		static constexpr const int id = 0x05;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::uses> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "uses";
+		static constexpr const int id = 0x06;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::atk_points1> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "atk_points1";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::def_points1> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "def_points1";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::spi_points1> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "spi_points1";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::agi_points1> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "agi_points1";
+		static constexpr const int id = 0x0E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::two_handed> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "two_handed";
+		static constexpr const int id = 0x0F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::sp_cost> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "sp_cost";
+		static constexpr const int id = 0x10;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::hit> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "hit";
+		static constexpr const int id = 0x11;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::critical_hit> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "critical_hit";
+		static constexpr const int id = 0x12;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::animation_id> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "animation_id";
+		static constexpr const int id = 0x14;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::preemptive> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "preemptive";
+		static constexpr const int id = 0x15;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::dual_attack> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "dual_attack";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::attack_all> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "attack_all";
+		static constexpr const int id = 0x17;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::ignore_evasion> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "ignore_evasion";
+		static constexpr const int id = 0x18;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::prevent_critical> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "prevent_critical";
+		static constexpr const int id = 0x19;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::raise_evasion> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "raise_evasion";
+		static constexpr const int id = 0x1A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::half_sp_cost> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "half_sp_cost";
+		static constexpr const int id = 0x1B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::no_terrain_damage> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "no_terrain_damage";
+		static constexpr const int id = 0x1C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Item,bool,&Item::cursed> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "cursed";
+		static constexpr const int id = 0x1D;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::entire_party> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "entire_party";
+		static constexpr const int id = 0x1F;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::recover_hp_rate> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "recover_hp_rate";
+		static constexpr const int id = 0x20;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::recover_hp> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "recover_hp";
+		static constexpr const int id = 0x21;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::recover_sp_rate> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "recover_sp_rate";
+		static constexpr const int id = 0x22;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::recover_sp> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "recover_sp";
+		static constexpr const int id = 0x23;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::occasion_field1> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "occasion_field1";
+		static constexpr const int id = 0x25;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::ko_only> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "ko_only";
+		static constexpr const int id = 0x26;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::max_hp_points> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "max_hp_points";
+		static constexpr const int id = 0x29;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::max_sp_points> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "max_sp_points";
+		static constexpr const int id = 0x2A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::atk_points2> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "atk_points2";
+		static constexpr const int id = 0x2B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::def_points2> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "def_points2";
+		static constexpr const int id = 0x2C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::spi_points2> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "spi_points2";
+		static constexpr const int id = 0x2D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::agi_points2> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "agi_points2";
+		static constexpr const int id = 0x2E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::using_message> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "using_message";
+		static constexpr const int id = 0x33;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::skill_id> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "skill_id";
+		static constexpr const int id = 0x35;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::switch_id> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_id";
+		static constexpr const int id = 0x37;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::occasion_field2> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "occasion_field2";
+		static constexpr const int id = 0x39;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::occasion_battle> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "occasion_battle";
+		static constexpr const int id = 0x3A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Flag
+	template <> struct ReflectMember<Item,DBBitArray,&Item::actor_set> {
+		using struct_t = Item;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "actor_set";
+		static constexpr const int id = 0x3E;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Flag
+	template <> struct ReflectMember<Item,DBBitArray,&Item::state_set> {
+		using struct_t = Item;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "state_set";
+		static constexpr const int id = 0x40;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - Flag
+	template <> struct ReflectMember<Item,DBBitArray,&Item::attribute_set> {
+		using struct_t = Item;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "attribute_set";
+		static constexpr const int id = 0x42;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::state_chance> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "state_chance";
+		static constexpr const int id = 0x43;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<Item,bool,&Item::reverse_state_effect> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "reverse_state_effect";
+		static constexpr const int id = 0x44;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer - RPG2003
+	template <> struct ReflectMember<Item,int32_t,&Item::weapon_animation> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "weapon_animation";
+		static constexpr const int id = 0x45;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - RPG2003
+	template <> struct ReflectMember<Item,std::vector<ItemAnimation>,&Item::animation_data> {
+		using struct_t = Item;
+		using type_t = std::vector<ItemAnimation>;
+		static constexpr const auto& name[] = "animation_data";
+		static constexpr const int id = 0x46;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Flag - RPG2003
+	template <> struct ReflectMember<Item,bool,&Item::use_skill> {
+		using struct_t = Item;
+		using type_t = bool;
+		static constexpr const auto& name[] = "use_skill";
+		static constexpr const int id = 0x47;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - Flag - RPG2003
+	template <> struct ReflectMember<Item,DBBitArray,&Item::class_set> {
+		using struct_t = Item;
+		using type_t = DBBitArray;
+		static constexpr const auto& name[] = "class_set";
+		static constexpr const int id = 0x49;
+		static constexpr const bool is2k3 = 1;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::ranged_trajectory> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "ranged_trajectory";
+		static constexpr const int id = 0x4B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<Item,int32_t,&Item::ranged_target> {
+		using struct_t = Item;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "ranged_target";
+		static constexpr const int id = 0x4C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_COMMONEVENT_H
 #define LCF_RPG_COMMONEVENT_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <vector>
 #include "lcf/dbstring.h"
@@ -58,6 +60,56 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const CommonEvent& obj);
+
+	template <> struct ReflectStruct<CommonEvent> {
+		using type_t = CommonEvent;
+		static constexpr const auto& = "CommonEvent";
+	};
+	// String
+	template <> struct ReflectMember<CommonEvent,DBString,&CommonEvent::name> {
+		using struct_t = CommonEvent;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<CommonEvent,int32_t,&CommonEvent::trigger> {
+		using struct_t = CommonEvent;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "trigger";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Flag
+	template <> struct ReflectMember<CommonEvent,bool,&CommonEvent::switch_flag> {
+		using struct_t = CommonEvent;
+		using type_t = bool;
+		static constexpr const auto& name[] = "switch_flag";
+		static constexpr const int id = 0x0C;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<CommonEvent,int32_t,&CommonEvent::switch_id> {
+		using struct_t = CommonEvent;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "switch_id";
+		static constexpr const int id = 0x0D;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - rpg::EventCommand
+	template <> struct ReflectMember<CommonEvent,std::vector<EventCommand>,&CommonEvent::event_commands> {
+		using struct_t = CommonEvent;
+		using type_t = std::vector<EventCommand>;
+		static constexpr const auto& name[] = "event_commands";
+		static constexpr const int id = 0x16;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

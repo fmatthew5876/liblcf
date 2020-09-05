@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_BATTLERANIMATION_H
 #define LCF_RPG_BATTLERANIMATION_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <vector>
 #include "lcf/dbstring.h"
@@ -56,6 +58,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const BattlerAnimation& obj);
+
+	template <> struct ReflectStruct<BattlerAnimation> {
+		using type_t = BattlerAnimation;
+		static constexpr const auto& = "BattlerAnimation";
+	};
+	// String
+	template <> struct ReflectMember<BattlerAnimation,DBString,&BattlerAnimation::name> {
+		using struct_t = BattlerAnimation;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "name";
+		static constexpr const int id = 0x01;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Integer
+	template <> struct ReflectMember<BattlerAnimation,int32_t,&BattlerAnimation::speed> {
+		using struct_t = BattlerAnimation;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "speed";
+		static constexpr const int id = 0x02;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// Array - rpg::BattlerAnimationExtension
+	template <> struct ReflectMember<BattlerAnimation,std::vector<BattlerAnimationExtension>,&BattlerAnimation::base_data> {
+		using struct_t = BattlerAnimation;
+		using type_t = std::vector<BattlerAnimationExtension>;
+		static constexpr const auto& name[] = "base_data";
+		static constexpr const int id = 0x0A;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
+	// Array - rpg::BattlerAnimationExtension
+	template <> struct ReflectMember<BattlerAnimation,std::vector<BattlerAnimationExtension>,&BattlerAnimation::weapon_data> {
+		using struct_t = BattlerAnimation;
+		using type_t = std::vector<BattlerAnimationExtension>;
+		static constexpr const auto& name[] = "weapon_data";
+		static constexpr const int id = 0x0B;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 1;
+	};
 } // namespace rpg
 } // namespace lcf
 

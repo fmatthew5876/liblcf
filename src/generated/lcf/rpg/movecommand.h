@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_MOVECOMMAND_H
 #define LCF_RPG_MOVECOMMAND_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include "lcf/dbstring.h"
@@ -139,6 +141,56 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const MoveCommand& obj);
+
+	template <> struct ReflectStruct<MoveCommand> {
+		using type_t = MoveCommand;
+		static constexpr const auto& = "MoveCommand";
+	};
+	// 
+	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::command_id> {
+		using struct_t = MoveCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "command_id";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<MoveCommand,DBString,&MoveCommand::parameter_string> {
+		using struct_t = MoveCommand;
+		using type_t = DBString;
+		static constexpr const auto& name[] = "parameter_string";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_a> {
+		using struct_t = MoveCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parameter_a";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_b> {
+		using struct_t = MoveCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parameter_b";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_c> {
+		using struct_t = MoveCommand;
+		using type_t = int32_t;
+		static constexpr const auto& name[] = "parameter_c";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 

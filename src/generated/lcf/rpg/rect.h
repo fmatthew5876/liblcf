@@ -12,6 +12,8 @@
 #ifndef LCF_RPG_RECT_H
 #define LCF_RPG_RECT_H
 
+#include <lcf/rpg/reflect.h>
+
 // Headers
 #include <stdint.h>
 #include <ostream>
@@ -42,6 +44,47 @@ namespace rpg {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Rect& obj);
+
+	template <> struct ReflectStruct<Rect> {
+		using type_t = Rect;
+		static constexpr const auto& = "Rect";
+	};
+	// 
+	template <> struct ReflectMember<Rect,uint32_t,&Rect::l> {
+		using struct_t = Rect;
+		using type_t = uint32_t;
+		static constexpr const auto& name[] = "l";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<Rect,uint32_t,&Rect::t> {
+		using struct_t = Rect;
+		using type_t = uint32_t;
+		static constexpr const auto& name[] = "t";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<Rect,uint32_t,&Rect::r> {
+		using struct_t = Rect;
+		using type_t = uint32_t;
+		static constexpr const auto& name[] = "r";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
+	// 
+	template <> struct ReflectMember<Rect,uint32_t,&Rect::b> {
+		using struct_t = Rect;
+		using type_t = uint32_t;
+		static constexpr const auto& name[] = "b";
+		static constexpr const int id = 0x00;
+		static constexpr const bool is2k3 = 0;
+		static constexpr const bool present_if_default = 0;
+	};
 } // namespace rpg
 } // namespace lcf
 
