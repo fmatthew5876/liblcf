@@ -153,13 +153,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<BattleCommands> {
 		using type_t = BattleCommands;
-		static constexpr const auto& = "BattleCommands";
+		static constexpr const auto& name = "BattleCommands";
 	};
 	// Integer
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::placement> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "placement";
+		static constexpr const auto& name = "placement";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -168,7 +168,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,bool,&BattleCommands::death_handler_unused> {
 		using struct_t = BattleCommands;
 		using type_t = bool;
-		static constexpr const auto& name[] = "death_handler_unused";
+		static constexpr const auto& name = "death_handler_unused";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -177,7 +177,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::row> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "row";
+		static constexpr const auto& name = "row";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -186,7 +186,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::battle_type> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_type";
+		static constexpr const auto& name = "battle_type";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -195,7 +195,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,bool,&BattleCommands::unused_display_normal_parameters> {
 		using struct_t = BattleCommands;
 		using type_t = bool;
-		static constexpr const auto& name[] = "unused_display_normal_parameters";
+		static constexpr const auto& name = "unused_display_normal_parameters";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -204,7 +204,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,std::vector<BattleCommand>,&BattleCommands::commands> {
 		using struct_t = BattleCommands;
 		using type_t = std::vector<BattleCommand>;
-		static constexpr const auto& name[] = "commands";
+		static constexpr const auto& name = "commands";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -213,7 +213,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,bool,&BattleCommands::death_handler> {
 		using struct_t = BattleCommands;
 		using type_t = bool;
-		static constexpr const auto& name[] = "death_handler";
+		static constexpr const auto& name = "death_handler";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -222,7 +222,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::death_event> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "death_event";
+		static constexpr const auto& name = "death_event";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -231,7 +231,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::window_size> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "window_size";
+		static constexpr const auto& name = "window_size";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -240,7 +240,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::transparency> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "transparency";
+		static constexpr const auto& name = "transparency";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -249,7 +249,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,bool,&BattleCommands::death_teleport> {
 		using struct_t = BattleCommands;
 		using type_t = bool;
-		static constexpr const auto& name[] = "death_teleport";
+		static constexpr const auto& name = "death_teleport";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -258,7 +258,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::death_teleport_id> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "death_teleport_id";
+		static constexpr const auto& name = "death_teleport_id";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -267,7 +267,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::death_teleport_x> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "death_teleport_x";
+		static constexpr const auto& name = "death_teleport_x";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -276,7 +276,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::death_teleport_y> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "death_teleport_y";
+		static constexpr const auto& name = "death_teleport_y";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -285,11 +285,34 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommands,int32_t,&BattleCommands::death_teleport_face> {
 		using struct_t = BattleCommands;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "death_teleport_face";
+		static constexpr const auto& name = "death_teleport_face";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,BattleCommands>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.placement, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, placement)());
+		v(s, s.death_handler_unused, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_handler_unused)());
+		v(s, s.row, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, row)());
+		v(s, s.battle_type, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, battle_type)());
+		v(s, s.unused_display_normal_parameters, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, unused_display_normal_parameters)());
+		v(s, s.commands, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, commands)());
+		for (auto&& e: s.commands) {
+			ForEachMember(e, v);
+		}
+		v(s, s.death_handler, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_handler)());
+		v(s, s.death_event, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_event)());
+		v(s, s.window_size, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, window_size)());
+		v(s, s.transparency, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, transparency)());
+		v(s, s.death_teleport, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_teleport)());
+		v(s, s.death_teleport_id, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_teleport_id)());
+		v(s, s.death_teleport_x, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_teleport_x)());
+		v(s, s.death_teleport_y, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_teleport_y)());
+		v(s, s.death_teleport_face, LCF_REFL_S(BattleCommands)(), LCF_REFL_M(BattleCommands, death_teleport_face)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

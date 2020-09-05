@@ -186,13 +186,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<State> {
 		using type_t = State;
-		static constexpr const auto& = "State";
+		static constexpr const auto& name = "State";
 	};
 	// String
 	template <> struct ReflectMember<State,DBString,&State::name> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -201,7 +201,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::type> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "type";
+		static constexpr const auto& name = "type";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -210,7 +210,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::color> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "color";
+		static constexpr const auto& name = "color";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -219,7 +219,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::priority> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "priority";
+		static constexpr const auto& name = "priority";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -228,7 +228,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::restriction> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "restriction";
+		static constexpr const auto& name = "restriction";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -237,7 +237,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::a_rate> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "a_rate";
+		static constexpr const auto& name = "a_rate";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -246,7 +246,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::b_rate> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "b_rate";
+		static constexpr const auto& name = "b_rate";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -255,7 +255,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::c_rate> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "c_rate";
+		static constexpr const auto& name = "c_rate";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -264,7 +264,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::d_rate> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "d_rate";
+		static constexpr const auto& name = "d_rate";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -273,7 +273,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::e_rate> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "e_rate";
+		static constexpr const auto& name = "e_rate";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -282,7 +282,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hold_turn> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hold_turn";
+		static constexpr const auto& name = "hold_turn";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -291,7 +291,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::auto_release_prob> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "auto_release_prob";
+		static constexpr const auto& name = "auto_release_prob";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -300,7 +300,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::release_by_damage> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "release_by_damage";
+		static constexpr const auto& name = "release_by_damage";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -309,7 +309,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::affect_type> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "affect_type";
+		static constexpr const auto& name = "affect_type";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -318,7 +318,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::affect_attack> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "affect_attack";
+		static constexpr const auto& name = "affect_attack";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -327,7 +327,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::affect_defense> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "affect_defense";
+		static constexpr const auto& name = "affect_defense";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -336,7 +336,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::affect_spirit> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "affect_spirit";
+		static constexpr const auto& name = "affect_spirit";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -345,7 +345,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::affect_agility> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "affect_agility";
+		static constexpr const auto& name = "affect_agility";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -354,7 +354,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::reduce_hit_ratio> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "reduce_hit_ratio";
+		static constexpr const auto& name = "reduce_hit_ratio";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -363,7 +363,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::avoid_attacks> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "avoid_attacks";
+		static constexpr const auto& name = "avoid_attacks";
 		static constexpr const int id = 0x24;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -372,7 +372,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::reflect_magic> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "reflect_magic";
+		static constexpr const auto& name = "reflect_magic";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -381,7 +381,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::cursed> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "cursed";
+		static constexpr const auto& name = "cursed";
 		static constexpr const int id = 0x26;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -390,7 +390,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::battler_animation_id> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battler_animation_id";
+		static constexpr const auto& name = "battler_animation_id";
 		static constexpr const int id = 0x27;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -399,7 +399,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::restrict_skill> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "restrict_skill";
+		static constexpr const auto& name = "restrict_skill";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -408,7 +408,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::restrict_skill_level> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "restrict_skill_level";
+		static constexpr const auto& name = "restrict_skill_level";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -417,7 +417,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,bool,&State::restrict_magic> {
 		using struct_t = State;
 		using type_t = bool;
-		static constexpr const auto& name[] = "restrict_magic";
+		static constexpr const auto& name = "restrict_magic";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -426,7 +426,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::restrict_magic_level> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "restrict_magic_level";
+		static constexpr const auto& name = "restrict_magic_level";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -435,7 +435,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hp_change_type> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hp_change_type";
+		static constexpr const auto& name = "hp_change_type";
 		static constexpr const int id = 0x2D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -444,7 +444,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::sp_change_type> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_change_type";
+		static constexpr const auto& name = "sp_change_type";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -453,7 +453,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,DBString,&State::message_actor> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "message_actor";
+		static constexpr const auto& name = "message_actor";
 		static constexpr const int id = 0x33;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -462,7 +462,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,DBString,&State::message_enemy> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "message_enemy";
+		static constexpr const auto& name = "message_enemy";
 		static constexpr const int id = 0x34;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -471,7 +471,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,DBString,&State::message_already> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "message_already";
+		static constexpr const auto& name = "message_already";
 		static constexpr const int id = 0x35;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -480,7 +480,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,DBString,&State::message_affected> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "message_affected";
+		static constexpr const auto& name = "message_affected";
 		static constexpr const int id = 0x36;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -489,7 +489,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,DBString,&State::message_recovery> {
 		using struct_t = State;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "message_recovery";
+		static constexpr const auto& name = "message_recovery";
 		static constexpr const int id = 0x37;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -498,7 +498,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hp_change_max> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hp_change_max";
+		static constexpr const auto& name = "hp_change_max";
 		static constexpr const int id = 0x3D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -507,7 +507,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hp_change_val> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hp_change_val";
+		static constexpr const auto& name = "hp_change_val";
 		static constexpr const int id = 0x3E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -516,7 +516,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hp_change_map_steps> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hp_change_map_steps";
+		static constexpr const auto& name = "hp_change_map_steps";
 		static constexpr const int id = 0x3F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -525,7 +525,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::hp_change_map_val> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hp_change_map_val";
+		static constexpr const auto& name = "hp_change_map_val";
 		static constexpr const int id = 0x40;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -534,7 +534,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::sp_change_max> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_change_max";
+		static constexpr const auto& name = "sp_change_max";
 		static constexpr const int id = 0x41;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -543,7 +543,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::sp_change_val> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_change_val";
+		static constexpr const auto& name = "sp_change_val";
 		static constexpr const int id = 0x42;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -552,7 +552,7 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::sp_change_map_steps> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_change_map_steps";
+		static constexpr const auto& name = "sp_change_map_steps";
 		static constexpr const int id = 0x43;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -561,11 +561,58 @@ namespace rpg {
 	template <> struct ReflectMember<State,int32_t,&State::sp_change_map_val> {
 		using struct_t = State;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_change_map_val";
+		static constexpr const auto& name = "sp_change_map_val";
 		static constexpr const int id = 0x44;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,State>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(State)(), LCF_REFL_M(State, name)());
+		v(s, s.type, LCF_REFL_S(State)(), LCF_REFL_M(State, type)());
+		v(s, s.color, LCF_REFL_S(State)(), LCF_REFL_M(State, color)());
+		v(s, s.priority, LCF_REFL_S(State)(), LCF_REFL_M(State, priority)());
+		v(s, s.restriction, LCF_REFL_S(State)(), LCF_REFL_M(State, restriction)());
+		v(s, s.a_rate, LCF_REFL_S(State)(), LCF_REFL_M(State, a_rate)());
+		v(s, s.b_rate, LCF_REFL_S(State)(), LCF_REFL_M(State, b_rate)());
+		v(s, s.c_rate, LCF_REFL_S(State)(), LCF_REFL_M(State, c_rate)());
+		v(s, s.d_rate, LCF_REFL_S(State)(), LCF_REFL_M(State, d_rate)());
+		v(s, s.e_rate, LCF_REFL_S(State)(), LCF_REFL_M(State, e_rate)());
+		v(s, s.hold_turn, LCF_REFL_S(State)(), LCF_REFL_M(State, hold_turn)());
+		v(s, s.auto_release_prob, LCF_REFL_S(State)(), LCF_REFL_M(State, auto_release_prob)());
+		v(s, s.release_by_damage, LCF_REFL_S(State)(), LCF_REFL_M(State, release_by_damage)());
+		v(s, s.affect_type, LCF_REFL_S(State)(), LCF_REFL_M(State, affect_type)());
+		v(s, s.affect_attack, LCF_REFL_S(State)(), LCF_REFL_M(State, affect_attack)());
+		v(s, s.affect_defense, LCF_REFL_S(State)(), LCF_REFL_M(State, affect_defense)());
+		v(s, s.affect_spirit, LCF_REFL_S(State)(), LCF_REFL_M(State, affect_spirit)());
+		v(s, s.affect_agility, LCF_REFL_S(State)(), LCF_REFL_M(State, affect_agility)());
+		v(s, s.reduce_hit_ratio, LCF_REFL_S(State)(), LCF_REFL_M(State, reduce_hit_ratio)());
+		v(s, s.avoid_attacks, LCF_REFL_S(State)(), LCF_REFL_M(State, avoid_attacks)());
+		v(s, s.reflect_magic, LCF_REFL_S(State)(), LCF_REFL_M(State, reflect_magic)());
+		v(s, s.cursed, LCF_REFL_S(State)(), LCF_REFL_M(State, cursed)());
+		v(s, s.battler_animation_id, LCF_REFL_S(State)(), LCF_REFL_M(State, battler_animation_id)());
+		v(s, s.restrict_skill, LCF_REFL_S(State)(), LCF_REFL_M(State, restrict_skill)());
+		v(s, s.restrict_skill_level, LCF_REFL_S(State)(), LCF_REFL_M(State, restrict_skill_level)());
+		v(s, s.restrict_magic, LCF_REFL_S(State)(), LCF_REFL_M(State, restrict_magic)());
+		v(s, s.restrict_magic_level, LCF_REFL_S(State)(), LCF_REFL_M(State, restrict_magic_level)());
+		v(s, s.hp_change_type, LCF_REFL_S(State)(), LCF_REFL_M(State, hp_change_type)());
+		v(s, s.sp_change_type, LCF_REFL_S(State)(), LCF_REFL_M(State, sp_change_type)());
+		v(s, s.message_actor, LCF_REFL_S(State)(), LCF_REFL_M(State, message_actor)());
+		v(s, s.message_enemy, LCF_REFL_S(State)(), LCF_REFL_M(State, message_enemy)());
+		v(s, s.message_already, LCF_REFL_S(State)(), LCF_REFL_M(State, message_already)());
+		v(s, s.message_affected, LCF_REFL_S(State)(), LCF_REFL_M(State, message_affected)());
+		v(s, s.message_recovery, LCF_REFL_S(State)(), LCF_REFL_M(State, message_recovery)());
+		v(s, s.hp_change_max, LCF_REFL_S(State)(), LCF_REFL_M(State, hp_change_max)());
+		v(s, s.hp_change_val, LCF_REFL_S(State)(), LCF_REFL_M(State, hp_change_val)());
+		v(s, s.hp_change_map_steps, LCF_REFL_S(State)(), LCF_REFL_M(State, hp_change_map_steps)());
+		v(s, s.hp_change_map_val, LCF_REFL_S(State)(), LCF_REFL_M(State, hp_change_map_val)());
+		v(s, s.sp_change_max, LCF_REFL_S(State)(), LCF_REFL_M(State, sp_change_max)());
+		v(s, s.sp_change_val, LCF_REFL_S(State)(), LCF_REFL_M(State, sp_change_val)());
+		v(s, s.sp_change_map_steps, LCF_REFL_S(State)(), LCF_REFL_M(State, sp_change_map_steps)());
+		v(s, s.sp_change_map_val, LCF_REFL_S(State)(), LCF_REFL_M(State, sp_change_map_val)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

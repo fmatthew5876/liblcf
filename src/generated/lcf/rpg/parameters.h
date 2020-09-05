@@ -53,13 +53,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Parameters> {
 		using type_t = Parameters;
-		static constexpr const auto& = "Parameters";
+		static constexpr const auto& name = "Parameters";
 	};
 	// 
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::maxhp> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "maxhp";
+		static constexpr const auto& name = "maxhp";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -68,7 +68,7 @@ namespace rpg {
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::maxsp> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "maxsp";
+		static constexpr const auto& name = "maxsp";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -77,7 +77,7 @@ namespace rpg {
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::attack> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "attack";
+		static constexpr const auto& name = "attack";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -86,7 +86,7 @@ namespace rpg {
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::defense> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "defense";
+		static constexpr const auto& name = "defense";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -95,7 +95,7 @@ namespace rpg {
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::spirit> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "spirit";
+		static constexpr const auto& name = "spirit";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -104,11 +104,22 @@ namespace rpg {
 	template <> struct ReflectMember<Parameters,std::vector<int16_t>,&Parameters::agility> {
 		using struct_t = Parameters;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "agility";
+		static constexpr const auto& name = "agility";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Parameters>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.maxhp, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, maxhp)());
+		v(s, s.maxsp, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, maxsp)());
+		v(s, s.attack, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, attack)());
+		v(s, s.defense, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, defense)());
+		v(s, s.spirit, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, spirit)());
+		v(s, s.agility, LCF_REFL_S(Parameters)(), LCF_REFL_M(Parameters, agility)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

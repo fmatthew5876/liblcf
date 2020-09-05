@@ -108,13 +108,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<EventPageCondition> {
 		using type_t = EventPageCondition;
-		static constexpr const auto& = "EventPageCondition";
+		static constexpr const auto& name = "EventPageCondition";
 	};
 	// Bitflag
 	template <> struct ReflectMember<EventPageCondition,EventPageCondition::Flags,&EventPageCondition::flags> {
 		using struct_t = EventPageCondition;
 		using type_t = EventPageCondition::Flags;
-		static constexpr const auto& name[] = "flags";
+		static constexpr const auto& name = "flags";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -123,7 +123,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::switch_a_id> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_a_id";
+		static constexpr const auto& name = "switch_a_id";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -132,7 +132,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::switch_b_id> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_b_id";
+		static constexpr const auto& name = "switch_b_id";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -141,7 +141,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::variable_id> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "variable_id";
+		static constexpr const auto& name = "variable_id";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -150,7 +150,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::variable_value> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "variable_value";
+		static constexpr const auto& name = "variable_value";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -159,7 +159,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::item_id> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "item_id";
+		static constexpr const auto& name = "item_id";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -168,7 +168,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::actor_id> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "actor_id";
+		static constexpr const auto& name = "actor_id";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -177,7 +177,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::timer_sec> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "timer_sec";
+		static constexpr const auto& name = "timer_sec";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -186,7 +186,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::timer2_sec> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "timer2_sec";
+		static constexpr const auto& name = "timer2_sec";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -195,11 +195,26 @@ namespace rpg {
 	template <> struct ReflectMember<EventPageCondition,int32_t,&EventPageCondition::compare_operator> {
 		using struct_t = EventPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "compare_operator";
+		static constexpr const auto& name = "compare_operator";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,EventPageCondition>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.flags, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, flags)());
+		v(s, s.switch_a_id, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, switch_a_id)());
+		v(s, s.switch_b_id, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, switch_b_id)());
+		v(s, s.variable_id, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, variable_id)());
+		v(s, s.variable_value, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, variable_value)());
+		v(s, s.item_id, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, item_id)());
+		v(s, s.actor_id, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, actor_id)());
+		v(s, s.timer_sec, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, timer_sec)());
+		v(s, s.timer2_sec, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, timer2_sec)());
+		v(s, s.compare_operator, LCF_REFL_S(EventPageCondition)(), LCF_REFL_M(EventPageCondition, compare_operator)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

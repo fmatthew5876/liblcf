@@ -63,13 +63,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Start> {
 		using type_t = Start;
-		static constexpr const auto& = "Start";
+		static constexpr const auto& name = "Start";
 	};
 	// Integer
 	template <> struct ReflectMember<Start,int32_t,&Start::party_map_id> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "party_map_id";
+		static constexpr const auto& name = "party_map_id";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -78,7 +78,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::party_x> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "party_x";
+		static constexpr const auto& name = "party_x";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -87,7 +87,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::party_y> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "party_y";
+		static constexpr const auto& name = "party_y";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -96,7 +96,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::boat_map_id> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "boat_map_id";
+		static constexpr const auto& name = "boat_map_id";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -105,7 +105,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::boat_x> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "boat_x";
+		static constexpr const auto& name = "boat_x";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -114,7 +114,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::boat_y> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "boat_y";
+		static constexpr const auto& name = "boat_y";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -123,7 +123,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::ship_map_id> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ship_map_id";
+		static constexpr const auto& name = "ship_map_id";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -132,7 +132,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::ship_x> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ship_x";
+		static constexpr const auto& name = "ship_x";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -141,7 +141,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::ship_y> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ship_y";
+		static constexpr const auto& name = "ship_y";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -150,7 +150,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::airship_map_id> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "airship_map_id";
+		static constexpr const auto& name = "airship_map_id";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -159,7 +159,7 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::airship_x> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "airship_x";
+		static constexpr const auto& name = "airship_x";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -168,11 +168,28 @@ namespace rpg {
 	template <> struct ReflectMember<Start,int32_t,&Start::airship_y> {
 		using struct_t = Start;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "airship_y";
+		static constexpr const auto& name = "airship_y";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Start>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.party_map_id, LCF_REFL_S(Start)(), LCF_REFL_M(Start, party_map_id)());
+		v(s, s.party_x, LCF_REFL_S(Start)(), LCF_REFL_M(Start, party_x)());
+		v(s, s.party_y, LCF_REFL_S(Start)(), LCF_REFL_M(Start, party_y)());
+		v(s, s.boat_map_id, LCF_REFL_S(Start)(), LCF_REFL_M(Start, boat_map_id)());
+		v(s, s.boat_x, LCF_REFL_S(Start)(), LCF_REFL_M(Start, boat_x)());
+		v(s, s.boat_y, LCF_REFL_S(Start)(), LCF_REFL_M(Start, boat_y)());
+		v(s, s.ship_map_id, LCF_REFL_S(Start)(), LCF_REFL_M(Start, ship_map_id)());
+		v(s, s.ship_x, LCF_REFL_S(Start)(), LCF_REFL_M(Start, ship_x)());
+		v(s, s.ship_y, LCF_REFL_S(Start)(), LCF_REFL_M(Start, ship_y)());
+		v(s, s.airship_map_id, LCF_REFL_S(Start)(), LCF_REFL_M(Start, airship_map_id)());
+		v(s, s.airship_x, LCF_REFL_S(Start)(), LCF_REFL_M(Start, airship_x)());
+		v(s, s.airship_y, LCF_REFL_S(Start)(), LCF_REFL_M(Start, airship_y)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

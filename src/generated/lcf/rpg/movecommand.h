@@ -144,13 +144,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<MoveCommand> {
 		using type_t = MoveCommand;
-		static constexpr const auto& = "MoveCommand";
+		static constexpr const auto& name = "MoveCommand";
 	};
 	// 
 	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::command_id> {
 		using struct_t = MoveCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "command_id";
+		static constexpr const auto& name = "command_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -159,7 +159,7 @@ namespace rpg {
 	template <> struct ReflectMember<MoveCommand,DBString,&MoveCommand::parameter_string> {
 		using struct_t = MoveCommand;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "parameter_string";
+		static constexpr const auto& name = "parameter_string";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -168,7 +168,7 @@ namespace rpg {
 	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_a> {
 		using struct_t = MoveCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "parameter_a";
+		static constexpr const auto& name = "parameter_a";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -177,7 +177,7 @@ namespace rpg {
 	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_b> {
 		using struct_t = MoveCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "parameter_b";
+		static constexpr const auto& name = "parameter_b";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -186,11 +186,21 @@ namespace rpg {
 	template <> struct ReflectMember<MoveCommand,int32_t,&MoveCommand::parameter_c> {
 		using struct_t = MoveCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "parameter_c";
+		static constexpr const auto& name = "parameter_c";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,MoveCommand>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.command_id, LCF_REFL_S(MoveCommand)(), LCF_REFL_M(MoveCommand, command_id)());
+		v(s, s.parameter_string, LCF_REFL_S(MoveCommand)(), LCF_REFL_M(MoveCommand, parameter_string)());
+		v(s, s.parameter_a, LCF_REFL_S(MoveCommand)(), LCF_REFL_M(MoveCommand, parameter_a)());
+		v(s, s.parameter_b, LCF_REFL_S(MoveCommand)(), LCF_REFL_M(MoveCommand, parameter_b)());
+		v(s, s.parameter_c, LCF_REFL_S(MoveCommand)(), LCF_REFL_M(MoveCommand, parameter_c)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

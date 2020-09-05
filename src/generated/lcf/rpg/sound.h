@@ -48,13 +48,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Sound> {
 		using type_t = Sound;
-		static constexpr const auto& = "Sound";
+		static constexpr const auto& name = "Sound";
 	};
 	// String
 	template <> struct ReflectMember<Sound,std::string,&Sound::name> {
 		using struct_t = Sound;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -63,7 +63,7 @@ namespace rpg {
 	template <> struct ReflectMember<Sound,int32_t,&Sound::volume> {
 		using struct_t = Sound;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "volume";
+		static constexpr const auto& name = "volume";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -72,7 +72,7 @@ namespace rpg {
 	template <> struct ReflectMember<Sound,int32_t,&Sound::tempo> {
 		using struct_t = Sound;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tempo";
+		static constexpr const auto& name = "tempo";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -81,11 +81,20 @@ namespace rpg {
 	template <> struct ReflectMember<Sound,int32_t,&Sound::balance> {
 		using struct_t = Sound;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "balance";
+		static constexpr const auto& name = "balance";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Sound>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Sound)(), LCF_REFL_M(Sound, name)());
+		v(s, s.volume, LCF_REFL_S(Sound)(), LCF_REFL_M(Sound, volume)());
+		v(s, s.tempo, LCF_REFL_S(Sound)(), LCF_REFL_M(Sound, tempo)());
+		v(s, s.balance, LCF_REFL_S(Sound)(), LCF_REFL_M(Sound, balance)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

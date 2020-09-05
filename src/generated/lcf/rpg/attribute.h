@@ -69,13 +69,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Attribute> {
 		using type_t = Attribute;
-		static constexpr const auto& = "Attribute";
+		static constexpr const auto& name = "Attribute";
 	};
 	// String
 	template <> struct ReflectMember<Attribute,DBString,&Attribute::name> {
 		using struct_t = Attribute;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -84,7 +84,7 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::type> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "type";
+		static constexpr const auto& name = "type";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -93,7 +93,7 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::a_rate> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "a_rate";
+		static constexpr const auto& name = "a_rate";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -102,7 +102,7 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::b_rate> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "b_rate";
+		static constexpr const auto& name = "b_rate";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -111,7 +111,7 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::c_rate> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "c_rate";
+		static constexpr const auto& name = "c_rate";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -120,7 +120,7 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::d_rate> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "d_rate";
+		static constexpr const auto& name = "d_rate";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -129,11 +129,23 @@ namespace rpg {
 	template <> struct ReflectMember<Attribute,int32_t,&Attribute::e_rate> {
 		using struct_t = Attribute;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "e_rate";
+		static constexpr const auto& name = "e_rate";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Attribute>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, name)());
+		v(s, s.type, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, type)());
+		v(s, s.a_rate, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, a_rate)());
+		v(s, s.b_rate, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, b_rate)());
+		v(s, s.c_rate, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, c_rate)());
+		v(s, s.d_rate, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, d_rate)());
+		v(s, s.e_rate, LCF_REFL_S(Attribute)(), LCF_REFL_M(Attribute, e_rate)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

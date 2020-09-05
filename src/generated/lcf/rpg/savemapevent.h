@@ -52,13 +52,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveMapEvent> {
 		using type_t = SaveMapEvent;
-		static constexpr const auto& = "SaveMapEvent";
+		static constexpr const auto& name = "SaveMapEvent";
 	};
 	// If true; this event is waiting for foreground execution.
 	template <> struct ReflectMember<SaveMapEvent,bool,&SaveMapEvent::waiting_execution> {
 		using struct_t = SaveMapEvent;
 		using type_t = bool;
-		static constexpr const auto& name[] = "waiting_execution";
+		static constexpr const auto& name = "waiting_execution";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -67,7 +67,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveMapEvent,int32_t,&SaveMapEvent::original_move_route_index> {
 		using struct_t = SaveMapEvent;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "original_move_route_index";
+		static constexpr const auto& name = "original_move_route_index";
 		static constexpr const int id = 0x66;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -76,7 +76,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveMapEvent,bool,&SaveMapEvent::triggered_by_decision_key> {
 		using struct_t = SaveMapEvent;
 		using type_t = bool;
-		static constexpr const auto& name[] = "triggered_by_decision_key";
+		static constexpr const auto& name = "triggered_by_decision_key";
 		static constexpr const int id = 0x67;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -85,11 +85,21 @@ namespace rpg {
 	template <> struct ReflectMember<SaveMapEvent,SaveEventExecState,&SaveMapEvent::parallel_event_execstate> {
 		using struct_t = SaveMapEvent;
 		using type_t = SaveEventExecState;
-		static constexpr const auto& name[] = "parallel_event_execstate";
+		static constexpr const auto& name = "parallel_event_execstate";
 		static constexpr const int id = 0x6C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveMapEvent>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.waiting_execution, LCF_REFL_S(SaveMapEvent)(), LCF_REFL_M(SaveMapEvent, waiting_execution)());
+		v(s, s.original_move_route_index, LCF_REFL_S(SaveMapEvent)(), LCF_REFL_M(SaveMapEvent, original_move_route_index)());
+		v(s, s.triggered_by_decision_key, LCF_REFL_S(SaveMapEvent)(), LCF_REFL_M(SaveMapEvent, triggered_by_decision_key)());
+		v(s, s.parallel_event_execstate, LCF_REFL_S(SaveMapEvent)(), LCF_REFL_M(SaveMapEvent, parallel_event_execstate)());
+		ForEachMember(s.parallel_event_execstate, v);
+	}
+
 } // namespace rpg
 } // namespace lcf
 

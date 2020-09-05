@@ -85,13 +85,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Animation> {
 		using type_t = Animation;
-		static constexpr const auto& = "Animation";
+		static constexpr const auto& name = "Animation";
 	};
 	// String
 	template <> struct ReflectMember<Animation,DBString,&Animation::name> {
 		using struct_t = Animation;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -100,7 +100,7 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,DBString,&Animation::animation_name> {
 		using struct_t = Animation;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "animation_name";
+		static constexpr const auto& name = "animation_name";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -109,7 +109,7 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,bool,&Animation::large> {
 		using struct_t = Animation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "large";
+		static constexpr const auto& name = "large";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -118,7 +118,7 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,std::vector<AnimationTiming>,&Animation::timings> {
 		using struct_t = Animation;
 		using type_t = std::vector<AnimationTiming>;
-		static constexpr const auto& name[] = "timings";
+		static constexpr const auto& name = "timings";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -127,7 +127,7 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,int32_t,&Animation::scope> {
 		using struct_t = Animation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "scope";
+		static constexpr const auto& name = "scope";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -136,7 +136,7 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,int32_t,&Animation::position> {
 		using struct_t = Animation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "position";
+		static constexpr const auto& name = "position";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -145,11 +145,29 @@ namespace rpg {
 	template <> struct ReflectMember<Animation,std::vector<AnimationFrame>,&Animation::frames> {
 		using struct_t = Animation;
 		using type_t = std::vector<AnimationFrame>;
-		static constexpr const auto& name[] = "frames";
+		static constexpr const auto& name = "frames";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Animation>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, name)());
+		v(s, s.animation_name, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, animation_name)());
+		v(s, s.large, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, large)());
+		v(s, s.timings, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, timings)());
+		for (auto&& e: s.timings) {
+			ForEachMember(e, v);
+		}
+		v(s, s.scope, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, scope)());
+		v(s, s.position, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, position)());
+		v(s, s.frames, LCF_REFL_S(Animation)(), LCF_REFL_M(Animation, frames)());
+		for (auto&& e: s.frames) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

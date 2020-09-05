@@ -85,13 +85,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveEventExecState> {
 		using type_t = SaveEventExecState;
-		static constexpr const auto& = "SaveEventExecState";
+		static constexpr const auto& name = "SaveEventExecState";
 	};
 	// array
 	template <> struct ReflectMember<SaveEventExecState,std::vector<SaveEventExecFrame>,&SaveEventExecState::stack> {
 		using struct_t = SaveEventExecState;
 		using type_t = std::vector<SaveEventExecFrame>;
-		static constexpr const auto& name[] = "stack";
+		static constexpr const auto& name = "stack";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -100,7 +100,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::show_message> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "show_message";
+		static constexpr const auto& name = "show_message";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -109,7 +109,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::abort_on_escape> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "abort_on_escape";
+		static constexpr const auto& name = "abort_on_escape";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -118,7 +118,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::wait_movement> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "wait_movement";
+		static constexpr const auto& name = "wait_movement";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -127,7 +127,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_wait> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_wait";
+		static constexpr const auto& name = "keyinput_wait";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -136,7 +136,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,uint8_t,&SaveEventExecState::keyinput_variable> {
 		using struct_t = SaveEventExecState;
 		using type_t = uint8_t;
-		static constexpr const auto& name[] = "keyinput_variable";
+		static constexpr const auto& name = "keyinput_variable";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -145,7 +145,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_all_directions> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_all_directions";
+		static constexpr const auto& name = "keyinput_all_directions";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -154,7 +154,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_decision> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_decision";
+		static constexpr const auto& name = "keyinput_decision";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -163,7 +163,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_cancel> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_cancel";
+		static constexpr const auto& name = "keyinput_cancel";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -172,7 +172,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2kshift_2k3numbers> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2kshift_2k3numbers";
+		static constexpr const auto& name = "keyinput_2kshift_2k3numbers";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -181,7 +181,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2kdown_2k3operators> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2kdown_2k3operators";
+		static constexpr const auto& name = "keyinput_2kdown_2k3operators";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -190,7 +190,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2kleft_2k3shift> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2kleft_2k3shift";
+		static constexpr const auto& name = "keyinput_2kleft_2k3shift";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -199,7 +199,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2kright> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2kright";
+		static constexpr const auto& name = "keyinput_2kright";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -208,7 +208,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2kup> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2kup";
+		static constexpr const auto& name = "keyinput_2kup";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -217,7 +217,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,int32_t,&SaveEventExecState::wait_time> {
 		using struct_t = SaveEventExecState;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "wait_time";
+		static constexpr const auto& name = "wait_time";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -226,7 +226,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,int32_t,&SaveEventExecState::keyinput_time_variable> {
 		using struct_t = SaveEventExecState;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "keyinput_time_variable";
+		static constexpr const auto& name = "keyinput_time_variable";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -235,7 +235,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2k3down> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2k3down";
+		static constexpr const auto& name = "keyinput_2k3down";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -244,7 +244,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2k3left> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2k3left";
+		static constexpr const auto& name = "keyinput_2k3left";
 		static constexpr const int id = 0x24;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -253,7 +253,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2k3right> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2k3right";
+		static constexpr const auto& name = "keyinput_2k3right";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -262,7 +262,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_2k3up> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_2k3up";
+		static constexpr const auto& name = "keyinput_2k3up";
 		static constexpr const int id = 0x26;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -271,7 +271,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::keyinput_timed> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "keyinput_timed";
+		static constexpr const auto& name = "keyinput_timed";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -280,11 +280,41 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecState,bool,&SaveEventExecState::wait_key_enter> {
 		using struct_t = SaveEventExecState;
 		using type_t = bool;
-		static constexpr const auto& name[] = "wait_key_enter";
+		static constexpr const auto& name = "wait_key_enter";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveEventExecState>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.stack, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, stack)());
+		for (auto&& e: s.stack) {
+			ForEachMember(e, v);
+		}
+		v(s, s.show_message, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, show_message)());
+		v(s, s.abort_on_escape, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, abort_on_escape)());
+		v(s, s.wait_movement, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, wait_movement)());
+		v(s, s.keyinput_wait, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_wait)());
+		v(s, s.keyinput_variable, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_variable)());
+		v(s, s.keyinput_all_directions, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_all_directions)());
+		v(s, s.keyinput_decision, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_decision)());
+		v(s, s.keyinput_cancel, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_cancel)());
+		v(s, s.keyinput_2kshift_2k3numbers, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2kshift_2k3numbers)());
+		v(s, s.keyinput_2kdown_2k3operators, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2kdown_2k3operators)());
+		v(s, s.keyinput_2kleft_2k3shift, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2kleft_2k3shift)());
+		v(s, s.keyinput_2kright, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2kright)());
+		v(s, s.keyinput_2kup, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2kup)());
+		v(s, s.wait_time, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, wait_time)());
+		v(s, s.keyinput_time_variable, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_time_variable)());
+		v(s, s.keyinput_2k3down, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2k3down)());
+		v(s, s.keyinput_2k3left, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2k3left)());
+		v(s, s.keyinput_2k3right, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2k3right)());
+		v(s, s.keyinput_2k3up, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_2k3up)());
+		v(s, s.keyinput_timed, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, keyinput_timed)());
+		v(s, s.wait_key_enter, LCF_REFL_S(SaveEventExecState)(), LCF_REFL_M(SaveEventExecState, wait_key_enter)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

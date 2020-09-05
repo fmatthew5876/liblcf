@@ -330,13 +330,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<System> {
 		using type_t = System;
-		static constexpr const auto& = "System";
+		static constexpr const auto& name = "System";
 	};
 	// Integer - RPG2003
 	template <> struct ReflectMember<System,int32_t,&System::ldb_id> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ldb_id";
+		static constexpr const auto& name = "ldb_id";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -345,7 +345,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::boat_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "boat_name";
+		static constexpr const auto& name = "boat_name";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -354,7 +354,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::ship_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "ship_name";
+		static constexpr const auto& name = "ship_name";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -363,7 +363,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::airship_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "airship_name";
+		static constexpr const auto& name = "airship_name";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -372,7 +372,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::boat_index> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "boat_index";
+		static constexpr const auto& name = "boat_index";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -381,7 +381,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::ship_index> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ship_index";
+		static constexpr const auto& name = "ship_index";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -390,7 +390,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::airship_index> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "airship_index";
+		static constexpr const auto& name = "airship_index";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -399,7 +399,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::title_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "title_name";
+		static constexpr const auto& name = "title_name";
 		static constexpr const int id = 0x11;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -408,7 +408,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::gameover_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "gameover_name";
+		static constexpr const auto& name = "gameover_name";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -417,7 +417,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::system_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "system_name";
+		static constexpr const auto& name = "system_name";
 		static constexpr const int id = 0x13;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -426,7 +426,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::system2_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "system2_name";
+		static constexpr const auto& name = "system2_name";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -435,7 +435,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,std::vector<int16_t>,&System::party> {
 		using struct_t = System;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "party";
+		static constexpr const auto& name = "party";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -444,7 +444,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,std::vector<int16_t>,&System::menu_commands> {
 		using struct_t = System;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "menu_commands";
+		static constexpr const auto& name = "menu_commands";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -453,7 +453,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::title_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "title_music";
+		static constexpr const auto& name = "title_music";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -462,7 +462,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::battle_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "battle_music";
+		static constexpr const auto& name = "battle_music";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -471,7 +471,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::battle_end_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "battle_end_music";
+		static constexpr const auto& name = "battle_end_music";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -480,7 +480,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::inn_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "inn_music";
+		static constexpr const auto& name = "inn_music";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -489,7 +489,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::boat_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "boat_music";
+		static constexpr const auto& name = "boat_music";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -498,7 +498,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::ship_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "ship_music";
+		static constexpr const auto& name = "ship_music";
 		static constexpr const int id = 0x24;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -507,7 +507,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::airship_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "airship_music";
+		static constexpr const auto& name = "airship_music";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -516,7 +516,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Music,&System::gameover_music> {
 		using struct_t = System;
 		using type_t = Music;
-		static constexpr const auto& name[] = "gameover_music";
+		static constexpr const auto& name = "gameover_music";
 		static constexpr const int id = 0x26;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -525,7 +525,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::cursor_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "cursor_se";
+		static constexpr const auto& name = "cursor_se";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -534,7 +534,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::decision_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "decision_se";
+		static constexpr const auto& name = "decision_se";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -543,7 +543,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::cancel_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "cancel_se";
+		static constexpr const auto& name = "cancel_se";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -552,7 +552,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::buzzer_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "buzzer_se";
+		static constexpr const auto& name = "buzzer_se";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -561,7 +561,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::battle_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "battle_se";
+		static constexpr const auto& name = "battle_se";
 		static constexpr const int id = 0x2D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -570,7 +570,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::escape_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "escape_se";
+		static constexpr const auto& name = "escape_se";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -579,7 +579,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::enemy_attack_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "enemy_attack_se";
+		static constexpr const auto& name = "enemy_attack_se";
 		static constexpr const int id = 0x2F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -588,7 +588,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::enemy_damaged_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "enemy_damaged_se";
+		static constexpr const auto& name = "enemy_damaged_se";
 		static constexpr const int id = 0x30;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -597,7 +597,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::actor_damaged_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "actor_damaged_se";
+		static constexpr const auto& name = "actor_damaged_se";
 		static constexpr const int id = 0x31;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -606,7 +606,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::dodge_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "dodge_se";
+		static constexpr const auto& name = "dodge_se";
 		static constexpr const int id = 0x32;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -615,7 +615,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::enemy_death_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "enemy_death_se";
+		static constexpr const auto& name = "enemy_death_se";
 		static constexpr const int id = 0x33;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -624,7 +624,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,Sound,&System::item_se> {
 		using struct_t = System;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "item_se";
+		static constexpr const auto& name = "item_se";
 		static constexpr const int id = 0x34;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -633,7 +633,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::transition_out> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "transition_out";
+		static constexpr const auto& name = "transition_out";
 		static constexpr const int id = 0x3D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -642,7 +642,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::transition_in> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "transition_in";
+		static constexpr const auto& name = "transition_in";
 		static constexpr const int id = 0x3E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -651,7 +651,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battle_start_fadeout> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_start_fadeout";
+		static constexpr const auto& name = "battle_start_fadeout";
 		static constexpr const int id = 0x3F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -660,7 +660,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battle_start_fadein> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_start_fadein";
+		static constexpr const auto& name = "battle_start_fadein";
 		static constexpr const int id = 0x40;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -669,7 +669,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battle_end_fadeout> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_end_fadeout";
+		static constexpr const auto& name = "battle_end_fadeout";
 		static constexpr const int id = 0x41;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -678,7 +678,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battle_end_fadein> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_end_fadein";
+		static constexpr const auto& name = "battle_end_fadein";
 		static constexpr const int id = 0x42;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -687,7 +687,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::message_stretch> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "message_stretch";
+		static constexpr const auto& name = "message_stretch";
 		static constexpr const int id = 0x47;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -696,7 +696,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::font_id> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "font_id";
+		static constexpr const auto& name = "font_id";
 		static constexpr const int id = 0x48;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -705,7 +705,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::selected_condition> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "selected_condition";
+		static constexpr const auto& name = "selected_condition";
 		static constexpr const int id = 0x51;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -714,7 +714,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::selected_hero> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "selected_hero";
+		static constexpr const auto& name = "selected_hero";
 		static constexpr const int id = 0x52;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -723,7 +723,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::battletest_background> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battletest_background";
+		static constexpr const auto& name = "battletest_background";
 		static constexpr const int id = 0x54;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -732,7 +732,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,std::vector<TestBattler>,&System::battletest_data> {
 		using struct_t = System;
 		using type_t = std::vector<TestBattler>;
-		static constexpr const auto& name[] = "battletest_data";
+		static constexpr const auto& name = "battletest_data";
 		static constexpr const int id = 0x55;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -741,7 +741,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::save_count> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "save_count";
+		static constexpr const auto& name = "save_count";
 		static constexpr const int id = 0x5B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -750,7 +750,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battletest_terrain> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battletest_terrain";
+		static constexpr const auto& name = "battletest_terrain";
 		static constexpr const int id = 0x5E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -759,7 +759,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battletest_formation> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battletest_formation";
+		static constexpr const auto& name = "battletest_formation";
 		static constexpr const int id = 0x5F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -768,7 +768,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battletest_condition> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battletest_condition";
+		static constexpr const auto& name = "battletest_condition";
 		static constexpr const int id = 0x60;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -777,7 +777,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::equipment_setting> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "equipment_setting";
+		static constexpr const auto& name = "equipment_setting";
 		static constexpr const int id = 0x61;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -786,7 +786,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,int32_t,&System::battletest_alt_terrain> {
 		using struct_t = System;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battletest_alt_terrain";
+		static constexpr const auto& name = "battletest_alt_terrain";
 		static constexpr const int id = 0x62;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -795,7 +795,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,bool,&System::show_frame> {
 		using struct_t = System;
 		using type_t = bool;
-		static constexpr const auto& name[] = "show_frame";
+		static constexpr const auto& name = "show_frame";
 		static constexpr const int id = 0x63;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -804,7 +804,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,DBString,&System::frame_name> {
 		using struct_t = System;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "frame_name";
+		static constexpr const auto& name = "frame_name";
 		static constexpr const int id = 0x64;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -813,7 +813,7 @@ namespace rpg {
 	template <> struct ReflectMember<System,bool,&System::invert_animations> {
 		using struct_t = System;
 		using type_t = bool;
-		static constexpr const auto& name[] = "invert_animations";
+		static constexpr const auto& name = "invert_animations";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -822,11 +822,94 @@ namespace rpg {
 	template <> struct ReflectMember<System,bool,&System::show_title> {
 		using struct_t = System;
 		using type_t = bool;
-		static constexpr const auto& name[] = "show_title";
+		static constexpr const auto& name = "show_title";
 		static constexpr const int id = 0x6F;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,System>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.ldb_id, LCF_REFL_S(System)(), LCF_REFL_M(System, ldb_id)());
+		v(s, s.boat_name, LCF_REFL_S(System)(), LCF_REFL_M(System, boat_name)());
+		v(s, s.ship_name, LCF_REFL_S(System)(), LCF_REFL_M(System, ship_name)());
+		v(s, s.airship_name, LCF_REFL_S(System)(), LCF_REFL_M(System, airship_name)());
+		v(s, s.boat_index, LCF_REFL_S(System)(), LCF_REFL_M(System, boat_index)());
+		v(s, s.ship_index, LCF_REFL_S(System)(), LCF_REFL_M(System, ship_index)());
+		v(s, s.airship_index, LCF_REFL_S(System)(), LCF_REFL_M(System, airship_index)());
+		v(s, s.title_name, LCF_REFL_S(System)(), LCF_REFL_M(System, title_name)());
+		v(s, s.gameover_name, LCF_REFL_S(System)(), LCF_REFL_M(System, gameover_name)());
+		v(s, s.system_name, LCF_REFL_S(System)(), LCF_REFL_M(System, system_name)());
+		v(s, s.system2_name, LCF_REFL_S(System)(), LCF_REFL_M(System, system2_name)());
+		v(s, s.party, LCF_REFL_S(System)(), LCF_REFL_M(System, party)());
+		v(s, s.menu_commands, LCF_REFL_S(System)(), LCF_REFL_M(System, menu_commands)());
+		v(s, s.title_music, LCF_REFL_S(System)(), LCF_REFL_M(System, title_music)());
+		ForEachMember(s.title_music, v);
+		v(s, s.battle_music, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_music)());
+		ForEachMember(s.battle_music, v);
+		v(s, s.battle_end_music, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_end_music)());
+		ForEachMember(s.battle_end_music, v);
+		v(s, s.inn_music, LCF_REFL_S(System)(), LCF_REFL_M(System, inn_music)());
+		ForEachMember(s.inn_music, v);
+		v(s, s.boat_music, LCF_REFL_S(System)(), LCF_REFL_M(System, boat_music)());
+		ForEachMember(s.boat_music, v);
+		v(s, s.ship_music, LCF_REFL_S(System)(), LCF_REFL_M(System, ship_music)());
+		ForEachMember(s.ship_music, v);
+		v(s, s.airship_music, LCF_REFL_S(System)(), LCF_REFL_M(System, airship_music)());
+		ForEachMember(s.airship_music, v);
+		v(s, s.gameover_music, LCF_REFL_S(System)(), LCF_REFL_M(System, gameover_music)());
+		ForEachMember(s.gameover_music, v);
+		v(s, s.cursor_se, LCF_REFL_S(System)(), LCF_REFL_M(System, cursor_se)());
+		ForEachMember(s.cursor_se, v);
+		v(s, s.decision_se, LCF_REFL_S(System)(), LCF_REFL_M(System, decision_se)());
+		ForEachMember(s.decision_se, v);
+		v(s, s.cancel_se, LCF_REFL_S(System)(), LCF_REFL_M(System, cancel_se)());
+		ForEachMember(s.cancel_se, v);
+		v(s, s.buzzer_se, LCF_REFL_S(System)(), LCF_REFL_M(System, buzzer_se)());
+		ForEachMember(s.buzzer_se, v);
+		v(s, s.battle_se, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_se)());
+		ForEachMember(s.battle_se, v);
+		v(s, s.escape_se, LCF_REFL_S(System)(), LCF_REFL_M(System, escape_se)());
+		ForEachMember(s.escape_se, v);
+		v(s, s.enemy_attack_se, LCF_REFL_S(System)(), LCF_REFL_M(System, enemy_attack_se)());
+		ForEachMember(s.enemy_attack_se, v);
+		v(s, s.enemy_damaged_se, LCF_REFL_S(System)(), LCF_REFL_M(System, enemy_damaged_se)());
+		ForEachMember(s.enemy_damaged_se, v);
+		v(s, s.actor_damaged_se, LCF_REFL_S(System)(), LCF_REFL_M(System, actor_damaged_se)());
+		ForEachMember(s.actor_damaged_se, v);
+		v(s, s.dodge_se, LCF_REFL_S(System)(), LCF_REFL_M(System, dodge_se)());
+		ForEachMember(s.dodge_se, v);
+		v(s, s.enemy_death_se, LCF_REFL_S(System)(), LCF_REFL_M(System, enemy_death_se)());
+		ForEachMember(s.enemy_death_se, v);
+		v(s, s.item_se, LCF_REFL_S(System)(), LCF_REFL_M(System, item_se)());
+		ForEachMember(s.item_se, v);
+		v(s, s.transition_out, LCF_REFL_S(System)(), LCF_REFL_M(System, transition_out)());
+		v(s, s.transition_in, LCF_REFL_S(System)(), LCF_REFL_M(System, transition_in)());
+		v(s, s.battle_start_fadeout, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_start_fadeout)());
+		v(s, s.battle_start_fadein, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_start_fadein)());
+		v(s, s.battle_end_fadeout, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_end_fadeout)());
+		v(s, s.battle_end_fadein, LCF_REFL_S(System)(), LCF_REFL_M(System, battle_end_fadein)());
+		v(s, s.message_stretch, LCF_REFL_S(System)(), LCF_REFL_M(System, message_stretch)());
+		v(s, s.font_id, LCF_REFL_S(System)(), LCF_REFL_M(System, font_id)());
+		v(s, s.selected_condition, LCF_REFL_S(System)(), LCF_REFL_M(System, selected_condition)());
+		v(s, s.selected_hero, LCF_REFL_S(System)(), LCF_REFL_M(System, selected_hero)());
+		v(s, s.battletest_background, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_background)());
+		v(s, s.battletest_data, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_data)());
+		for (auto&& e: s.battletest_data) {
+			ForEachMember(e, v);
+		}
+		v(s, s.save_count, LCF_REFL_S(System)(), LCF_REFL_M(System, save_count)());
+		v(s, s.battletest_terrain, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_terrain)());
+		v(s, s.battletest_formation, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_formation)());
+		v(s, s.battletest_condition, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_condition)());
+		v(s, s.equipment_setting, LCF_REFL_S(System)(), LCF_REFL_M(System, equipment_setting)());
+		v(s, s.battletest_alt_terrain, LCF_REFL_S(System)(), LCF_REFL_M(System, battletest_alt_terrain)());
+		v(s, s.show_frame, LCF_REFL_S(System)(), LCF_REFL_M(System, show_frame)());
+		v(s, s.frame_name, LCF_REFL_S(System)(), LCF_REFL_M(System, frame_name)());
+		v(s, s.invert_animations, LCF_REFL_S(System)(), LCF_REFL_M(System, invert_animations)());
+		v(s, s.show_title, LCF_REFL_S(System)(), LCF_REFL_M(System, show_title)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -79,13 +79,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveInventory> {
 		using type_t = SaveInventory;
-		static constexpr const auto& = "SaveInventory";
+		static constexpr const auto& name = "SaveInventory";
 	};
 	// ?
 	template <> struct ReflectMember<SaveInventory,std::vector<int16_t>,&SaveInventory::party> {
 		using struct_t = SaveInventory;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "party";
+		static constexpr const auto& name = "party";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -94,7 +94,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,std::vector<int16_t>,&SaveInventory::item_ids> {
 		using struct_t = SaveInventory;
 		using type_t = std::vector<int16_t>;
-		static constexpr const auto& name[] = "item_ids";
+		static constexpr const auto& name = "item_ids";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -103,7 +103,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,std::vector<uint8_t>,&SaveInventory::item_counts> {
 		using struct_t = SaveInventory;
 		using type_t = std::vector<uint8_t>;
-		static constexpr const auto& name[] = "item_counts";
+		static constexpr const auto& name = "item_counts";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -112,7 +112,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,std::vector<uint8_t>,&SaveInventory::item_usage> {
 		using struct_t = SaveInventory;
 		using type_t = std::vector<uint8_t>;
-		static constexpr const auto& name[] = "item_usage";
+		static constexpr const auto& name = "item_usage";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -121,7 +121,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::gold> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "gold";
+		static constexpr const auto& name = "gold";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -130,7 +130,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::timer1_frames> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "timer1_frames";
+		static constexpr const auto& name = "timer1_frames";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -139,7 +139,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer1_active> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer1_active";
+		static constexpr const auto& name = "timer1_active";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -148,7 +148,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer1_visible> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer1_visible";
+		static constexpr const auto& name = "timer1_visible";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -157,7 +157,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer1_battle> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer1_battle";
+		static constexpr const auto& name = "timer1_battle";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -166,7 +166,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::timer2_frames> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "timer2_frames";
+		static constexpr const auto& name = "timer2_frames";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -175,7 +175,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer2_active> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer2_active";
+		static constexpr const auto& name = "timer2_active";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -184,7 +184,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer2_visible> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer2_visible";
+		static constexpr const auto& name = "timer2_visible";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -193,7 +193,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,bool,&SaveInventory::timer2_battle> {
 		using struct_t = SaveInventory;
 		using type_t = bool;
-		static constexpr const auto& name[] = "timer2_battle";
+		static constexpr const auto& name = "timer2_battle";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -202,7 +202,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::battles> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battles";
+		static constexpr const auto& name = "battles";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -211,7 +211,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::defeats> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "defeats";
+		static constexpr const auto& name = "defeats";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -220,7 +220,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::escapes> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "escapes";
+		static constexpr const auto& name = "escapes";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -229,7 +229,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::victories> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "victories";
+		static constexpr const auto& name = "victories";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -238,7 +238,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::turns> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turns";
+		static constexpr const auto& name = "turns";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -247,11 +247,35 @@ namespace rpg {
 	template <> struct ReflectMember<SaveInventory,int32_t,&SaveInventory::steps> {
 		using struct_t = SaveInventory;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "steps";
+		static constexpr const auto& name = "steps";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveInventory>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.party, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, party)());
+		v(s, s.item_ids, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, item_ids)());
+		v(s, s.item_counts, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, item_counts)());
+		v(s, s.item_usage, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, item_usage)());
+		v(s, s.gold, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, gold)());
+		v(s, s.timer1_frames, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer1_frames)());
+		v(s, s.timer1_active, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer1_active)());
+		v(s, s.timer1_visible, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer1_visible)());
+		v(s, s.timer1_battle, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer1_battle)());
+		v(s, s.timer2_frames, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer2_frames)());
+		v(s, s.timer2_active, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer2_active)());
+		v(s, s.timer2_visible, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer2_visible)());
+		v(s, s.timer2_battle, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, timer2_battle)());
+		v(s, s.battles, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, battles)());
+		v(s, s.defeats, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, defeats)());
+		v(s, s.escapes, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, escapes)());
+		v(s, s.victories, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, victories)());
+		v(s, s.turns, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, turns)());
+		v(s, s.steps, LCF_REFL_S(SaveInventory)(), LCF_REFL_M(SaveInventory, steps)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

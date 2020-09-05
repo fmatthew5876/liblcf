@@ -50,13 +50,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveTarget> {
 		using type_t = SaveTarget;
-		static constexpr const auto& = "SaveTarget";
+		static constexpr const auto& name = "SaveTarget";
 	};
 	// int
 	template <> struct ReflectMember<SaveTarget,int32_t,&SaveTarget::map_id> {
 		using struct_t = SaveTarget;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "map_id";
+		static constexpr const auto& name = "map_id";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -65,7 +65,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTarget,int32_t,&SaveTarget::map_x> {
 		using struct_t = SaveTarget;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "map_x";
+		static constexpr const auto& name = "map_x";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -74,7 +74,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTarget,int32_t,&SaveTarget::map_y> {
 		using struct_t = SaveTarget;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "map_y";
+		static constexpr const auto& name = "map_y";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -83,7 +83,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTarget,bool,&SaveTarget::switch_on> {
 		using struct_t = SaveTarget;
 		using type_t = bool;
-		static constexpr const auto& name[] = "switch_on";
+		static constexpr const auto& name = "switch_on";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -92,11 +92,21 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTarget,int32_t,&SaveTarget::switch_id> {
 		using struct_t = SaveTarget;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_id";
+		static constexpr const auto& name = "switch_id";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveTarget>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.map_id, LCF_REFL_S(SaveTarget)(), LCF_REFL_M(SaveTarget, map_id)());
+		v(s, s.map_x, LCF_REFL_S(SaveTarget)(), LCF_REFL_M(SaveTarget, map_x)());
+		v(s, s.map_y, LCF_REFL_S(SaveTarget)(), LCF_REFL_M(SaveTarget, map_y)());
+		v(s, s.switch_on, LCF_REFL_S(SaveTarget)(), LCF_REFL_M(SaveTarget, switch_on)());
+		v(s, s.switch_id, LCF_REFL_S(SaveTarget)(), LCF_REFL_M(SaveTarget, switch_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

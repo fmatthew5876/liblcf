@@ -76,13 +76,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<BattlerAnimationData> {
 		using type_t = BattlerAnimationData;
-		static constexpr const auto& = "BattlerAnimationData";
+		static constexpr const auto& name = "BattlerAnimationData";
 	};
 	// Integer
 	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::move> {
 		using struct_t = BattlerAnimationData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "move";
+		static constexpr const auto& name = "move";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -91,7 +91,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::after_image> {
 		using struct_t = BattlerAnimationData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "after_image";
+		static constexpr const auto& name = "after_image";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -100,11 +100,19 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationData,int32_t,&BattlerAnimationData::pose> {
 		using struct_t = BattlerAnimationData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pose";
+		static constexpr const auto& name = "pose";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,BattlerAnimationData>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.move, LCF_REFL_S(BattlerAnimationData)(), LCF_REFL_M(BattlerAnimationData, move)());
+		v(s, s.after_image, LCF_REFL_S(BattlerAnimationData)(), LCF_REFL_M(BattlerAnimationData, after_image)());
+		v(s, s.pose, LCF_REFL_S(BattlerAnimationData)(), LCF_REFL_M(BattlerAnimationData, pose)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

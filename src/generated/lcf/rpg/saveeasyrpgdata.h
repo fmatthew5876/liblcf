@@ -41,17 +41,23 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveEasyRpgData> {
 		using type_t = SaveEasyRpgData;
-		static constexpr const auto& = "SaveEasyRpgData";
+		static constexpr const auto& name = "SaveEasyRpgData";
 	};
 	// Savegame version
 	template <> struct ReflectMember<SaveEasyRpgData,int32_t,&SaveEasyRpgData::version> {
 		using struct_t = SaveEasyRpgData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "version";
+		static constexpr const auto& name = "version";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveEasyRpgData>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.version, LCF_REFL_S(SaveEasyRpgData)(), LCF_REFL_M(SaveEasyRpgData, version)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -50,13 +50,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Music> {
 		using type_t = Music;
-		static constexpr const auto& = "Music";
+		static constexpr const auto& name = "Music";
 	};
 	// String
 	template <> struct ReflectMember<Music,std::string,&Music::name> {
 		using struct_t = Music;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -65,7 +65,7 @@ namespace rpg {
 	template <> struct ReflectMember<Music,int32_t,&Music::fadein> {
 		using struct_t = Music;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "fadein";
+		static constexpr const auto& name = "fadein";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -74,7 +74,7 @@ namespace rpg {
 	template <> struct ReflectMember<Music,int32_t,&Music::volume> {
 		using struct_t = Music;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "volume";
+		static constexpr const auto& name = "volume";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -83,7 +83,7 @@ namespace rpg {
 	template <> struct ReflectMember<Music,int32_t,&Music::tempo> {
 		using struct_t = Music;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tempo";
+		static constexpr const auto& name = "tempo";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -92,11 +92,21 @@ namespace rpg {
 	template <> struct ReflectMember<Music,int32_t,&Music::balance> {
 		using struct_t = Music;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "balance";
+		static constexpr const auto& name = "balance";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Music>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Music)(), LCF_REFL_M(Music, name)());
+		v(s, s.fadein, LCF_REFL_S(Music)(), LCF_REFL_M(Music, fadein)());
+		v(s, s.volume, LCF_REFL_S(Music)(), LCF_REFL_M(Music, volume)());
+		v(s, s.tempo, LCF_REFL_S(Music)(), LCF_REFL_M(Music, tempo)());
+		v(s, s.balance, LCF_REFL_S(Music)(), LCF_REFL_M(Music, balance)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

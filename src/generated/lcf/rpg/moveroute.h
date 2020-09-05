@@ -46,13 +46,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<MoveRoute> {
 		using type_t = MoveRoute;
-		static constexpr const auto& = "MoveRoute";
+		static constexpr const auto& name = "MoveRoute";
 	};
 	// Array - rpg::MoveCommand
 	template <> struct ReflectMember<MoveRoute,std::vector<MoveCommand>,&MoveRoute::move_commands> {
 		using struct_t = MoveRoute;
 		using type_t = std::vector<MoveCommand>;
-		static constexpr const auto& name[] = "move_commands";
+		static constexpr const auto& name = "move_commands";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -61,7 +61,7 @@ namespace rpg {
 	template <> struct ReflectMember<MoveRoute,bool,&MoveRoute::repeat> {
 		using struct_t = MoveRoute;
 		using type_t = bool;
-		static constexpr const auto& name[] = "repeat";
+		static constexpr const auto& name = "repeat";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -70,11 +70,22 @@ namespace rpg {
 	template <> struct ReflectMember<MoveRoute,bool,&MoveRoute::skippable> {
 		using struct_t = MoveRoute;
 		using type_t = bool;
-		static constexpr const auto& name[] = "skippable";
+		static constexpr const auto& name = "skippable";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,MoveRoute>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.move_commands, LCF_REFL_S(MoveRoute)(), LCF_REFL_M(MoveRoute, move_commands)());
+		for (auto&& e: s.move_commands) {
+			ForEachMember(e, v);
+		}
+		v(s, s.repeat, LCF_REFL_S(MoveRoute)(), LCF_REFL_M(MoveRoute, repeat)());
+		v(s, s.skippable, LCF_REFL_S(MoveRoute)(), LCF_REFL_M(MoveRoute, skippable)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

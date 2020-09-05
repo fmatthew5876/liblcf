@@ -68,13 +68,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<BattleCommand> {
 		using type_t = BattleCommand;
-		static constexpr const auto& = "BattleCommand";
+		static constexpr const auto& name = "BattleCommand";
 	};
 	// String
 	template <> struct ReflectMember<BattleCommand,DBString,&BattleCommand::name> {
 		using struct_t = BattleCommand;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -83,11 +83,18 @@ namespace rpg {
 	template <> struct ReflectMember<BattleCommand,int32_t,&BattleCommand::type> {
 		using struct_t = BattleCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "type";
+		static constexpr const auto& name = "type";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,BattleCommand>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(BattleCommand)(), LCF_REFL_M(BattleCommand, name)());
+		v(s, s.type, LCF_REFL_S(BattleCommand)(), LCF_REFL_M(BattleCommand, type)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

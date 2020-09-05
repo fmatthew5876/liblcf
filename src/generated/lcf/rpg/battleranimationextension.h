@@ -65,13 +65,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<BattlerAnimationExtension> {
 		using type_t = BattlerAnimationExtension;
-		static constexpr const auto& = "BattlerAnimationExtension";
+		static constexpr const auto& name = "BattlerAnimationExtension";
 	};
 	// String
 	template <> struct ReflectMember<BattlerAnimationExtension,DBString,&BattlerAnimationExtension::name> {
 		using struct_t = BattlerAnimationExtension;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -80,7 +80,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationExtension,DBString,&BattlerAnimationExtension::battler_name> {
 		using struct_t = BattlerAnimationExtension;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battler_name";
+		static constexpr const auto& name = "battler_name";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -89,7 +89,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationExtension,int32_t,&BattlerAnimationExtension::battler_index> {
 		using struct_t = BattlerAnimationExtension;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battler_index";
+		static constexpr const auto& name = "battler_index";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -98,7 +98,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationExtension,int32_t,&BattlerAnimationExtension::animation_type> {
 		using struct_t = BattlerAnimationExtension;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "animation_type";
+		static constexpr const auto& name = "animation_type";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -107,11 +107,21 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimationExtension,int32_t,&BattlerAnimationExtension::animation_id> {
 		using struct_t = BattlerAnimationExtension;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "animation_id";
+		static constexpr const auto& name = "animation_id";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,BattlerAnimationExtension>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(BattlerAnimationExtension)(), LCF_REFL_M(BattlerAnimationExtension, name)());
+		v(s, s.battler_name, LCF_REFL_S(BattlerAnimationExtension)(), LCF_REFL_M(BattlerAnimationExtension, battler_name)());
+		v(s, s.battler_index, LCF_REFL_S(BattlerAnimationExtension)(), LCF_REFL_M(BattlerAnimationExtension, battler_index)());
+		v(s, s.animation_type, LCF_REFL_S(BattlerAnimationExtension)(), LCF_REFL_M(BattlerAnimationExtension, animation_type)());
+		v(s, s.animation_id, LCF_REFL_S(BattlerAnimationExtension)(), LCF_REFL_M(BattlerAnimationExtension, animation_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

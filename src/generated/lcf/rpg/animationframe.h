@@ -43,17 +43,26 @@ namespace rpg {
 
 	template <> struct ReflectStruct<AnimationFrame> {
 		using type_t = AnimationFrame;
-		static constexpr const auto& = "AnimationFrame";
+		static constexpr const auto& name = "AnimationFrame";
 	};
 	// Array - rpg::AnimationCellData
 	template <> struct ReflectMember<AnimationFrame,std::vector<AnimationCellData>,&AnimationFrame::cells> {
 		using struct_t = AnimationFrame;
 		using type_t = std::vector<AnimationCellData>;
-		static constexpr const auto& name[] = "cells";
+		static constexpr const auto& name = "cells";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,AnimationFrame>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.cells, LCF_REFL_S(AnimationFrame)(), LCF_REFL_M(AnimationFrame, cells)());
+		for (auto&& e: s.cells) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -87,13 +87,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<AnimationTiming> {
 		using type_t = AnimationTiming;
-		static constexpr const auto& = "AnimationTiming";
+		static constexpr const auto& name = "AnimationTiming";
 	};
 	// Integer
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::frame> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "frame";
+		static constexpr const auto& name = "frame";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -102,7 +102,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,Sound,&AnimationTiming::se> {
 		using struct_t = AnimationTiming;
 		using type_t = Sound;
-		static constexpr const auto& name[] = "se";
+		static constexpr const auto& name = "se";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -111,7 +111,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_scope> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_scope";
+		static constexpr const auto& name = "flash_scope";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -120,7 +120,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_red> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_red";
+		static constexpr const auto& name = "flash_red";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -129,7 +129,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_green> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_green";
+		static constexpr const auto& name = "flash_green";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -138,7 +138,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_blue> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_blue";
+		static constexpr const auto& name = "flash_blue";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -147,7 +147,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::flash_power> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_power";
+		static constexpr const auto& name = "flash_power";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -156,11 +156,25 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationTiming,int32_t,&AnimationTiming::screen_shake> {
 		using struct_t = AnimationTiming;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "screen_shake";
+		static constexpr const auto& name = "screen_shake";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,AnimationTiming>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.frame, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, frame)());
+		v(s, s.se, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, se)());
+		ForEachMember(s.se, v);
+		v(s, s.flash_scope, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, flash_scope)());
+		v(s, s.flash_red, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, flash_red)());
+		v(s, s.flash_green, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, flash_green)());
+		v(s, s.flash_blue, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, flash_blue)());
+		v(s, s.flash_power, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, flash_power)());
+		v(s, s.screen_shake, LCF_REFL_S(AnimationTiming)(), LCF_REFL_M(AnimationTiming, screen_shake)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

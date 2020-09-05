@@ -54,13 +54,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<TestBattler> {
 		using type_t = TestBattler;
-		static constexpr const auto& = "TestBattler";
+		static constexpr const auto& name = "TestBattler";
 	};
 	// Integer
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::actor_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "actor_id";
+		static constexpr const auto& name = "actor_id";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -69,7 +69,7 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::level> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "level";
+		static constexpr const auto& name = "level";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -78,7 +78,7 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::weapon_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "weapon_id";
+		static constexpr const auto& name = "weapon_id";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -87,7 +87,7 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::shield_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shield_id";
+		static constexpr const auto& name = "shield_id";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -96,7 +96,7 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::armor_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "armor_id";
+		static constexpr const auto& name = "armor_id";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -105,7 +105,7 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::helmet_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "helmet_id";
+		static constexpr const auto& name = "helmet_id";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -114,11 +114,23 @@ namespace rpg {
 	template <> struct ReflectMember<TestBattler,int32_t,&TestBattler::accessory_id> {
 		using struct_t = TestBattler;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "accessory_id";
+		static constexpr const auto& name = "accessory_id";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,TestBattler>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.actor_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, actor_id)());
+		v(s, s.level, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, level)());
+		v(s, s.weapon_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, weapon_id)());
+		v(s, s.shield_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, shield_id)());
+		v(s, s.armor_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, armor_id)());
+		v(s, s.helmet_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, helmet_id)());
+		v(s, s.accessory_id, LCF_REFL_S(TestBattler)(), LCF_REFL_M(TestBattler, accessory_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

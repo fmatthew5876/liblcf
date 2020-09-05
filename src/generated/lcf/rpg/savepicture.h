@@ -210,13 +210,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SavePicture> {
 		using type_t = SavePicture;
-		static constexpr const auto& = "SavePicture";
+		static constexpr const auto& name = "SavePicture";
 	};
 	// string
 	template <> struct ReflectMember<SavePicture,std::string,&SavePicture::name> {
 		using struct_t = SavePicture;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -225,7 +225,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::start_x> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "start_x";
+		static constexpr const auto& name = "start_x";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -234,7 +234,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::start_y> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "start_y";
+		static constexpr const auto& name = "start_y";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -243,7 +243,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_x> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_x";
+		static constexpr const auto& name = "current_x";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -252,7 +252,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_y> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_y";
+		static constexpr const auto& name = "current_y";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -261,7 +261,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,bool,&SavePicture::fixed_to_map> {
 		using struct_t = SavePicture;
 		using type_t = bool;
-		static constexpr const auto& name[] = "fixed_to_map";
+		static constexpr const auto& name = "fixed_to_map";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -270,7 +270,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_magnify> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_magnify";
+		static constexpr const auto& name = "current_magnify";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -279,7 +279,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_top_trans> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_top_trans";
+		static constexpr const auto& name = "current_top_trans";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -288,7 +288,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,bool,&SavePicture::use_transparent_color> {
 		using struct_t = SavePicture;
 		using type_t = bool;
-		static constexpr const auto& name[] = "use_transparent_color";
+		static constexpr const auto& name = "use_transparent_color";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -297,7 +297,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_red> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_red";
+		static constexpr const auto& name = "current_red";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -306,7 +306,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_green> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_green";
+		static constexpr const auto& name = "current_green";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -315,7 +315,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_blue> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_blue";
+		static constexpr const auto& name = "current_blue";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -324,7 +324,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_sat> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_sat";
+		static constexpr const auto& name = "current_sat";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -333,7 +333,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::effect_mode> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "effect_mode";
+		static constexpr const auto& name = "effect_mode";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -342,7 +342,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_effect_power> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_effect_power";
+		static constexpr const auto& name = "current_effect_power";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -351,7 +351,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_bot_trans> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_bot_trans";
+		static constexpr const auto& name = "current_bot_trans";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -360,7 +360,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::spritesheet_cols> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spritesheet_cols";
+		static constexpr const auto& name = "spritesheet_cols";
 		static constexpr const int id = 0x13;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -369,7 +369,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::spritesheet_rows> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spritesheet_rows";
+		static constexpr const auto& name = "spritesheet_rows";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -378,7 +378,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::spritesheet_frame> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spritesheet_frame";
+		static constexpr const auto& name = "spritesheet_frame";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -387,7 +387,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::spritesheet_speed> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spritesheet_speed";
+		static constexpr const auto& name = "spritesheet_speed";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -396,7 +396,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::frames> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "frames";
+		static constexpr const auto& name = "frames";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -405,7 +405,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,bool,&SavePicture::spritesheet_play_once> {
 		using struct_t = SavePicture;
 		using type_t = bool;
-		static constexpr const auto& name[] = "spritesheet_play_once";
+		static constexpr const auto& name = "spritesheet_play_once";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -414,7 +414,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::map_layer> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "map_layer";
+		static constexpr const auto& name = "map_layer";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -423,7 +423,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::battle_layer> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_layer";
+		static constexpr const auto& name = "battle_layer";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -432,7 +432,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,SavePicture::Flags,&SavePicture::flags> {
 		using struct_t = SavePicture;
 		using type_t = SavePicture::Flags;
-		static constexpr const auto& name[] = "flags";
+		static constexpr const auto& name = "flags";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -441,7 +441,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::finish_x> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "finish_x";
+		static constexpr const auto& name = "finish_x";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -450,7 +450,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::finish_y> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "finish_y";
+		static constexpr const auto& name = "finish_y";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -459,7 +459,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_magnify> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_magnify";
+		static constexpr const auto& name = "finish_magnify";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -468,7 +468,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_top_trans> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_top_trans";
+		static constexpr const auto& name = "finish_top_trans";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -477,7 +477,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_bot_trans> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_bot_trans";
+		static constexpr const auto& name = "finish_bot_trans";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -486,7 +486,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_red> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_red";
+		static constexpr const auto& name = "finish_red";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -495,7 +495,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_green> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_green";
+		static constexpr const auto& name = "finish_green";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -504,7 +504,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_blue> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_blue";
+		static constexpr const auto& name = "finish_blue";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -513,7 +513,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_sat> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_sat";
+		static constexpr const auto& name = "finish_sat";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -522,7 +522,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::finish_effect_power> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "finish_effect_power";
+		static constexpr const auto& name = "finish_effect_power";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -531,7 +531,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::time_left> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "time_left";
+		static constexpr const auto& name = "time_left";
 		static constexpr const int id = 0x33;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -540,7 +540,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,double,&SavePicture::current_rotation> {
 		using struct_t = SavePicture;
 		using type_t = double;
-		static constexpr const auto& name[] = "current_rotation";
+		static constexpr const auto& name = "current_rotation";
 		static constexpr const int id = 0x34;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -549,11 +549,54 @@ namespace rpg {
 	template <> struct ReflectMember<SavePicture,int32_t,&SavePicture::current_waver> {
 		using struct_t = SavePicture;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "current_waver";
+		static constexpr const auto& name = "current_waver";
 		static constexpr const int id = 0x35;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SavePicture>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, name)());
+		v(s, s.start_x, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, start_x)());
+		v(s, s.start_y, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, start_y)());
+		v(s, s.current_x, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_x)());
+		v(s, s.current_y, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_y)());
+		v(s, s.fixed_to_map, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, fixed_to_map)());
+		v(s, s.current_magnify, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_magnify)());
+		v(s, s.current_top_trans, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_top_trans)());
+		v(s, s.use_transparent_color, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, use_transparent_color)());
+		v(s, s.current_red, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_red)());
+		v(s, s.current_green, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_green)());
+		v(s, s.current_blue, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_blue)());
+		v(s, s.current_sat, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_sat)());
+		v(s, s.effect_mode, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, effect_mode)());
+		v(s, s.current_effect_power, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_effect_power)());
+		v(s, s.current_bot_trans, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_bot_trans)());
+		v(s, s.spritesheet_cols, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, spritesheet_cols)());
+		v(s, s.spritesheet_rows, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, spritesheet_rows)());
+		v(s, s.spritesheet_frame, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, spritesheet_frame)());
+		v(s, s.spritesheet_speed, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, spritesheet_speed)());
+		v(s, s.frames, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, frames)());
+		v(s, s.spritesheet_play_once, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, spritesheet_play_once)());
+		v(s, s.map_layer, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, map_layer)());
+		v(s, s.battle_layer, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, battle_layer)());
+		v(s, s.flags, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, flags)());
+		v(s, s.finish_x, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_x)());
+		v(s, s.finish_y, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_y)());
+		v(s, s.finish_magnify, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_magnify)());
+		v(s, s.finish_top_trans, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_top_trans)());
+		v(s, s.finish_bot_trans, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_bot_trans)());
+		v(s, s.finish_red, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_red)());
+		v(s, s.finish_green, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_green)());
+		v(s, s.finish_blue, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_blue)());
+		v(s, s.finish_sat, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_sat)());
+		v(s, s.finish_effect_power, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, finish_effect_power)());
+		v(s, s.time_left, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, time_left)());
+		v(s, s.current_rotation, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_rotation)());
+		v(s, s.current_waver, LCF_REFL_S(SavePicture)(), LCF_REFL_M(SavePicture, current_waver)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

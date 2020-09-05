@@ -60,13 +60,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<AnimationCellData> {
 		using type_t = AnimationCellData;
-		static constexpr const auto& = "AnimationCellData";
+		static constexpr const auto& name = "AnimationCellData";
 	};
 	// Bool
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::valid> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "valid";
+		static constexpr const auto& name = "valid";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -75,7 +75,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::cell_id> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "cell_id";
+		static constexpr const auto& name = "cell_id";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -84,7 +84,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::x> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "x";
+		static constexpr const auto& name = "x";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -93,7 +93,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::y> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "y";
+		static constexpr const auto& name = "y";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -102,7 +102,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::zoom> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "zoom";
+		static constexpr const auto& name = "zoom";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -111,7 +111,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_red> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tone_red";
+		static constexpr const auto& name = "tone_red";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -120,7 +120,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_green> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tone_green";
+		static constexpr const auto& name = "tone_green";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -129,7 +129,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_blue> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tone_blue";
+		static constexpr const auto& name = "tone_blue";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -138,7 +138,7 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::tone_gray> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tone_gray";
+		static constexpr const auto& name = "tone_gray";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -147,11 +147,26 @@ namespace rpg {
 	template <> struct ReflectMember<AnimationCellData,int32_t,&AnimationCellData::transparency> {
 		using struct_t = AnimationCellData;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "transparency";
+		static constexpr const auto& name = "transparency";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,AnimationCellData>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.valid, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, valid)());
+		v(s, s.cell_id, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, cell_id)());
+		v(s, s.x, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, x)());
+		v(s, s.y, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, y)());
+		v(s, s.zoom, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, zoom)());
+		v(s, s.tone_red, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, tone_red)());
+		v(s, s.tone_green, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, tone_green)());
+		v(s, s.tone_blue, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, tone_blue)());
+		v(s, s.tone_gray, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, tone_gray)());
+		v(s, s.transparency, LCF_REFL_S(AnimationCellData)(), LCF_REFL_M(AnimationCellData, transparency)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

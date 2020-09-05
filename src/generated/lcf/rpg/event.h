@@ -51,13 +51,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Event> {
 		using type_t = Event;
-		static constexpr const auto& = "Event";
+		static constexpr const auto& name = "Event";
 	};
 	// String
 	template <> struct ReflectMember<Event,DBString,&Event::name> {
 		using struct_t = Event;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -66,7 +66,7 @@ namespace rpg {
 	template <> struct ReflectMember<Event,int32_t,&Event::x> {
 		using struct_t = Event;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "x";
+		static constexpr const auto& name = "x";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -75,7 +75,7 @@ namespace rpg {
 	template <> struct ReflectMember<Event,int32_t,&Event::y> {
 		using struct_t = Event;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "y";
+		static constexpr const auto& name = "y";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -84,11 +84,23 @@ namespace rpg {
 	template <> struct ReflectMember<Event,std::vector<EventPage>,&Event::pages> {
 		using struct_t = Event;
 		using type_t = std::vector<EventPage>;
-		static constexpr const auto& name[] = "pages";
+		static constexpr const auto& name = "pages";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Event>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Event)(), LCF_REFL_M(Event, name)());
+		v(s, s.x, LCF_REFL_S(Event)(), LCF_REFL_M(Event, x)());
+		v(s, s.y, LCF_REFL_S(Event)(), LCF_REFL_M(Event, y)());
+		v(s, s.pages, LCF_REFL_S(Event)(), LCF_REFL_M(Event, pages)());
+		for (auto&& e: s.pages) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

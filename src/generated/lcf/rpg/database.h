@@ -97,13 +97,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Database> {
 		using type_t = Database;
-		static constexpr const auto& = "Database";
+		static constexpr const auto& name = "Database";
 	};
 	// rpg::Actor
 	template <> struct ReflectMember<Database,std::vector<Actor>,&Database::actors> {
 		using struct_t = Database;
 		using type_t = std::vector<Actor>;
-		static constexpr const auto& name[] = "actors";
+		static constexpr const auto& name = "actors";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -112,7 +112,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Skill>,&Database::skills> {
 		using struct_t = Database;
 		using type_t = std::vector<Skill>;
-		static constexpr const auto& name[] = "skills";
+		static constexpr const auto& name = "skills";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -121,7 +121,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Item>,&Database::items> {
 		using struct_t = Database;
 		using type_t = std::vector<Item>;
-		static constexpr const auto& name[] = "items";
+		static constexpr const auto& name = "items";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -130,7 +130,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Enemy>,&Database::enemies> {
 		using struct_t = Database;
 		using type_t = std::vector<Enemy>;
-		static constexpr const auto& name[] = "enemies";
+		static constexpr const auto& name = "enemies";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -139,7 +139,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Troop>,&Database::troops> {
 		using struct_t = Database;
 		using type_t = std::vector<Troop>;
-		static constexpr const auto& name[] = "troops";
+		static constexpr const auto& name = "troops";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -148,7 +148,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Terrain>,&Database::terrains> {
 		using struct_t = Database;
 		using type_t = std::vector<Terrain>;
-		static constexpr const auto& name[] = "terrains";
+		static constexpr const auto& name = "terrains";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -157,7 +157,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Attribute>,&Database::attributes> {
 		using struct_t = Database;
 		using type_t = std::vector<Attribute>;
-		static constexpr const auto& name[] = "attributes";
+		static constexpr const auto& name = "attributes";
 		static constexpr const int id = 0x11;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -166,7 +166,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<State>,&Database::states> {
 		using struct_t = Database;
 		using type_t = std::vector<State>;
-		static constexpr const auto& name[] = "states";
+		static constexpr const auto& name = "states";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -175,7 +175,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Animation>,&Database::animations> {
 		using struct_t = Database;
 		using type_t = std::vector<Animation>;
-		static constexpr const auto& name[] = "animations";
+		static constexpr const auto& name = "animations";
 		static constexpr const int id = 0x13;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -184,7 +184,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Chipset>,&Database::chipsets> {
 		using struct_t = Database;
 		using type_t = std::vector<Chipset>;
-		static constexpr const auto& name[] = "chipsets";
+		static constexpr const auto& name = "chipsets";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -193,7 +193,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,Terms,&Database::terms> {
 		using struct_t = Database;
 		using type_t = Terms;
-		static constexpr const auto& name[] = "terms";
+		static constexpr const auto& name = "terms";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -202,7 +202,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,System,&Database::system> {
 		using struct_t = Database;
 		using type_t = System;
-		static constexpr const auto& name[] = "system";
+		static constexpr const auto& name = "system";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -211,7 +211,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Switch>,&Database::switches> {
 		using struct_t = Database;
 		using type_t = std::vector<Switch>;
-		static constexpr const auto& name[] = "switches";
+		static constexpr const auto& name = "switches";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -220,7 +220,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Variable>,&Database::variables> {
 		using struct_t = Database;
 		using type_t = std::vector<Variable>;
-		static constexpr const auto& name[] = "variables";
+		static constexpr const auto& name = "variables";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -229,7 +229,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<CommonEvent>,&Database::commonevents> {
 		using struct_t = Database;
 		using type_t = std::vector<CommonEvent>;
-		static constexpr const auto& name[] = "commonevents";
+		static constexpr const auto& name = "commonevents";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -238,7 +238,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,int32_t,&Database::version> {
 		using struct_t = Database;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "version";
+		static constexpr const auto& name = "version";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -247,7 +247,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,BattleCommands,&Database::battlecommands> {
 		using struct_t = Database;
 		using type_t = BattleCommands;
-		static constexpr const auto& name[] = "battlecommands";
+		static constexpr const auto& name = "battlecommands";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -256,7 +256,7 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<Class>,&Database::classes> {
 		using struct_t = Database;
 		using type_t = std::vector<Class>;
-		static constexpr const auto& name[] = "classes";
+		static constexpr const auto& name = "classes";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -265,11 +265,83 @@ namespace rpg {
 	template <> struct ReflectMember<Database,std::vector<BattlerAnimation>,&Database::battleranimations> {
 		using struct_t = Database;
 		using type_t = std::vector<BattlerAnimation>;
-		static constexpr const auto& name[] = "battleranimations";
+		static constexpr const auto& name = "battleranimations";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Database>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.actors, LCF_REFL_S(Database)(), LCF_REFL_M(Database, actors)());
+		for (auto&& e: s.actors) {
+			ForEachMember(e, v);
+		}
+		v(s, s.skills, LCF_REFL_S(Database)(), LCF_REFL_M(Database, skills)());
+		for (auto&& e: s.skills) {
+			ForEachMember(e, v);
+		}
+		v(s, s.items, LCF_REFL_S(Database)(), LCF_REFL_M(Database, items)());
+		for (auto&& e: s.items) {
+			ForEachMember(e, v);
+		}
+		v(s, s.enemies, LCF_REFL_S(Database)(), LCF_REFL_M(Database, enemies)());
+		for (auto&& e: s.enemies) {
+			ForEachMember(e, v);
+		}
+		v(s, s.troops, LCF_REFL_S(Database)(), LCF_REFL_M(Database, troops)());
+		for (auto&& e: s.troops) {
+			ForEachMember(e, v);
+		}
+		v(s, s.terrains, LCF_REFL_S(Database)(), LCF_REFL_M(Database, terrains)());
+		for (auto&& e: s.terrains) {
+			ForEachMember(e, v);
+		}
+		v(s, s.attributes, LCF_REFL_S(Database)(), LCF_REFL_M(Database, attributes)());
+		for (auto&& e: s.attributes) {
+			ForEachMember(e, v);
+		}
+		v(s, s.states, LCF_REFL_S(Database)(), LCF_REFL_M(Database, states)());
+		for (auto&& e: s.states) {
+			ForEachMember(e, v);
+		}
+		v(s, s.animations, LCF_REFL_S(Database)(), LCF_REFL_M(Database, animations)());
+		for (auto&& e: s.animations) {
+			ForEachMember(e, v);
+		}
+		v(s, s.chipsets, LCF_REFL_S(Database)(), LCF_REFL_M(Database, chipsets)());
+		for (auto&& e: s.chipsets) {
+			ForEachMember(e, v);
+		}
+		v(s, s.terms, LCF_REFL_S(Database)(), LCF_REFL_M(Database, terms)());
+		ForEachMember(s.terms, v);
+		v(s, s.system, LCF_REFL_S(Database)(), LCF_REFL_M(Database, system)());
+		ForEachMember(s.system, v);
+		v(s, s.switches, LCF_REFL_S(Database)(), LCF_REFL_M(Database, switches)());
+		for (auto&& e: s.switches) {
+			ForEachMember(e, v);
+		}
+		v(s, s.variables, LCF_REFL_S(Database)(), LCF_REFL_M(Database, variables)());
+		for (auto&& e: s.variables) {
+			ForEachMember(e, v);
+		}
+		v(s, s.commonevents, LCF_REFL_S(Database)(), LCF_REFL_M(Database, commonevents)());
+		for (auto&& e: s.commonevents) {
+			ForEachMember(e, v);
+		}
+		v(s, s.version, LCF_REFL_S(Database)(), LCF_REFL_M(Database, version)());
+		v(s, s.battlecommands, LCF_REFL_S(Database)(), LCF_REFL_M(Database, battlecommands)());
+		ForEachMember(s.battlecommands, v);
+		v(s, s.classes, LCF_REFL_S(Database)(), LCF_REFL_M(Database, classes)());
+		for (auto&& e: s.classes) {
+			ForEachMember(e, v);
+		}
+		v(s, s.battleranimations, LCF_REFL_S(Database)(), LCF_REFL_M(Database, battleranimations)());
+		for (auto&& e: s.battleranimations) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -102,13 +102,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<ItemAnimation> {
 		using type_t = ItemAnimation;
-		static constexpr const auto& = "ItemAnimation";
+		static constexpr const auto& name = "ItemAnimation";
 	};
 	// 
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::type> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "type";
+		static constexpr const auto& name = "type";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -117,7 +117,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::weapon_anim> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "weapon_anim";
+		static constexpr const auto& name = "weapon_anim";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -126,7 +126,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::movement> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "movement";
+		static constexpr const auto& name = "movement";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -135,7 +135,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::after_image> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "after_image";
+		static constexpr const auto& name = "after_image";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -144,7 +144,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::attacks> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "attacks";
+		static constexpr const auto& name = "attacks";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -153,7 +153,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,bool,&ItemAnimation::ranged> {
 		using struct_t = ItemAnimation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "ranged";
+		static constexpr const auto& name = "ranged";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -162,7 +162,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::ranged_anim> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ranged_anim";
+		static constexpr const auto& name = "ranged_anim";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -171,7 +171,7 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::ranged_speed> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ranged_speed";
+		static constexpr const auto& name = "ranged_speed";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -180,11 +180,25 @@ namespace rpg {
 	template <> struct ReflectMember<ItemAnimation,int32_t,&ItemAnimation::battle_anim> {
 		using struct_t = ItemAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battle_anim";
+		static constexpr const auto& name = "battle_anim";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,ItemAnimation>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.type, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, type)());
+		v(s, s.weapon_anim, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, weapon_anim)());
+		v(s, s.movement, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, movement)());
+		v(s, s.after_image, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, after_image)());
+		v(s, s.attacks, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, attacks)());
+		v(s, s.ranged, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, ranged)());
+		v(s, s.ranged_anim, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, ranged_anim)());
+		v(s, s.ranged_speed, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, ranged_speed)());
+		v(s, s.battle_anim, LCF_REFL_S(ItemAnimation)(), LCF_REFL_M(ItemAnimation, battle_anim)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

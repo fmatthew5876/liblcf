@@ -52,13 +52,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveEventExecFrame> {
 		using type_t = SaveEventExecFrame;
-		static constexpr const auto& = "SaveEventExecFrame";
+		static constexpr const auto& name = "SaveEventExecFrame";
 	};
 	// event command list
 	template <> struct ReflectMember<SaveEventExecFrame,std::vector<EventCommand>,&SaveEventExecFrame::commands> {
 		using struct_t = SaveEventExecFrame;
 		using type_t = std::vector<EventCommand>;
-		static constexpr const auto& name[] = "commands";
+		static constexpr const auto& name = "commands";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -67,7 +67,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecFrame,int32_t,&SaveEventExecFrame::current_command> {
 		using struct_t = SaveEventExecFrame;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "current_command";
+		static constexpr const auto& name = "current_command";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -76,7 +76,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecFrame,int32_t,&SaveEventExecFrame::event_id> {
 		using struct_t = SaveEventExecFrame;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "event_id";
+		static constexpr const auto& name = "event_id";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -85,7 +85,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecFrame,bool,&SaveEventExecFrame::triggered_by_decision_key> {
 		using struct_t = SaveEventExecFrame;
 		using type_t = bool;
-		static constexpr const auto& name[] = "triggered_by_decision_key";
+		static constexpr const auto& name = "triggered_by_decision_key";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -94,11 +94,24 @@ namespace rpg {
 	template <> struct ReflectMember<SaveEventExecFrame,std::vector<uint8_t>,&SaveEventExecFrame::subcommand_path> {
 		using struct_t = SaveEventExecFrame;
 		using type_t = std::vector<uint8_t>;
-		static constexpr const auto& name[] = "subcommand_path";
+		static constexpr const auto& name = "subcommand_path";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveEventExecFrame>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.commands, LCF_REFL_S(SaveEventExecFrame)(), LCF_REFL_M(SaveEventExecFrame, commands)());
+		for (auto&& e: s.commands) {
+			ForEachMember(e, v);
+		}
+		v(s, s.current_command, LCF_REFL_S(SaveEventExecFrame)(), LCF_REFL_M(SaveEventExecFrame, current_command)());
+		v(s, s.event_id, LCF_REFL_S(SaveEventExecFrame)(), LCF_REFL_M(SaveEventExecFrame, event_id)());
+		v(s, s.triggered_by_decision_key, LCF_REFL_S(SaveEventExecFrame)(), LCF_REFL_M(SaveEventExecFrame, triggered_by_decision_key)());
+		v(s, s.subcommand_path, LCF_REFL_S(SaveEventExecFrame)(), LCF_REFL_M(SaveEventExecFrame, subcommand_path)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -56,13 +56,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Troop> {
 		using type_t = Troop;
-		static constexpr const auto& = "Troop";
+		static constexpr const auto& name = "Troop";
 	};
 	// String
 	template <> struct ReflectMember<Troop,DBString,&Troop::name> {
 		using struct_t = Troop;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -71,7 +71,7 @@ namespace rpg {
 	template <> struct ReflectMember<Troop,std::vector<TroopMember>,&Troop::members> {
 		using struct_t = Troop;
 		using type_t = std::vector<TroopMember>;
-		static constexpr const auto& name[] = "members";
+		static constexpr const auto& name = "members";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -80,7 +80,7 @@ namespace rpg {
 	template <> struct ReflectMember<Troop,bool,&Troop::auto_alignment> {
 		using struct_t = Troop;
 		using type_t = bool;
-		static constexpr const auto& name[] = "auto_alignment";
+		static constexpr const auto& name = "auto_alignment";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -89,7 +89,7 @@ namespace rpg {
 	template <> struct ReflectMember<Troop,DBBitArray,&Troop::terrain_set> {
 		using struct_t = Troop;
 		using type_t = DBBitArray;
-		static constexpr const auto& name[] = "terrain_set";
+		static constexpr const auto& name = "terrain_set";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -98,7 +98,7 @@ namespace rpg {
 	template <> struct ReflectMember<Troop,bool,&Troop::appear_randomly> {
 		using struct_t = Troop;
 		using type_t = bool;
-		static constexpr const auto& name[] = "appear_randomly";
+		static constexpr const auto& name = "appear_randomly";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -107,11 +107,28 @@ namespace rpg {
 	template <> struct ReflectMember<Troop,std::vector<TroopPage>,&Troop::pages> {
 		using struct_t = Troop;
 		using type_t = std::vector<TroopPage>;
-		static constexpr const auto& name[] = "pages";
+		static constexpr const auto& name = "pages";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Troop>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, name)());
+		v(s, s.members, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, members)());
+		for (auto&& e: s.members) {
+			ForEachMember(e, v);
+		}
+		v(s, s.auto_alignment, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, auto_alignment)());
+		v(s, s.terrain_set, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, terrain_set)());
+		v(s, s.appear_randomly, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, appear_randomly)());
+		v(s, s.pages, LCF_REFL_S(Troop)(), LCF_REFL_M(Troop, pages)());
+		for (auto&& e: s.pages) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

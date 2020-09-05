@@ -43,13 +43,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SavePanorama> {
 		using type_t = SavePanorama;
-		static constexpr const auto& = "SavePanorama";
+		static constexpr const auto& name = "SavePanorama";
 	};
 	// Panorama X position
 	template <> struct ReflectMember<SavePanorama,int32_t,&SavePanorama::pan_x> {
 		using struct_t = SavePanorama;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_x";
+		static constexpr const auto& name = "pan_x";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -58,11 +58,18 @@ namespace rpg {
 	template <> struct ReflectMember<SavePanorama,int32_t,&SavePanorama::pan_y> {
 		using struct_t = SavePanorama;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_y";
+		static constexpr const auto& name = "pan_y";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SavePanorama>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.pan_x, LCF_REFL_S(SavePanorama)(), LCF_REFL_M(SavePanorama, pan_x)());
+		v(s, s.pan_y, LCF_REFL_S(SavePanorama)(), LCF_REFL_M(SavePanorama, pan_y)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

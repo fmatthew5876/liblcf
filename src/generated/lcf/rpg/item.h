@@ -208,13 +208,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Item> {
 		using type_t = Item;
-		static constexpr const auto& = "Item";
+		static constexpr const auto& name = "Item";
 	};
 	// String
 	template <> struct ReflectMember<Item,DBString,&Item::name> {
 		using struct_t = Item;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -223,7 +223,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,DBString,&Item::description> {
 		using struct_t = Item;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "description";
+		static constexpr const auto& name = "description";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -232,7 +232,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::type> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "type";
+		static constexpr const auto& name = "type";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -241,7 +241,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::price> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "price";
+		static constexpr const auto& name = "price";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -250,7 +250,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::uses> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "uses";
+		static constexpr const auto& name = "uses";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -259,7 +259,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::atk_points1> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "atk_points1";
+		static constexpr const auto& name = "atk_points1";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -268,7 +268,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::def_points1> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "def_points1";
+		static constexpr const auto& name = "def_points1";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -277,7 +277,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::spi_points1> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spi_points1";
+		static constexpr const auto& name = "spi_points1";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -286,7 +286,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::agi_points1> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "agi_points1";
+		static constexpr const auto& name = "agi_points1";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -295,7 +295,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::two_handed> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "two_handed";
+		static constexpr const auto& name = "two_handed";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -304,7 +304,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::sp_cost> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "sp_cost";
+		static constexpr const auto& name = "sp_cost";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -313,7 +313,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::hit> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hit";
+		static constexpr const auto& name = "hit";
 		static constexpr const int id = 0x11;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -322,7 +322,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::critical_hit> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "critical_hit";
+		static constexpr const auto& name = "critical_hit";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -331,7 +331,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::animation_id> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "animation_id";
+		static constexpr const auto& name = "animation_id";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -340,7 +340,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::preemptive> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "preemptive";
+		static constexpr const auto& name = "preemptive";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -349,7 +349,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::dual_attack> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "dual_attack";
+		static constexpr const auto& name = "dual_attack";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -358,7 +358,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::attack_all> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "attack_all";
+		static constexpr const auto& name = "attack_all";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -367,7 +367,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::ignore_evasion> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "ignore_evasion";
+		static constexpr const auto& name = "ignore_evasion";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -376,7 +376,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::prevent_critical> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "prevent_critical";
+		static constexpr const auto& name = "prevent_critical";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -385,7 +385,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::raise_evasion> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "raise_evasion";
+		static constexpr const auto& name = "raise_evasion";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -394,7 +394,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::half_sp_cost> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "half_sp_cost";
+		static constexpr const auto& name = "half_sp_cost";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -403,7 +403,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::no_terrain_damage> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "no_terrain_damage";
+		static constexpr const auto& name = "no_terrain_damage";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -412,7 +412,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::cursed> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "cursed";
+		static constexpr const auto& name = "cursed";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -421,7 +421,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::entire_party> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "entire_party";
+		static constexpr const auto& name = "entire_party";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -430,7 +430,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::recover_hp_rate> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "recover_hp_rate";
+		static constexpr const auto& name = "recover_hp_rate";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -439,7 +439,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::recover_hp> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "recover_hp";
+		static constexpr const auto& name = "recover_hp";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -448,7 +448,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::recover_sp_rate> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "recover_sp_rate";
+		static constexpr const auto& name = "recover_sp_rate";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -457,7 +457,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::recover_sp> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "recover_sp";
+		static constexpr const auto& name = "recover_sp";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -466,7 +466,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::occasion_field1> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "occasion_field1";
+		static constexpr const auto& name = "occasion_field1";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -475,7 +475,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::ko_only> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "ko_only";
+		static constexpr const auto& name = "ko_only";
 		static constexpr const int id = 0x26;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -484,7 +484,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::max_hp_points> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "max_hp_points";
+		static constexpr const auto& name = "max_hp_points";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -493,7 +493,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::max_sp_points> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "max_sp_points";
+		static constexpr const auto& name = "max_sp_points";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -502,7 +502,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::atk_points2> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "atk_points2";
+		static constexpr const auto& name = "atk_points2";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -511,7 +511,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::def_points2> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "def_points2";
+		static constexpr const auto& name = "def_points2";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -520,7 +520,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::spi_points2> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "spi_points2";
+		static constexpr const auto& name = "spi_points2";
 		static constexpr const int id = 0x2D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -529,7 +529,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::agi_points2> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "agi_points2";
+		static constexpr const auto& name = "agi_points2";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -538,7 +538,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::using_message> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "using_message";
+		static constexpr const auto& name = "using_message";
 		static constexpr const int id = 0x33;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -547,7 +547,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::skill_id> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "skill_id";
+		static constexpr const auto& name = "skill_id";
 		static constexpr const int id = 0x35;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -556,7 +556,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::switch_id> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_id";
+		static constexpr const auto& name = "switch_id";
 		static constexpr const int id = 0x37;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -565,7 +565,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::occasion_field2> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "occasion_field2";
+		static constexpr const auto& name = "occasion_field2";
 		static constexpr const int id = 0x39;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -574,7 +574,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::occasion_battle> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "occasion_battle";
+		static constexpr const auto& name = "occasion_battle";
 		static constexpr const int id = 0x3A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -583,7 +583,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,DBBitArray,&Item::actor_set> {
 		using struct_t = Item;
 		using type_t = DBBitArray;
-		static constexpr const auto& name[] = "actor_set";
+		static constexpr const auto& name = "actor_set";
 		static constexpr const int id = 0x3E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -592,7 +592,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,DBBitArray,&Item::state_set> {
 		using struct_t = Item;
 		using type_t = DBBitArray;
-		static constexpr const auto& name[] = "state_set";
+		static constexpr const auto& name = "state_set";
 		static constexpr const int id = 0x40;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -601,7 +601,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,DBBitArray,&Item::attribute_set> {
 		using struct_t = Item;
 		using type_t = DBBitArray;
-		static constexpr const auto& name[] = "attribute_set";
+		static constexpr const auto& name = "attribute_set";
 		static constexpr const int id = 0x42;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -610,7 +610,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::state_chance> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "state_chance";
+		static constexpr const auto& name = "state_chance";
 		static constexpr const int id = 0x43;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -619,7 +619,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::reverse_state_effect> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "reverse_state_effect";
+		static constexpr const auto& name = "reverse_state_effect";
 		static constexpr const int id = 0x44;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -628,7 +628,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::weapon_animation> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "weapon_animation";
+		static constexpr const auto& name = "weapon_animation";
 		static constexpr const int id = 0x45;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -637,7 +637,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,std::vector<ItemAnimation>,&Item::animation_data> {
 		using struct_t = Item;
 		using type_t = std::vector<ItemAnimation>;
-		static constexpr const auto& name[] = "animation_data";
+		static constexpr const auto& name = "animation_data";
 		static constexpr const int id = 0x46;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -646,7 +646,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,bool,&Item::use_skill> {
 		using struct_t = Item;
 		using type_t = bool;
-		static constexpr const auto& name[] = "use_skill";
+		static constexpr const auto& name = "use_skill";
 		static constexpr const int id = 0x47;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -655,7 +655,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,DBBitArray,&Item::class_set> {
 		using struct_t = Item;
 		using type_t = DBBitArray;
-		static constexpr const auto& name[] = "class_set";
+		static constexpr const auto& name = "class_set";
 		static constexpr const int id = 0x49;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -664,7 +664,7 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::ranged_trajectory> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ranged_trajectory";
+		static constexpr const auto& name = "ranged_trajectory";
 		static constexpr const int id = 0x4B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -673,11 +673,68 @@ namespace rpg {
 	template <> struct ReflectMember<Item,int32_t,&Item::ranged_target> {
 		using struct_t = Item;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "ranged_target";
+		static constexpr const auto& name = "ranged_target";
 		static constexpr const int id = 0x4C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Item>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Item)(), LCF_REFL_M(Item, name)());
+		v(s, s.description, LCF_REFL_S(Item)(), LCF_REFL_M(Item, description)());
+		v(s, s.type, LCF_REFL_S(Item)(), LCF_REFL_M(Item, type)());
+		v(s, s.price, LCF_REFL_S(Item)(), LCF_REFL_M(Item, price)());
+		v(s, s.uses, LCF_REFL_S(Item)(), LCF_REFL_M(Item, uses)());
+		v(s, s.atk_points1, LCF_REFL_S(Item)(), LCF_REFL_M(Item, atk_points1)());
+		v(s, s.def_points1, LCF_REFL_S(Item)(), LCF_REFL_M(Item, def_points1)());
+		v(s, s.spi_points1, LCF_REFL_S(Item)(), LCF_REFL_M(Item, spi_points1)());
+		v(s, s.agi_points1, LCF_REFL_S(Item)(), LCF_REFL_M(Item, agi_points1)());
+		v(s, s.two_handed, LCF_REFL_S(Item)(), LCF_REFL_M(Item, two_handed)());
+		v(s, s.sp_cost, LCF_REFL_S(Item)(), LCF_REFL_M(Item, sp_cost)());
+		v(s, s.hit, LCF_REFL_S(Item)(), LCF_REFL_M(Item, hit)());
+		v(s, s.critical_hit, LCF_REFL_S(Item)(), LCF_REFL_M(Item, critical_hit)());
+		v(s, s.animation_id, LCF_REFL_S(Item)(), LCF_REFL_M(Item, animation_id)());
+		v(s, s.preemptive, LCF_REFL_S(Item)(), LCF_REFL_M(Item, preemptive)());
+		v(s, s.dual_attack, LCF_REFL_S(Item)(), LCF_REFL_M(Item, dual_attack)());
+		v(s, s.attack_all, LCF_REFL_S(Item)(), LCF_REFL_M(Item, attack_all)());
+		v(s, s.ignore_evasion, LCF_REFL_S(Item)(), LCF_REFL_M(Item, ignore_evasion)());
+		v(s, s.prevent_critical, LCF_REFL_S(Item)(), LCF_REFL_M(Item, prevent_critical)());
+		v(s, s.raise_evasion, LCF_REFL_S(Item)(), LCF_REFL_M(Item, raise_evasion)());
+		v(s, s.half_sp_cost, LCF_REFL_S(Item)(), LCF_REFL_M(Item, half_sp_cost)());
+		v(s, s.no_terrain_damage, LCF_REFL_S(Item)(), LCF_REFL_M(Item, no_terrain_damage)());
+		v(s, s.cursed, LCF_REFL_S(Item)(), LCF_REFL_M(Item, cursed)());
+		v(s, s.entire_party, LCF_REFL_S(Item)(), LCF_REFL_M(Item, entire_party)());
+		v(s, s.recover_hp_rate, LCF_REFL_S(Item)(), LCF_REFL_M(Item, recover_hp_rate)());
+		v(s, s.recover_hp, LCF_REFL_S(Item)(), LCF_REFL_M(Item, recover_hp)());
+		v(s, s.recover_sp_rate, LCF_REFL_S(Item)(), LCF_REFL_M(Item, recover_sp_rate)());
+		v(s, s.recover_sp, LCF_REFL_S(Item)(), LCF_REFL_M(Item, recover_sp)());
+		v(s, s.occasion_field1, LCF_REFL_S(Item)(), LCF_REFL_M(Item, occasion_field1)());
+		v(s, s.ko_only, LCF_REFL_S(Item)(), LCF_REFL_M(Item, ko_only)());
+		v(s, s.max_hp_points, LCF_REFL_S(Item)(), LCF_REFL_M(Item, max_hp_points)());
+		v(s, s.max_sp_points, LCF_REFL_S(Item)(), LCF_REFL_M(Item, max_sp_points)());
+		v(s, s.atk_points2, LCF_REFL_S(Item)(), LCF_REFL_M(Item, atk_points2)());
+		v(s, s.def_points2, LCF_REFL_S(Item)(), LCF_REFL_M(Item, def_points2)());
+		v(s, s.spi_points2, LCF_REFL_S(Item)(), LCF_REFL_M(Item, spi_points2)());
+		v(s, s.agi_points2, LCF_REFL_S(Item)(), LCF_REFL_M(Item, agi_points2)());
+		v(s, s.using_message, LCF_REFL_S(Item)(), LCF_REFL_M(Item, using_message)());
+		v(s, s.skill_id, LCF_REFL_S(Item)(), LCF_REFL_M(Item, skill_id)());
+		v(s, s.switch_id, LCF_REFL_S(Item)(), LCF_REFL_M(Item, switch_id)());
+		v(s, s.occasion_field2, LCF_REFL_S(Item)(), LCF_REFL_M(Item, occasion_field2)());
+		v(s, s.occasion_battle, LCF_REFL_S(Item)(), LCF_REFL_M(Item, occasion_battle)());
+		v(s, s.actor_set, LCF_REFL_S(Item)(), LCF_REFL_M(Item, actor_set)());
+		v(s, s.state_set, LCF_REFL_S(Item)(), LCF_REFL_M(Item, state_set)());
+		v(s, s.attribute_set, LCF_REFL_S(Item)(), LCF_REFL_M(Item, attribute_set)());
+		v(s, s.state_chance, LCF_REFL_S(Item)(), LCF_REFL_M(Item, state_chance)());
+		v(s, s.reverse_state_effect, LCF_REFL_S(Item)(), LCF_REFL_M(Item, reverse_state_effect)());
+		v(s, s.weapon_animation, LCF_REFL_S(Item)(), LCF_REFL_M(Item, weapon_animation)());
+		v(s, s.animation_data, LCF_REFL_S(Item)(), LCF_REFL_M(Item, animation_data)());
+		v(s, s.use_skill, LCF_REFL_S(Item)(), LCF_REFL_M(Item, use_skill)());
+		v(s, s.class_set, LCF_REFL_S(Item)(), LCF_REFL_M(Item, class_set)());
+		v(s, s.ranged_trajectory, LCF_REFL_S(Item)(), LCF_REFL_M(Item, ranged_trajectory)());
+		v(s, s.ranged_target, LCF_REFL_S(Item)(), LCF_REFL_M(Item, ranged_target)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -109,13 +109,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SavePartyLocation> {
 		using type_t = SavePartyLocation;
-		static constexpr const auto& = "SavePartyLocation";
+		static constexpr const auto& name = "SavePartyLocation";
 	};
 	// 
 	template <> struct ReflectMember<SavePartyLocation,bool,&SavePartyLocation::boarding> {
 		using struct_t = SavePartyLocation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "boarding";
+		static constexpr const auto& name = "boarding";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -124,7 +124,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,bool,&SavePartyLocation::aboard> {
 		using struct_t = SavePartyLocation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "aboard";
+		static constexpr const auto& name = "aboard";
 		static constexpr const int id = 0x66;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -133,7 +133,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::vehicle> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "vehicle";
+		static constexpr const auto& name = "vehicle";
 		static constexpr const int id = 0x67;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -142,7 +142,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,bool,&SavePartyLocation::unboarding> {
 		using struct_t = SavePartyLocation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "unboarding";
+		static constexpr const auto& name = "unboarding";
 		static constexpr const int id = 0x68;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -151,7 +151,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::preboard_move_speed> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "preboard_move_speed";
+		static constexpr const auto& name = "preboard_move_speed";
 		static constexpr const int id = 0x69;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -160,7 +160,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,bool,&SavePartyLocation::menu_calling> {
 		using struct_t = SavePartyLocation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "menu_calling";
+		static constexpr const auto& name = "menu_calling";
 		static constexpr const int id = 0x6C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -169,7 +169,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_state> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_state";
+		static constexpr const auto& name = "pan_state";
 		static constexpr const int id = 0x6F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -178,7 +178,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_current_x> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_current_x";
+		static constexpr const auto& name = "pan_current_x";
 		static constexpr const int id = 0x70;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -187,7 +187,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_current_y> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_current_y";
+		static constexpr const auto& name = "pan_current_y";
 		static constexpr const int id = 0x71;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -196,7 +196,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_finish_x> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_finish_x";
+		static constexpr const auto& name = "pan_finish_x";
 		static constexpr const int id = 0x72;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -205,7 +205,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_finish_y> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_finish_y";
+		static constexpr const auto& name = "pan_finish_y";
 		static constexpr const int id = 0x73;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -214,7 +214,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::pan_speed> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_speed";
+		static constexpr const auto& name = "pan_speed";
 		static constexpr const int id = 0x79;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -223,7 +223,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::encounter_steps> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "encounter_steps";
+		static constexpr const auto& name = "encounter_steps";
 		static constexpr const int id = 0x7C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -232,7 +232,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,bool,&SavePartyLocation::encounter_calling> {
 		using struct_t = SavePartyLocation;
 		using type_t = bool;
-		static constexpr const auto& name[] = "encounter_calling";
+		static constexpr const auto& name = "encounter_calling";
 		static constexpr const int id = 0x7D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -241,7 +241,7 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::map_save_count> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "map_save_count";
+		static constexpr const auto& name = "map_save_count";
 		static constexpr const int id = 0x83;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -250,11 +250,32 @@ namespace rpg {
 	template <> struct ReflectMember<SavePartyLocation,int32_t,&SavePartyLocation::database_save_count> {
 		using struct_t = SavePartyLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "database_save_count";
+		static constexpr const auto& name = "database_save_count";
 		static constexpr const int id = 0x84;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SavePartyLocation>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.boarding, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, boarding)());
+		v(s, s.aboard, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, aboard)());
+		v(s, s.vehicle, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, vehicle)());
+		v(s, s.unboarding, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, unboarding)());
+		v(s, s.preboard_move_speed, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, preboard_move_speed)());
+		v(s, s.menu_calling, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, menu_calling)());
+		v(s, s.pan_state, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_state)());
+		v(s, s.pan_current_x, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_current_x)());
+		v(s, s.pan_current_y, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_current_y)());
+		v(s, s.pan_finish_x, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_finish_x)());
+		v(s, s.pan_finish_y, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_finish_y)());
+		v(s, s.pan_speed, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, pan_speed)());
+		v(s, s.encounter_steps, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, encounter_steps)());
+		v(s, s.encounter_calling, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, encounter_calling)());
+		v(s, s.map_save_count, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, map_save_count)());
+		v(s, s.database_save_count, LCF_REFL_S(SavePartyLocation)(), LCF_REFL_M(SavePartyLocation, database_save_count)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

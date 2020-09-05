@@ -99,13 +99,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveScreen> {
 		using type_t = SaveScreen;
-		static constexpr const auto& = "SaveScreen";
+		static constexpr const auto& name = "SaveScreen";
 	};
 	// int
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::tint_finish_red> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tint_finish_red";
+		static constexpr const auto& name = "tint_finish_red";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -114,7 +114,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::tint_finish_green> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tint_finish_green";
+		static constexpr const auto& name = "tint_finish_green";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -123,7 +123,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::tint_finish_blue> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tint_finish_blue";
+		static constexpr const auto& name = "tint_finish_blue";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -132,7 +132,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::tint_finish_sat> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tint_finish_sat";
+		static constexpr const auto& name = "tint_finish_sat";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -141,7 +141,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,double,&SaveScreen::tint_current_red> {
 		using struct_t = SaveScreen;
 		using type_t = double;
-		static constexpr const auto& name[] = "tint_current_red";
+		static constexpr const auto& name = "tint_current_red";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -150,7 +150,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,double,&SaveScreen::tint_current_green> {
 		using struct_t = SaveScreen;
 		using type_t = double;
-		static constexpr const auto& name[] = "tint_current_green";
+		static constexpr const auto& name = "tint_current_green";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -159,7 +159,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,double,&SaveScreen::tint_current_blue> {
 		using struct_t = SaveScreen;
 		using type_t = double;
-		static constexpr const auto& name[] = "tint_current_blue";
+		static constexpr const auto& name = "tint_current_blue";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -168,7 +168,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,double,&SaveScreen::tint_current_sat> {
 		using struct_t = SaveScreen;
 		using type_t = double;
-		static constexpr const auto& name[] = "tint_current_sat";
+		static constexpr const auto& name = "tint_current_sat";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -177,7 +177,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::tint_time_left> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "tint_time_left";
+		static constexpr const auto& name = "tint_time_left";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -186,7 +186,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,bool,&SaveScreen::flash_continuous> {
 		using struct_t = SaveScreen;
 		using type_t = bool;
-		static constexpr const auto& name[] = "flash_continuous";
+		static constexpr const auto& name = "flash_continuous";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -195,7 +195,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::flash_red> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_red";
+		static constexpr const auto& name = "flash_red";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -204,7 +204,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::flash_green> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_green";
+		static constexpr const auto& name = "flash_green";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -213,7 +213,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::flash_blue> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_blue";
+		static constexpr const auto& name = "flash_blue";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -222,7 +222,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,double,&SaveScreen::flash_current_level> {
 		using struct_t = SaveScreen;
 		using type_t = double;
-		static constexpr const auto& name[] = "flash_current_level";
+		static constexpr const auto& name = "flash_current_level";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -231,7 +231,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::flash_time_left> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "flash_time_left";
+		static constexpr const auto& name = "flash_time_left";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -240,7 +240,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,bool,&SaveScreen::shake_continuous> {
 		using struct_t = SaveScreen;
 		using type_t = bool;
-		static constexpr const auto& name[] = "shake_continuous";
+		static constexpr const auto& name = "shake_continuous";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -249,7 +249,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::shake_strength> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shake_strength";
+		static constexpr const auto& name = "shake_strength";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -258,7 +258,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::shake_speed> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shake_speed";
+		static constexpr const auto& name = "shake_speed";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -267,7 +267,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::shake_position> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shake_position";
+		static constexpr const auto& name = "shake_position";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -276,7 +276,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::shake_position_y> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shake_position_y";
+		static constexpr const auto& name = "shake_position_y";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -285,7 +285,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::shake_time_left> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "shake_time_left";
+		static constexpr const auto& name = "shake_time_left";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -294,7 +294,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::pan_x> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_x";
+		static constexpr const auto& name = "pan_x";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -303,7 +303,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::pan_y> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "pan_y";
+		static constexpr const auto& name = "pan_y";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -312,7 +312,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::battleanim_id> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battleanim_id";
+		static constexpr const auto& name = "battleanim_id";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -321,7 +321,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::battleanim_target> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battleanim_target";
+		static constexpr const auto& name = "battleanim_target";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -330,7 +330,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::battleanim_frame> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "battleanim_frame";
+		static constexpr const auto& name = "battleanim_frame";
 		static constexpr const int id = 0x2D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -339,7 +339,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,bool,&SaveScreen::battleanim_active> {
 		using struct_t = SaveScreen;
 		using type_t = bool;
-		static constexpr const auto& name[] = "battleanim_active";
+		static constexpr const auto& name = "battleanim_active";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -348,7 +348,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,bool,&SaveScreen::battleanim_global> {
 		using struct_t = SaveScreen;
 		using type_t = bool;
-		static constexpr const auto& name[] = "battleanim_global";
+		static constexpr const auto& name = "battleanim_global";
 		static constexpr const int id = 0x2F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -357,7 +357,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::weather> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "weather";
+		static constexpr const auto& name = "weather";
 		static constexpr const int id = 0x30;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -366,11 +366,46 @@ namespace rpg {
 	template <> struct ReflectMember<SaveScreen,int32_t,&SaveScreen::weather_strength> {
 		using struct_t = SaveScreen;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "weather_strength";
+		static constexpr const auto& name = "weather_strength";
 		static constexpr const int id = 0x31;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveScreen>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.tint_finish_red, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_finish_red)());
+		v(s, s.tint_finish_green, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_finish_green)());
+		v(s, s.tint_finish_blue, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_finish_blue)());
+		v(s, s.tint_finish_sat, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_finish_sat)());
+		v(s, s.tint_current_red, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_current_red)());
+		v(s, s.tint_current_green, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_current_green)());
+		v(s, s.tint_current_blue, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_current_blue)());
+		v(s, s.tint_current_sat, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_current_sat)());
+		v(s, s.tint_time_left, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, tint_time_left)());
+		v(s, s.flash_continuous, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_continuous)());
+		v(s, s.flash_red, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_red)());
+		v(s, s.flash_green, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_green)());
+		v(s, s.flash_blue, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_blue)());
+		v(s, s.flash_current_level, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_current_level)());
+		v(s, s.flash_time_left, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, flash_time_left)());
+		v(s, s.shake_continuous, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_continuous)());
+		v(s, s.shake_strength, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_strength)());
+		v(s, s.shake_speed, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_speed)());
+		v(s, s.shake_position, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_position)());
+		v(s, s.shake_position_y, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_position_y)());
+		v(s, s.shake_time_left, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, shake_time_left)());
+		v(s, s.pan_x, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, pan_x)());
+		v(s, s.pan_y, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, pan_y)());
+		v(s, s.battleanim_id, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, battleanim_id)());
+		v(s, s.battleanim_target, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, battleanim_target)());
+		v(s, s.battleanim_frame, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, battleanim_frame)());
+		v(s, s.battleanim_active, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, battleanim_active)());
+		v(s, s.battleanim_global, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, battleanim_global)());
+		v(s, s.weather, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, weather)());
+		v(s, s.weather_strength, LCF_REFL_S(SaveScreen)(), LCF_REFL_M(SaveScreen, weather_strength)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -115,13 +115,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<TroopPageCondition> {
 		using type_t = TroopPageCondition;
-		static constexpr const auto& = "TroopPageCondition";
+		static constexpr const auto& name = "TroopPageCondition";
 	};
 	// Bitflag - x 2 if RPG2003
 	template <> struct ReflectMember<TroopPageCondition,TroopPageCondition::Flags,&TroopPageCondition::flags> {
 		using struct_t = TroopPageCondition;
 		using type_t = TroopPageCondition::Flags;
-		static constexpr const auto& name[] = "flags";
+		static constexpr const auto& name = "flags";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -130,7 +130,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::switch_a_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_a_id";
+		static constexpr const auto& name = "switch_a_id";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -139,7 +139,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::switch_b_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_b_id";
+		static constexpr const auto& name = "switch_b_id";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -148,7 +148,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::variable_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "variable_id";
+		static constexpr const auto& name = "variable_id";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -157,7 +157,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::variable_value> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "variable_value";
+		static constexpr const auto& name = "variable_value";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -166,7 +166,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_a> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_a";
+		static constexpr const auto& name = "turn_a";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -175,7 +175,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_b> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_b";
+		static constexpr const auto& name = "turn_b";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -184,7 +184,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::fatigue_min> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "fatigue_min";
+		static constexpr const auto& name = "fatigue_min";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -193,7 +193,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::fatigue_max> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "fatigue_max";
+		static constexpr const auto& name = "fatigue_max";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -202,7 +202,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::enemy_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "enemy_id";
+		static constexpr const auto& name = "enemy_id";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -211,7 +211,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::enemy_hp_min> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "enemy_hp_min";
+		static constexpr const auto& name = "enemy_hp_min";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -220,7 +220,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::enemy_hp_max> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "enemy_hp_max";
+		static constexpr const auto& name = "enemy_hp_max";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -229,7 +229,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::actor_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "actor_id";
+		static constexpr const auto& name = "actor_id";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -238,7 +238,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::actor_hp_min> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "actor_hp_min";
+		static constexpr const auto& name = "actor_hp_min";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -247,7 +247,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::actor_hp_max> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "actor_hp_max";
+		static constexpr const auto& name = "actor_hp_max";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -256,7 +256,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_enemy_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_enemy_id";
+		static constexpr const auto& name = "turn_enemy_id";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -265,7 +265,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_enemy_a> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_enemy_a";
+		static constexpr const auto& name = "turn_enemy_a";
 		static constexpr const int id = 0x11;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -274,7 +274,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_enemy_b> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_enemy_b";
+		static constexpr const auto& name = "turn_enemy_b";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -283,7 +283,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_actor_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_actor_id";
+		static constexpr const auto& name = "turn_actor_id";
 		static constexpr const int id = 0x13;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -292,7 +292,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_actor_a> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_actor_a";
+		static constexpr const auto& name = "turn_actor_a";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -301,7 +301,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::turn_actor_b> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "turn_actor_b";
+		static constexpr const auto& name = "turn_actor_b";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -310,7 +310,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::command_actor_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "command_actor_id";
+		static constexpr const auto& name = "command_actor_id";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
@@ -319,11 +319,39 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPageCondition,int32_t,&TroopPageCondition::command_id> {
 		using struct_t = TroopPageCondition;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "command_id";
+		static constexpr const auto& name = "command_id";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,TroopPageCondition>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.flags, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, flags)());
+		v(s, s.switch_a_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, switch_a_id)());
+		v(s, s.switch_b_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, switch_b_id)());
+		v(s, s.variable_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, variable_id)());
+		v(s, s.variable_value, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, variable_value)());
+		v(s, s.turn_a, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_a)());
+		v(s, s.turn_b, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_b)());
+		v(s, s.fatigue_min, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, fatigue_min)());
+		v(s, s.fatigue_max, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, fatigue_max)());
+		v(s, s.enemy_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, enemy_id)());
+		v(s, s.enemy_hp_min, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, enemy_hp_min)());
+		v(s, s.enemy_hp_max, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, enemy_hp_max)());
+		v(s, s.actor_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, actor_id)());
+		v(s, s.actor_hp_min, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, actor_hp_min)());
+		v(s, s.actor_hp_max, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, actor_hp_max)());
+		v(s, s.turn_enemy_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_enemy_id)());
+		v(s, s.turn_enemy_a, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_enemy_a)());
+		v(s, s.turn_enemy_b, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_enemy_b)());
+		v(s, s.turn_actor_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_actor_id)());
+		v(s, s.turn_actor_a, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_actor_a)());
+		v(s, s.turn_actor_b, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, turn_actor_b)());
+		v(s, s.command_actor_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, command_actor_id)());
+		v(s, s.command_id, LCF_REFL_S(TroopPageCondition)(), LCF_REFL_M(TroopPageCondition, command_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

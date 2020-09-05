@@ -42,17 +42,23 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Switch> {
 		using type_t = Switch;
-		static constexpr const auto& = "Switch";
+		static constexpr const auto& name = "Switch";
 	};
 	// String
 	template <> struct ReflectMember<Switch,DBString,&Switch::name> {
 		using struct_t = Switch;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Switch>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Switch)(), LCF_REFL_M(Switch, name)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

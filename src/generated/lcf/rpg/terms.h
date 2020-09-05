@@ -293,13 +293,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Terms> {
 		using type_t = Terms;
-		static constexpr const auto& = "Terms";
+		static constexpr const auto& name = "Terms";
 	};
 	// String
 	template <> struct ReflectMember<Terms,DBString,&Terms::encounter> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "encounter";
+		static constexpr const auto& name = "encounter";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -308,7 +308,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::special_combat> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "special_combat";
+		static constexpr const auto& name = "special_combat";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -317,7 +317,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::escape_success> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "escape_success";
+		static constexpr const auto& name = "escape_success";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -326,7 +326,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::escape_failure> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "escape_failure";
+		static constexpr const auto& name = "escape_failure";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -335,7 +335,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::victory> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "victory";
+		static constexpr const auto& name = "victory";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -344,7 +344,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::defeat> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "defeat";
+		static constexpr const auto& name = "defeat";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -353,7 +353,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::exp_received> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "exp_received";
+		static constexpr const auto& name = "exp_received";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -362,7 +362,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::gold_recieved_a> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "gold_recieved_a";
+		static constexpr const auto& name = "gold_recieved_a";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -371,7 +371,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::gold_recieved_b> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "gold_recieved_b";
+		static constexpr const auto& name = "gold_recieved_b";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -380,7 +380,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::item_recieved> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "item_recieved";
+		static constexpr const auto& name = "item_recieved";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -389,7 +389,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::attacking> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "attacking";
+		static constexpr const auto& name = "attacking";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -398,7 +398,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_critical> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_critical";
+		static constexpr const auto& name = "enemy_critical";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -407,7 +407,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::actor_critical> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "actor_critical";
+		static constexpr const auto& name = "actor_critical";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -416,7 +416,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::defending> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "defending";
+		static constexpr const auto& name = "defending";
 		static constexpr const int id = 0x0E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -425,7 +425,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::observing> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "observing";
+		static constexpr const auto& name = "observing";
 		static constexpr const int id = 0x0F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -434,7 +434,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::focus> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "focus";
+		static constexpr const auto& name = "focus";
 		static constexpr const int id = 0x10;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -443,7 +443,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::autodestruction> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "autodestruction";
+		static constexpr const auto& name = "autodestruction";
 		static constexpr const int id = 0x11;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -452,7 +452,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_escape> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_escape";
+		static constexpr const auto& name = "enemy_escape";
 		static constexpr const int id = 0x12;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -461,7 +461,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_transform> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_transform";
+		static constexpr const auto& name = "enemy_transform";
 		static constexpr const int id = 0x13;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -470,7 +470,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_damaged> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_damaged";
+		static constexpr const auto& name = "enemy_damaged";
 		static constexpr const int id = 0x14;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -479,7 +479,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_undamaged> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_undamaged";
+		static constexpr const auto& name = "enemy_undamaged";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -488,7 +488,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::actor_damaged> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "actor_damaged";
+		static constexpr const auto& name = "actor_damaged";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -497,7 +497,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::actor_undamaged> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "actor_undamaged";
+		static constexpr const auto& name = "actor_undamaged";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -506,7 +506,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::skill_failure_a> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "skill_failure_a";
+		static constexpr const auto& name = "skill_failure_a";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -515,7 +515,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::skill_failure_b> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "skill_failure_b";
+		static constexpr const auto& name = "skill_failure_b";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -524,7 +524,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::skill_failure_c> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "skill_failure_c";
+		static constexpr const auto& name = "skill_failure_c";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -533,7 +533,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::dodge> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "dodge";
+		static constexpr const auto& name = "dodge";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -542,7 +542,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::use_item> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "use_item";
+		static constexpr const auto& name = "use_item";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -551,7 +551,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::hp_recovery> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "hp_recovery";
+		static constexpr const auto& name = "hp_recovery";
 		static constexpr const int id = 0x1D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -560,7 +560,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::parameter_increase> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "parameter_increase";
+		static constexpr const auto& name = "parameter_increase";
 		static constexpr const int id = 0x1E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -569,7 +569,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::parameter_decrease> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "parameter_decrease";
+		static constexpr const auto& name = "parameter_decrease";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -578,7 +578,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::enemy_hp_absorbed> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "enemy_hp_absorbed";
+		static constexpr const auto& name = "enemy_hp_absorbed";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -587,7 +587,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::actor_hp_absorbed> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "actor_hp_absorbed";
+		static constexpr const auto& name = "actor_hp_absorbed";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -596,7 +596,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::resistance_increase> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "resistance_increase";
+		static constexpr const auto& name = "resistance_increase";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -605,7 +605,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::resistance_decrease> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "resistance_decrease";
+		static constexpr const auto& name = "resistance_decrease";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -614,7 +614,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::level_up> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "level_up";
+		static constexpr const auto& name = "level_up";
 		static constexpr const int id = 0x24;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -623,7 +623,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::skill_learned> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "skill_learned";
+		static constexpr const auto& name = "skill_learned";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -632,7 +632,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::battle_start> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battle_start";
+		static constexpr const auto& name = "battle_start";
 		static constexpr const int id = 0x26;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -641,7 +641,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::miss> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "miss";
+		static constexpr const auto& name = "miss";
 		static constexpr const int id = 0x27;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -650,7 +650,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_greeting1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_greeting1";
+		static constexpr const auto& name = "shop_greeting1";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -659,7 +659,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_regreeting1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_regreeting1";
+		static constexpr const auto& name = "shop_regreeting1";
 		static constexpr const int id = 0x2A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -668,7 +668,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy1";
+		static constexpr const auto& name = "shop_buy1";
 		static constexpr const int id = 0x2B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -677,7 +677,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell1";
+		static constexpr const auto& name = "shop_sell1";
 		static constexpr const int id = 0x2C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -686,7 +686,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_leave1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_leave1";
+		static constexpr const auto& name = "shop_leave1";
 		static constexpr const int id = 0x2D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -695,7 +695,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_select1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_select1";
+		static constexpr const auto& name = "shop_buy_select1";
 		static constexpr const int id = 0x2E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -704,7 +704,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_number1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_number1";
+		static constexpr const auto& name = "shop_buy_number1";
 		static constexpr const int id = 0x2F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -713,7 +713,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_purchased1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_purchased1";
+		static constexpr const auto& name = "shop_purchased1";
 		static constexpr const int id = 0x30;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -722,7 +722,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_select1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_select1";
+		static constexpr const auto& name = "shop_sell_select1";
 		static constexpr const int id = 0x31;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -731,7 +731,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_number1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_number1";
+		static constexpr const auto& name = "shop_sell_number1";
 		static constexpr const int id = 0x32;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -740,7 +740,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sold1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sold1";
+		static constexpr const auto& name = "shop_sold1";
 		static constexpr const int id = 0x33;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -749,7 +749,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_greeting2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_greeting2";
+		static constexpr const auto& name = "shop_greeting2";
 		static constexpr const int id = 0x36;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -758,7 +758,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_regreeting2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_regreeting2";
+		static constexpr const auto& name = "shop_regreeting2";
 		static constexpr const int id = 0x37;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -767,7 +767,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy2";
+		static constexpr const auto& name = "shop_buy2";
 		static constexpr const int id = 0x38;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -776,7 +776,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell2";
+		static constexpr const auto& name = "shop_sell2";
 		static constexpr const int id = 0x39;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -785,7 +785,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_leave2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_leave2";
+		static constexpr const auto& name = "shop_leave2";
 		static constexpr const int id = 0x3A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -794,7 +794,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_select2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_select2";
+		static constexpr const auto& name = "shop_buy_select2";
 		static constexpr const int id = 0x3B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -803,7 +803,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_number2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_number2";
+		static constexpr const auto& name = "shop_buy_number2";
 		static constexpr const int id = 0x3C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -812,7 +812,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_purchased2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_purchased2";
+		static constexpr const auto& name = "shop_purchased2";
 		static constexpr const int id = 0x3D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -821,7 +821,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_select2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_select2";
+		static constexpr const auto& name = "shop_sell_select2";
 		static constexpr const int id = 0x3E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -830,7 +830,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_number2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_number2";
+		static constexpr const auto& name = "shop_sell_number2";
 		static constexpr const int id = 0x3F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -839,7 +839,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sold2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sold2";
+		static constexpr const auto& name = "shop_sold2";
 		static constexpr const int id = 0x40;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -848,7 +848,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_greeting3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_greeting3";
+		static constexpr const auto& name = "shop_greeting3";
 		static constexpr const int id = 0x43;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -857,7 +857,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_regreeting3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_regreeting3";
+		static constexpr const auto& name = "shop_regreeting3";
 		static constexpr const int id = 0x44;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -866,7 +866,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy3";
+		static constexpr const auto& name = "shop_buy3";
 		static constexpr const int id = 0x45;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -875,7 +875,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell3";
+		static constexpr const auto& name = "shop_sell3";
 		static constexpr const int id = 0x46;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -884,7 +884,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_leave3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_leave3";
+		static constexpr const auto& name = "shop_leave3";
 		static constexpr const int id = 0x47;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -893,7 +893,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_select3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_select3";
+		static constexpr const auto& name = "shop_buy_select3";
 		static constexpr const int id = 0x48;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -902,7 +902,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_buy_number3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_buy_number3";
+		static constexpr const auto& name = "shop_buy_number3";
 		static constexpr const int id = 0x49;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -911,7 +911,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_purchased3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_purchased3";
+		static constexpr const auto& name = "shop_purchased3";
 		static constexpr const int id = 0x4A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -920,7 +920,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_select3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_select3";
+		static constexpr const auto& name = "shop_sell_select3";
 		static constexpr const int id = 0x4B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -929,7 +929,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sell_number3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sell_number3";
+		static constexpr const auto& name = "shop_sell_number3";
 		static constexpr const int id = 0x4C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -938,7 +938,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shop_sold3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shop_sold3";
+		static constexpr const auto& name = "shop_sold3";
 		static constexpr const int id = 0x4D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -947,7 +947,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_a_greeting_1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_a_greeting_1";
+		static constexpr const auto& name = "inn_a_greeting_1";
 		static constexpr const int id = 0x50;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -956,7 +956,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_a_greeting_2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_a_greeting_2";
+		static constexpr const auto& name = "inn_a_greeting_2";
 		static constexpr const int id = 0x51;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -965,7 +965,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_a_greeting_3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_a_greeting_3";
+		static constexpr const auto& name = "inn_a_greeting_3";
 		static constexpr const int id = 0x52;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -974,7 +974,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_a_accept> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_a_accept";
+		static constexpr const auto& name = "inn_a_accept";
 		static constexpr const int id = 0x53;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -983,7 +983,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_a_cancel> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_a_cancel";
+		static constexpr const auto& name = "inn_a_cancel";
 		static constexpr const int id = 0x54;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -992,7 +992,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_b_greeting_1> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_b_greeting_1";
+		static constexpr const auto& name = "inn_b_greeting_1";
 		static constexpr const int id = 0x55;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1001,7 +1001,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_b_greeting_2> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_b_greeting_2";
+		static constexpr const auto& name = "inn_b_greeting_2";
 		static constexpr const int id = 0x56;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1010,7 +1010,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_b_greeting_3> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_b_greeting_3";
+		static constexpr const auto& name = "inn_b_greeting_3";
 		static constexpr const int id = 0x57;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1019,7 +1019,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_b_accept> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_b_accept";
+		static constexpr const auto& name = "inn_b_accept";
 		static constexpr const int id = 0x58;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1028,7 +1028,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::inn_b_cancel> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "inn_b_cancel";
+		static constexpr const auto& name = "inn_b_cancel";
 		static constexpr const int id = 0x59;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1037,7 +1037,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::possessed_items> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "possessed_items";
+		static constexpr const auto& name = "possessed_items";
 		static constexpr const int id = 0x5C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1046,7 +1046,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::equipped_items> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "equipped_items";
+		static constexpr const auto& name = "equipped_items";
 		static constexpr const int id = 0x5D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1055,7 +1055,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::gold> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "gold";
+		static constexpr const auto& name = "gold";
 		static constexpr const int id = 0x5F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1064,7 +1064,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::battle_fight> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battle_fight";
+		static constexpr const auto& name = "battle_fight";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1073,7 +1073,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::battle_auto> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battle_auto";
+		static constexpr const auto& name = "battle_auto";
 		static constexpr const int id = 0x66;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1082,7 +1082,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::battle_escape> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "battle_escape";
+		static constexpr const auto& name = "battle_escape";
 		static constexpr const int id = 0x67;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1091,7 +1091,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::command_attack> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "command_attack";
+		static constexpr const auto& name = "command_attack";
 		static constexpr const int id = 0x68;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1100,7 +1100,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::command_defend> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "command_defend";
+		static constexpr const auto& name = "command_defend";
 		static constexpr const int id = 0x69;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1109,7 +1109,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::command_item> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "command_item";
+		static constexpr const auto& name = "command_item";
 		static constexpr const int id = 0x6A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1118,7 +1118,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::command_skill> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "command_skill";
+		static constexpr const auto& name = "command_skill";
 		static constexpr const int id = 0x6B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1127,7 +1127,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::menu_equipment> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "menu_equipment";
+		static constexpr const auto& name = "menu_equipment";
 		static constexpr const int id = 0x6C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1136,7 +1136,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::menu_save> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "menu_save";
+		static constexpr const auto& name = "menu_save";
 		static constexpr const int id = 0x6E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1145,7 +1145,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::menu_quit> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "menu_quit";
+		static constexpr const auto& name = "menu_quit";
 		static constexpr const int id = 0x70;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1154,7 +1154,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::new_game> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "new_game";
+		static constexpr const auto& name = "new_game";
 		static constexpr const int id = 0x72;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1163,7 +1163,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::load_game> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "load_game";
+		static constexpr const auto& name = "load_game";
 		static constexpr const int id = 0x73;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1172,7 +1172,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::exit_game> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "exit_game";
+		static constexpr const auto& name = "exit_game";
 		static constexpr const int id = 0x75;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1181,7 +1181,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::status> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "status";
+		static constexpr const auto& name = "status";
 		static constexpr const int id = 0x76;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -1190,7 +1190,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::row> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "row";
+		static constexpr const auto& name = "row";
 		static constexpr const int id = 0x77;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -1199,7 +1199,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::order> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "order";
+		static constexpr const auto& name = "order";
 		static constexpr const int id = 0x78;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -1208,7 +1208,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::wait_on> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "wait_on";
+		static constexpr const auto& name = "wait_on";
 		static constexpr const int id = 0x79;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -1217,7 +1217,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::wait_off> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "wait_off";
+		static constexpr const auto& name = "wait_off";
 		static constexpr const int id = 0x7A;
 		static constexpr const bool is2k3 = 1;
 		static constexpr const bool present_if_default = 1;
@@ -1226,7 +1226,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::level> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "level";
+		static constexpr const auto& name = "level";
 		static constexpr const int id = 0x7B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1235,7 +1235,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::health_points> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "health_points";
+		static constexpr const auto& name = "health_points";
 		static constexpr const int id = 0x7C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1244,7 +1244,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::spirit_points> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "spirit_points";
+		static constexpr const auto& name = "spirit_points";
 		static constexpr const int id = 0x7D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1253,7 +1253,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::normal_status> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "normal_status";
+		static constexpr const auto& name = "normal_status";
 		static constexpr const int id = 0x7E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1262,7 +1262,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::exp_short> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "exp_short";
+		static constexpr const auto& name = "exp_short";
 		static constexpr const int id = 0x7F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1271,7 +1271,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::lvl_short> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "lvl_short";
+		static constexpr const auto& name = "lvl_short";
 		static constexpr const int id = 0x80;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1280,7 +1280,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::hp_short> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "hp_short";
+		static constexpr const auto& name = "hp_short";
 		static constexpr const int id = 0x81;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1289,7 +1289,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::sp_short> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "sp_short";
+		static constexpr const auto& name = "sp_short";
 		static constexpr const int id = 0x82;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1298,7 +1298,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::sp_cost> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "sp_cost";
+		static constexpr const auto& name = "sp_cost";
 		static constexpr const int id = 0x83;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1307,7 +1307,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::attack> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "attack";
+		static constexpr const auto& name = "attack";
 		static constexpr const int id = 0x84;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1316,7 +1316,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::defense> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "defense";
+		static constexpr const auto& name = "defense";
 		static constexpr const int id = 0x85;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1325,7 +1325,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::spirit> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "spirit";
+		static constexpr const auto& name = "spirit";
 		static constexpr const int id = 0x86;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1334,7 +1334,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::agility> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "agility";
+		static constexpr const auto& name = "agility";
 		static constexpr const int id = 0x87;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1343,7 +1343,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::weapon> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "weapon";
+		static constexpr const auto& name = "weapon";
 		static constexpr const int id = 0x88;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1352,7 +1352,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::shield> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "shield";
+		static constexpr const auto& name = "shield";
 		static constexpr const int id = 0x89;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1361,7 +1361,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::armor> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "armor";
+		static constexpr const auto& name = "armor";
 		static constexpr const int id = 0x8A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1370,7 +1370,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::helmet> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "helmet";
+		static constexpr const auto& name = "helmet";
 		static constexpr const int id = 0x8B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1379,7 +1379,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::accessory> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "accessory";
+		static constexpr const auto& name = "accessory";
 		static constexpr const int id = 0x8C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1388,7 +1388,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::save_game_message> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "save_game_message";
+		static constexpr const auto& name = "save_game_message";
 		static constexpr const int id = 0x92;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1397,7 +1397,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::load_game_message> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "load_game_message";
+		static constexpr const auto& name = "load_game_message";
 		static constexpr const int id = 0x93;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1406,7 +1406,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::file> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "file";
+		static constexpr const auto& name = "file";
 		static constexpr const int id = 0x94;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1415,7 +1415,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::exit_game_message> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "exit_game_message";
+		static constexpr const auto& name = "exit_game_message";
 		static constexpr const int id = 0x97;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1424,7 +1424,7 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::yes> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "yes";
+		static constexpr const auto& name = "yes";
 		static constexpr const int id = 0x98;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -1433,11 +1433,143 @@ namespace rpg {
 	template <> struct ReflectMember<Terms,DBString,&Terms::no> {
 		using struct_t = Terms;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "no";
+		static constexpr const auto& name = "no";
 		static constexpr const int id = 0x99;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Terms>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.encounter, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, encounter)());
+		v(s, s.special_combat, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, special_combat)());
+		v(s, s.escape_success, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, escape_success)());
+		v(s, s.escape_failure, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, escape_failure)());
+		v(s, s.victory, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, victory)());
+		v(s, s.defeat, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, defeat)());
+		v(s, s.exp_received, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, exp_received)());
+		v(s, s.gold_recieved_a, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, gold_recieved_a)());
+		v(s, s.gold_recieved_b, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, gold_recieved_b)());
+		v(s, s.item_recieved, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, item_recieved)());
+		v(s, s.attacking, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, attacking)());
+		v(s, s.enemy_critical, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_critical)());
+		v(s, s.actor_critical, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, actor_critical)());
+		v(s, s.defending, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, defending)());
+		v(s, s.observing, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, observing)());
+		v(s, s.focus, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, focus)());
+		v(s, s.autodestruction, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, autodestruction)());
+		v(s, s.enemy_escape, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_escape)());
+		v(s, s.enemy_transform, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_transform)());
+		v(s, s.enemy_damaged, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_damaged)());
+		v(s, s.enemy_undamaged, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_undamaged)());
+		v(s, s.actor_damaged, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, actor_damaged)());
+		v(s, s.actor_undamaged, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, actor_undamaged)());
+		v(s, s.skill_failure_a, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, skill_failure_a)());
+		v(s, s.skill_failure_b, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, skill_failure_b)());
+		v(s, s.skill_failure_c, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, skill_failure_c)());
+		v(s, s.dodge, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, dodge)());
+		v(s, s.use_item, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, use_item)());
+		v(s, s.hp_recovery, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, hp_recovery)());
+		v(s, s.parameter_increase, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, parameter_increase)());
+		v(s, s.parameter_decrease, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, parameter_decrease)());
+		v(s, s.enemy_hp_absorbed, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, enemy_hp_absorbed)());
+		v(s, s.actor_hp_absorbed, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, actor_hp_absorbed)());
+		v(s, s.resistance_increase, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, resistance_increase)());
+		v(s, s.resistance_decrease, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, resistance_decrease)());
+		v(s, s.level_up, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, level_up)());
+		v(s, s.skill_learned, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, skill_learned)());
+		v(s, s.battle_start, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, battle_start)());
+		v(s, s.miss, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, miss)());
+		v(s, s.shop_greeting1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_greeting1)());
+		v(s, s.shop_regreeting1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_regreeting1)());
+		v(s, s.shop_buy1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy1)());
+		v(s, s.shop_sell1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell1)());
+		v(s, s.shop_leave1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_leave1)());
+		v(s, s.shop_buy_select1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_select1)());
+		v(s, s.shop_buy_number1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_number1)());
+		v(s, s.shop_purchased1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_purchased1)());
+		v(s, s.shop_sell_select1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_select1)());
+		v(s, s.shop_sell_number1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_number1)());
+		v(s, s.shop_sold1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sold1)());
+		v(s, s.shop_greeting2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_greeting2)());
+		v(s, s.shop_regreeting2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_regreeting2)());
+		v(s, s.shop_buy2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy2)());
+		v(s, s.shop_sell2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell2)());
+		v(s, s.shop_leave2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_leave2)());
+		v(s, s.shop_buy_select2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_select2)());
+		v(s, s.shop_buy_number2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_number2)());
+		v(s, s.shop_purchased2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_purchased2)());
+		v(s, s.shop_sell_select2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_select2)());
+		v(s, s.shop_sell_number2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_number2)());
+		v(s, s.shop_sold2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sold2)());
+		v(s, s.shop_greeting3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_greeting3)());
+		v(s, s.shop_regreeting3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_regreeting3)());
+		v(s, s.shop_buy3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy3)());
+		v(s, s.shop_sell3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell3)());
+		v(s, s.shop_leave3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_leave3)());
+		v(s, s.shop_buy_select3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_select3)());
+		v(s, s.shop_buy_number3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_buy_number3)());
+		v(s, s.shop_purchased3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_purchased3)());
+		v(s, s.shop_sell_select3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_select3)());
+		v(s, s.shop_sell_number3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sell_number3)());
+		v(s, s.shop_sold3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shop_sold3)());
+		v(s, s.inn_a_greeting_1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_a_greeting_1)());
+		v(s, s.inn_a_greeting_2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_a_greeting_2)());
+		v(s, s.inn_a_greeting_3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_a_greeting_3)());
+		v(s, s.inn_a_accept, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_a_accept)());
+		v(s, s.inn_a_cancel, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_a_cancel)());
+		v(s, s.inn_b_greeting_1, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_b_greeting_1)());
+		v(s, s.inn_b_greeting_2, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_b_greeting_2)());
+		v(s, s.inn_b_greeting_3, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_b_greeting_3)());
+		v(s, s.inn_b_accept, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_b_accept)());
+		v(s, s.inn_b_cancel, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, inn_b_cancel)());
+		v(s, s.possessed_items, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, possessed_items)());
+		v(s, s.equipped_items, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, equipped_items)());
+		v(s, s.gold, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, gold)());
+		v(s, s.battle_fight, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, battle_fight)());
+		v(s, s.battle_auto, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, battle_auto)());
+		v(s, s.battle_escape, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, battle_escape)());
+		v(s, s.command_attack, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, command_attack)());
+		v(s, s.command_defend, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, command_defend)());
+		v(s, s.command_item, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, command_item)());
+		v(s, s.command_skill, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, command_skill)());
+		v(s, s.menu_equipment, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, menu_equipment)());
+		v(s, s.menu_save, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, menu_save)());
+		v(s, s.menu_quit, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, menu_quit)());
+		v(s, s.new_game, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, new_game)());
+		v(s, s.load_game, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, load_game)());
+		v(s, s.exit_game, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, exit_game)());
+		v(s, s.status, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, status)());
+		v(s, s.row, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, row)());
+		v(s, s.order, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, order)());
+		v(s, s.wait_on, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, wait_on)());
+		v(s, s.wait_off, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, wait_off)());
+		v(s, s.level, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, level)());
+		v(s, s.health_points, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, health_points)());
+		v(s, s.spirit_points, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, spirit_points)());
+		v(s, s.normal_status, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, normal_status)());
+		v(s, s.exp_short, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, exp_short)());
+		v(s, s.lvl_short, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, lvl_short)());
+		v(s, s.hp_short, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, hp_short)());
+		v(s, s.sp_short, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, sp_short)());
+		v(s, s.sp_cost, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, sp_cost)());
+		v(s, s.attack, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, attack)());
+		v(s, s.defense, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, defense)());
+		v(s, s.spirit, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, spirit)());
+		v(s, s.agility, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, agility)());
+		v(s, s.weapon, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, weapon)());
+		v(s, s.shield, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, shield)());
+		v(s, s.armor, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, armor)());
+		v(s, s.helmet, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, helmet)());
+		v(s, s.accessory, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, accessory)());
+		v(s, s.save_game_message, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, save_game_message)());
+		v(s, s.load_game_message, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, load_game_message)());
+		v(s, s.file, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, file)());
+		v(s, s.exit_game_message, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, exit_game_message)());
+		v(s, s.yes, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, yes)());
+		v(s, s.no, LCF_REFL_S(Terms)(), LCF_REFL_M(Terms, no)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

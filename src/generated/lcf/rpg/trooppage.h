@@ -46,13 +46,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<TroopPage> {
 		using type_t = TroopPage;
-		static constexpr const auto& = "TroopPage";
+		static constexpr const auto& name = "TroopPage";
 	};
 	// rpg::TroopPageCondition
 	template <> struct ReflectMember<TroopPage,TroopPageCondition,&TroopPage::condition> {
 		using struct_t = TroopPage;
 		using type_t = TroopPageCondition;
-		static constexpr const auto& name[] = "condition";
+		static constexpr const auto& name = "condition";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -61,11 +61,22 @@ namespace rpg {
 	template <> struct ReflectMember<TroopPage,std::vector<EventCommand>,&TroopPage::event_commands> {
 		using struct_t = TroopPage;
 		using type_t = std::vector<EventCommand>;
-		static constexpr const auto& name[] = "event_commands";
+		static constexpr const auto& name = "event_commands";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,TroopPage>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.condition, LCF_REFL_S(TroopPage)(), LCF_REFL_M(TroopPage, condition)());
+		ForEachMember(s.condition, v);
+		v(s, s.event_commands, LCF_REFL_S(TroopPage)(), LCF_REFL_M(TroopPage, event_commands)());
+		for (auto&& e: s.event_commands) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

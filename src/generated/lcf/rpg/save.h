@@ -86,13 +86,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Save> {
 		using type_t = Save;
-		static constexpr const auto& = "Save";
+		static constexpr const auto& name = "Save";
 	};
 	// rpg::SaveTitle
 	template <> struct ReflectMember<Save,SaveTitle,&Save::title> {
 		using struct_t = Save;
 		using type_t = SaveTitle;
-		static constexpr const auto& name[] = "title";
+		static constexpr const auto& name = "title";
 		static constexpr const int id = 0x64;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -101,7 +101,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveSystem,&Save::system> {
 		using struct_t = Save;
 		using type_t = SaveSystem;
-		static constexpr const auto& name[] = "system";
+		static constexpr const auto& name = "system";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -110,7 +110,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveScreen,&Save::screen> {
 		using struct_t = Save;
 		using type_t = SaveScreen;
-		static constexpr const auto& name[] = "screen";
+		static constexpr const auto& name = "screen";
 		static constexpr const int id = 0x66;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -119,7 +119,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,std::vector<SavePicture>,&Save::pictures> {
 		using struct_t = Save;
 		using type_t = std::vector<SavePicture>;
-		static constexpr const auto& name[] = "pictures";
+		static constexpr const auto& name = "pictures";
 		static constexpr const int id = 0x67;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -128,7 +128,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SavePartyLocation,&Save::party_location> {
 		using struct_t = Save;
 		using type_t = SavePartyLocation;
-		static constexpr const auto& name[] = "party_location";
+		static constexpr const auto& name = "party_location";
 		static constexpr const int id = 0x68;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -137,7 +137,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveVehicleLocation,&Save::boat_location> {
 		using struct_t = Save;
 		using type_t = SaveVehicleLocation;
-		static constexpr const auto& name[] = "boat_location";
+		static constexpr const auto& name = "boat_location";
 		static constexpr const int id = 0x69;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -146,7 +146,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveVehicleLocation,&Save::ship_location> {
 		using struct_t = Save;
 		using type_t = SaveVehicleLocation;
-		static constexpr const auto& name[] = "ship_location";
+		static constexpr const auto& name = "ship_location";
 		static constexpr const int id = 0x6A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -155,7 +155,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveVehicleLocation,&Save::airship_location> {
 		using struct_t = Save;
 		using type_t = SaveVehicleLocation;
-		static constexpr const auto& name[] = "airship_location";
+		static constexpr const auto& name = "airship_location";
 		static constexpr const int id = 0x6B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -164,7 +164,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,std::vector<SaveActor>,&Save::actors> {
 		using struct_t = Save;
 		using type_t = std::vector<SaveActor>;
-		static constexpr const auto& name[] = "actors";
+		static constexpr const auto& name = "actors";
 		static constexpr const int id = 0x6C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -173,7 +173,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveInventory,&Save::inventory> {
 		using struct_t = Save;
 		using type_t = SaveInventory;
-		static constexpr const auto& name[] = "inventory";
+		static constexpr const auto& name = "inventory";
 		static constexpr const int id = 0x6D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -182,7 +182,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,std::vector<SaveTarget>,&Save::targets> {
 		using struct_t = Save;
 		using type_t = std::vector<SaveTarget>;
-		static constexpr const auto& name[] = "targets";
+		static constexpr const auto& name = "targets";
 		static constexpr const int id = 0x6E;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -191,7 +191,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveMapInfo,&Save::map_info> {
 		using struct_t = Save;
 		using type_t = SaveMapInfo;
-		static constexpr const auto& name[] = "map_info";
+		static constexpr const auto& name = "map_info";
 		static constexpr const int id = 0x6F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -200,7 +200,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SavePanorama,&Save::panorama> {
 		using struct_t = Save;
 		using type_t = SavePanorama;
-		static constexpr const auto& name[] = "panorama";
+		static constexpr const auto& name = "panorama";
 		static constexpr const int id = 0x70;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -209,7 +209,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveEventExecState,&Save::foreground_event_execstate> {
 		using struct_t = Save;
 		using type_t = SaveEventExecState;
-		static constexpr const auto& name[] = "foreground_event_execstate";
+		static constexpr const auto& name = "foreground_event_execstate";
 		static constexpr const int id = 0x71;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -218,7 +218,7 @@ namespace rpg {
 	template <> struct ReflectMember<Save,std::vector<SaveCommonEvent>,&Save::common_events> {
 		using struct_t = Save;
 		using type_t = std::vector<SaveCommonEvent>;
-		static constexpr const auto& name[] = "common_events";
+		static constexpr const auto& name = "common_events";
 		static constexpr const int id = 0x72;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -227,11 +227,56 @@ namespace rpg {
 	template <> struct ReflectMember<Save,SaveEasyRpgData,&Save::easyrpg_data> {
 		using struct_t = Save;
 		using type_t = SaveEasyRpgData;
-		static constexpr const auto& name[] = "easyrpg_data";
+		static constexpr const auto& name = "easyrpg_data";
 		static constexpr const int id = 0xC8;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Save>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.title, LCF_REFL_S(Save)(), LCF_REFL_M(Save, title)());
+		ForEachMember(s.title, v);
+		v(s, s.system, LCF_REFL_S(Save)(), LCF_REFL_M(Save, system)());
+		ForEachMember(s.system, v);
+		v(s, s.screen, LCF_REFL_S(Save)(), LCF_REFL_M(Save, screen)());
+		ForEachMember(s.screen, v);
+		v(s, s.pictures, LCF_REFL_S(Save)(), LCF_REFL_M(Save, pictures)());
+		for (auto&& e: s.pictures) {
+			ForEachMember(e, v);
+		}
+		v(s, s.party_location, LCF_REFL_S(Save)(), LCF_REFL_M(Save, party_location)());
+		ForEachMember(s.party_location, v);
+		v(s, s.boat_location, LCF_REFL_S(Save)(), LCF_REFL_M(Save, boat_location)());
+		ForEachMember(s.boat_location, v);
+		v(s, s.ship_location, LCF_REFL_S(Save)(), LCF_REFL_M(Save, ship_location)());
+		ForEachMember(s.ship_location, v);
+		v(s, s.airship_location, LCF_REFL_S(Save)(), LCF_REFL_M(Save, airship_location)());
+		ForEachMember(s.airship_location, v);
+		v(s, s.actors, LCF_REFL_S(Save)(), LCF_REFL_M(Save, actors)());
+		for (auto&& e: s.actors) {
+			ForEachMember(e, v);
+		}
+		v(s, s.inventory, LCF_REFL_S(Save)(), LCF_REFL_M(Save, inventory)());
+		ForEachMember(s.inventory, v);
+		v(s, s.targets, LCF_REFL_S(Save)(), LCF_REFL_M(Save, targets)());
+		for (auto&& e: s.targets) {
+			ForEachMember(e, v);
+		}
+		v(s, s.map_info, LCF_REFL_S(Save)(), LCF_REFL_M(Save, map_info)());
+		ForEachMember(s.map_info, v);
+		v(s, s.panorama, LCF_REFL_S(Save)(), LCF_REFL_M(Save, panorama)());
+		ForEachMember(s.panorama, v);
+		v(s, s.foreground_event_execstate, LCF_REFL_S(Save)(), LCF_REFL_M(Save, foreground_event_execstate)());
+		ForEachMember(s.foreground_event_execstate, v);
+		v(s, s.common_events, LCF_REFL_S(Save)(), LCF_REFL_M(Save, common_events)());
+		for (auto&& e: s.common_events) {
+			ForEachMember(e, v);
+		}
+		v(s, s.easyrpg_data, LCF_REFL_S(Save)(), LCF_REFL_M(Save, easyrpg_data)());
+		ForEachMember(s.easyrpg_data, v);
+	}
+
 } // namespace rpg
 } // namespace lcf
 

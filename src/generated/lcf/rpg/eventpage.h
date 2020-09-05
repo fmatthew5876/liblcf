@@ -197,13 +197,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<EventPage> {
 		using type_t = EventPage;
-		static constexpr const auto& = "EventPage";
+		static constexpr const auto& name = "EventPage";
 	};
 	// rpg::EventPageCondition
 	template <> struct ReflectMember<EventPage,EventPageCondition,&EventPage::condition> {
 		using struct_t = EventPage;
 		using type_t = EventPageCondition;
-		static constexpr const auto& name[] = "condition";
+		static constexpr const auto& name = "condition";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -212,7 +212,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,DBString,&EventPage::character_name> {
 		using struct_t = EventPage;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "character_name";
+		static constexpr const auto& name = "character_name";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -221,7 +221,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::character_index> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "character_index";
+		static constexpr const auto& name = "character_index";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -230,7 +230,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::character_direction> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "character_direction";
+		static constexpr const auto& name = "character_direction";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -239,7 +239,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::character_pattern> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "character_pattern";
+		static constexpr const auto& name = "character_pattern";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -248,7 +248,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,bool,&EventPage::translucent> {
 		using struct_t = EventPage;
 		using type_t = bool;
-		static constexpr const auto& name[] = "translucent";
+		static constexpr const auto& name = "translucent";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -257,7 +257,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::move_type> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "move_type";
+		static constexpr const auto& name = "move_type";
 		static constexpr const int id = 0x1F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -266,7 +266,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::move_frequency> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "move_frequency";
+		static constexpr const auto& name = "move_frequency";
 		static constexpr const int id = 0x20;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -275,7 +275,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::trigger> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "trigger";
+		static constexpr const auto& name = "trigger";
 		static constexpr const int id = 0x21;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -284,7 +284,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::layer> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "layer";
+		static constexpr const auto& name = "layer";
 		static constexpr const int id = 0x22;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -293,7 +293,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,bool,&EventPage::overlap_forbidden> {
 		using struct_t = EventPage;
 		using type_t = bool;
-		static constexpr const auto& name[] = "overlap_forbidden";
+		static constexpr const auto& name = "overlap_forbidden";
 		static constexpr const int id = 0x23;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -302,7 +302,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::animation_type> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "animation_type";
+		static constexpr const auto& name = "animation_type";
 		static constexpr const int id = 0x24;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -311,7 +311,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,int32_t,&EventPage::move_speed> {
 		using struct_t = EventPage;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "move_speed";
+		static constexpr const auto& name = "move_speed";
 		static constexpr const int id = 0x25;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -320,7 +320,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,MoveRoute,&EventPage::move_route> {
 		using struct_t = EventPage;
 		using type_t = MoveRoute;
-		static constexpr const auto& name[] = "move_route";
+		static constexpr const auto& name = "move_route";
 		static constexpr const int id = 0x29;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -329,11 +329,36 @@ namespace rpg {
 	template <> struct ReflectMember<EventPage,std::vector<EventCommand>,&EventPage::event_commands> {
 		using struct_t = EventPage;
 		using type_t = std::vector<EventCommand>;
-		static constexpr const auto& name[] = "event_commands";
+		static constexpr const auto& name = "event_commands";
 		static constexpr const int id = 0x34;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,EventPage>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.condition, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, condition)());
+		ForEachMember(s.condition, v);
+		v(s, s.character_name, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, character_name)());
+		v(s, s.character_index, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, character_index)());
+		v(s, s.character_direction, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, character_direction)());
+		v(s, s.character_pattern, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, character_pattern)());
+		v(s, s.translucent, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, translucent)());
+		v(s, s.move_type, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, move_type)());
+		v(s, s.move_frequency, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, move_frequency)());
+		v(s, s.trigger, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, trigger)());
+		v(s, s.layer, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, layer)());
+		v(s, s.overlap_forbidden, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, overlap_forbidden)());
+		v(s, s.animation_type, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, animation_type)());
+		v(s, s.move_speed, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, move_speed)());
+		v(s, s.move_route, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, move_route)());
+		ForEachMember(s.move_route, v);
+		v(s, s.event_commands, LCF_REFL_S(EventPage)(), LCF_REFL_M(EventPage, event_commands)());
+		for (auto&& e: s.event_commands) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -353,6 +353,23 @@ def needs_ctor(struct_name):
 def type_is_array(ty):
     return re.match(r'(Vector|Array|DBArray)<(.*)>', ty) or ty == "DBBitArray"
 
+def type_is_struct(ty):
+    structs_flat = []
+    for filetype, struct in structs.items():
+        for elem in struct:
+            structs_flat.append(elem)
+    return ty in [ x.name for x in structs_flat ]
+
+def type_is_struct_array(ty):
+    structs_flat = []
+    for filetype, struct in structs.items():
+        for elem in struct:
+            structs_flat.append(elem)
+    m = re.match(r'(Vector|Array|DBArray)<(.*)>', ty)
+    if m:
+        return m.group(2) in [ x.name for x in structs_flat ]
+    return False
+
 def is_monotonic_from_0(enum):
     expected = 0
     for (val, idx) in enum:
@@ -459,7 +476,7 @@ def main(argv):
     if not os.path.exists(dest_dir):
         os.mkdir(dest_dir)
 
-    global structs, sfields, enums, flags, setup, constants, headers
+    global structs, structs_flat, sfields, enums, flags, setup, constants, headers
     global chunk_tmpl, lcf_struct_tmpl, rpg_header_tmpl, rpg_source_tmpl, flags_tmpl, enums_tmpl, fwd_tmpl, fwd_struct_tmpl
 
     structs = get_structs('structs.csv','structs_easyrpg.csv')
@@ -484,6 +501,8 @@ def main(argv):
     env.tests['needs_ctor'] = needs_ctor
     env.tests['monotonic_from_0'] = is_monotonic_from_0
     env.tests['is_array'] = type_is_array
+    env.tests['is_struct'] = type_is_struct
+    env.tests['is_struct_array'] = type_is_struct_array
 
     globals = dict(
         structs=structs,

@@ -63,13 +63,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<CommonEvent> {
 		using type_t = CommonEvent;
-		static constexpr const auto& = "CommonEvent";
+		static constexpr const auto& name = "CommonEvent";
 	};
 	// String
 	template <> struct ReflectMember<CommonEvent,DBString,&CommonEvent::name> {
 		using struct_t = CommonEvent;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -78,7 +78,7 @@ namespace rpg {
 	template <> struct ReflectMember<CommonEvent,int32_t,&CommonEvent::trigger> {
 		using struct_t = CommonEvent;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "trigger";
+		static constexpr const auto& name = "trigger";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -87,7 +87,7 @@ namespace rpg {
 	template <> struct ReflectMember<CommonEvent,bool,&CommonEvent::switch_flag> {
 		using struct_t = CommonEvent;
 		using type_t = bool;
-		static constexpr const auto& name[] = "switch_flag";
+		static constexpr const auto& name = "switch_flag";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -96,7 +96,7 @@ namespace rpg {
 	template <> struct ReflectMember<CommonEvent,int32_t,&CommonEvent::switch_id> {
 		using struct_t = CommonEvent;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_id";
+		static constexpr const auto& name = "switch_id";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -105,11 +105,24 @@ namespace rpg {
 	template <> struct ReflectMember<CommonEvent,std::vector<EventCommand>,&CommonEvent::event_commands> {
 		using struct_t = CommonEvent;
 		using type_t = std::vector<EventCommand>;
-		static constexpr const auto& name[] = "event_commands";
+		static constexpr const auto& name = "event_commands";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,CommonEvent>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(CommonEvent)(), LCF_REFL_M(CommonEvent, name)());
+		v(s, s.trigger, LCF_REFL_S(CommonEvent)(), LCF_REFL_M(CommonEvent, trigger)());
+		v(s, s.switch_flag, LCF_REFL_S(CommonEvent)(), LCF_REFL_M(CommonEvent, switch_flag)());
+		v(s, s.switch_id, LCF_REFL_S(CommonEvent)(), LCF_REFL_M(CommonEvent, switch_id)());
+		v(s, s.event_commands, LCF_REFL_S(CommonEvent)(), LCF_REFL_M(CommonEvent, event_commands)());
+		for (auto&& e: s.event_commands) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

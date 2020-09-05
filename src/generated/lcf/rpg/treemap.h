@@ -66,13 +66,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<TreeMap> {
 		using type_t = TreeMap;
-		static constexpr const auto& = "TreeMap";
+		static constexpr const auto& name = "TreeMap";
 	};
 	// 
 	template <> struct ReflectMember<TreeMap,std::vector<MapInfo>,&TreeMap::maps> {
 		using struct_t = TreeMap;
 		using type_t = std::vector<MapInfo>;
-		static constexpr const auto& name[] = "maps";
+		static constexpr const auto& name = "maps";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -81,7 +81,7 @@ namespace rpg {
 	template <> struct ReflectMember<TreeMap,std::vector<int32_t>,&TreeMap::tree_order> {
 		using struct_t = TreeMap;
 		using type_t = std::vector<int32_t>;
-		static constexpr const auto& name[] = "tree_order";
+		static constexpr const auto& name = "tree_order";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -90,7 +90,7 @@ namespace rpg {
 	template <> struct ReflectMember<TreeMap,int32_t,&TreeMap::active_node> {
 		using struct_t = TreeMap;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "active_node";
+		static constexpr const auto& name = "active_node";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -99,11 +99,24 @@ namespace rpg {
 	template <> struct ReflectMember<TreeMap,Start,&TreeMap::start> {
 		using struct_t = TreeMap;
 		using type_t = Start;
-		static constexpr const auto& name[] = "start";
+		static constexpr const auto& name = "start";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,TreeMap>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.maps, LCF_REFL_S(TreeMap)(), LCF_REFL_M(TreeMap, maps)());
+		for (auto&& e: s.maps) {
+			ForEachMember(e, v);
+		}
+		v(s, s.tree_order, LCF_REFL_S(TreeMap)(), LCF_REFL_M(TreeMap, tree_order)());
+		v(s, s.active_node, LCF_REFL_S(TreeMap)(), LCF_REFL_M(TreeMap, active_node)());
+		v(s, s.start, LCF_REFL_S(TreeMap)(), LCF_REFL_M(TreeMap, start)());
+		ForEachMember(s.start, v);
+	}
+
 } // namespace rpg
 } // namespace lcf
 

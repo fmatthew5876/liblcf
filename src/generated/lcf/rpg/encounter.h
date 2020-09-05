@@ -39,17 +39,23 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Encounter> {
 		using type_t = Encounter;
-		static constexpr const auto& = "Encounter";
+		static constexpr const auto& name = "Encounter";
 	};
 	// Integer
 	template <> struct ReflectMember<Encounter,int32_t,&Encounter::troop_id> {
 		using struct_t = Encounter;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "troop_id";
+		static constexpr const auto& name = "troop_id";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Encounter>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.troop_id, LCF_REFL_S(Encounter)(), LCF_REFL_M(Encounter, troop_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

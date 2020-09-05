@@ -61,13 +61,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<BattlerAnimation> {
 		using type_t = BattlerAnimation;
-		static constexpr const auto& = "BattlerAnimation";
+		static constexpr const auto& name = "BattlerAnimation";
 	};
 	// String
 	template <> struct ReflectMember<BattlerAnimation,DBString,&BattlerAnimation::name> {
 		using struct_t = BattlerAnimation;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -76,7 +76,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimation,int32_t,&BattlerAnimation::speed> {
 		using struct_t = BattlerAnimation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "speed";
+		static constexpr const auto& name = "speed";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -85,7 +85,7 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimation,std::vector<BattlerAnimationExtension>,&BattlerAnimation::base_data> {
 		using struct_t = BattlerAnimation;
 		using type_t = std::vector<BattlerAnimationExtension>;
-		static constexpr const auto& name[] = "base_data";
+		static constexpr const auto& name = "base_data";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -94,11 +94,26 @@ namespace rpg {
 	template <> struct ReflectMember<BattlerAnimation,std::vector<BattlerAnimationExtension>,&BattlerAnimation::weapon_data> {
 		using struct_t = BattlerAnimation;
 		using type_t = std::vector<BattlerAnimationExtension>;
-		static constexpr const auto& name[] = "weapon_data";
+		static constexpr const auto& name = "weapon_data";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,BattlerAnimation>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(BattlerAnimation)(), LCF_REFL_M(BattlerAnimation, name)());
+		v(s, s.speed, LCF_REFL_S(BattlerAnimation)(), LCF_REFL_M(BattlerAnimation, speed)());
+		v(s, s.base_data, LCF_REFL_S(BattlerAnimation)(), LCF_REFL_M(BattlerAnimation, base_data)());
+		for (auto&& e: s.base_data) {
+			ForEachMember(e, v);
+		}
+		v(s, s.weapon_data, LCF_REFL_S(BattlerAnimation)(), LCF_REFL_M(BattlerAnimation, weapon_data)());
+		for (auto&& e: s.weapon_data) {
+			ForEachMember(e, v);
+		}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

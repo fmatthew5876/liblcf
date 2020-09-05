@@ -69,13 +69,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveVehicleLocation> {
 		using type_t = SaveVehicleLocation;
-		static constexpr const auto& = "SaveVehicleLocation";
+		static constexpr const auto& name = "SaveVehicleLocation";
 	};
 	// Which vehicle
 	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::vehicle> {
 		using struct_t = SaveVehicleLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "vehicle";
+		static constexpr const auto& name = "vehicle";
 		static constexpr const int id = 0x65;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -84,7 +84,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::remaining_ascent> {
 		using struct_t = SaveVehicleLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "remaining_ascent";
+		static constexpr const auto& name = "remaining_ascent";
 		static constexpr const int id = 0x6A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -93,7 +93,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::remaining_descent> {
 		using struct_t = SaveVehicleLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "remaining_descent";
+		static constexpr const auto& name = "remaining_descent";
 		static constexpr const int id = 0x6B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -102,7 +102,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveVehicleLocation,std::string,&SaveVehicleLocation::orig_sprite_name> {
 		using struct_t = SaveVehicleLocation;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "orig_sprite_name";
+		static constexpr const auto& name = "orig_sprite_name";
 		static constexpr const int id = 0x6F;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -111,11 +111,21 @@ namespace rpg {
 	template <> struct ReflectMember<SaveVehicleLocation,int32_t,&SaveVehicleLocation::orig_sprite_id> {
 		using struct_t = SaveVehicleLocation;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "orig_sprite_id";
+		static constexpr const auto& name = "orig_sprite_id";
 		static constexpr const int id = 0x70;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveVehicleLocation>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.vehicle, LCF_REFL_S(SaveVehicleLocation)(), LCF_REFL_M(SaveVehicleLocation, vehicle)());
+		v(s, s.remaining_ascent, LCF_REFL_S(SaveVehicleLocation)(), LCF_REFL_M(SaveVehicleLocation, remaining_ascent)());
+		v(s, s.remaining_descent, LCF_REFL_S(SaveVehicleLocation)(), LCF_REFL_M(SaveVehicleLocation, remaining_descent)());
+		v(s, s.orig_sprite_name, LCF_REFL_S(SaveVehicleLocation)(), LCF_REFL_M(SaveVehicleLocation, orig_sprite_name)());
+		v(s, s.orig_sprite_id, LCF_REFL_S(SaveVehicleLocation)(), LCF_REFL_M(SaveVehicleLocation, orig_sprite_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

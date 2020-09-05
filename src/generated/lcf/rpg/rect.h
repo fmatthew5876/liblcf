@@ -47,13 +47,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Rect> {
 		using type_t = Rect;
-		static constexpr const auto& = "Rect";
+		static constexpr const auto& name = "Rect";
 	};
 	// 
 	template <> struct ReflectMember<Rect,uint32_t,&Rect::l> {
 		using struct_t = Rect;
 		using type_t = uint32_t;
-		static constexpr const auto& name[] = "l";
+		static constexpr const auto& name = "l";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -62,7 +62,7 @@ namespace rpg {
 	template <> struct ReflectMember<Rect,uint32_t,&Rect::t> {
 		using struct_t = Rect;
 		using type_t = uint32_t;
-		static constexpr const auto& name[] = "t";
+		static constexpr const auto& name = "t";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -71,7 +71,7 @@ namespace rpg {
 	template <> struct ReflectMember<Rect,uint32_t,&Rect::r> {
 		using struct_t = Rect;
 		using type_t = uint32_t;
-		static constexpr const auto& name[] = "r";
+		static constexpr const auto& name = "r";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -80,11 +80,20 @@ namespace rpg {
 	template <> struct ReflectMember<Rect,uint32_t,&Rect::b> {
 		using struct_t = Rect;
 		using type_t = uint32_t;
-		static constexpr const auto& name[] = "b";
+		static constexpr const auto& name = "b";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Rect>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.l, LCF_REFL_S(Rect)(), LCF_REFL_M(Rect, l)());
+		v(s, s.t, LCF_REFL_S(Rect)(), LCF_REFL_M(Rect, t)());
+		v(s, s.r, LCF_REFL_S(Rect)(), LCF_REFL_M(Rect, r)());
+		v(s, s.b, LCF_REFL_S(Rect)(), LCF_REFL_M(Rect, b)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

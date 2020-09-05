@@ -42,17 +42,24 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveCommonEvent> {
 		using type_t = SaveCommonEvent;
-		static constexpr const auto& = "SaveCommonEvent";
+		static constexpr const auto& name = "SaveCommonEvent";
 	};
 	// chunks
 	template <> struct ReflectMember<SaveCommonEvent,SaveEventExecState,&SaveCommonEvent::parallel_event_execstate> {
 		using struct_t = SaveCommonEvent;
 		using type_t = SaveEventExecState;
-		static constexpr const auto& name[] = "parallel_event_execstate";
+		static constexpr const auto& name = "parallel_event_execstate";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveCommonEvent>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.parallel_event_execstate, LCF_REFL_S(SaveCommonEvent)(), LCF_REFL_M(SaveCommonEvent, parallel_event_execstate)());
+		ForEachMember(s.parallel_event_execstate, v);
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -130,13 +130,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<EnemyAction> {
 		using type_t = EnemyAction;
-		static constexpr const auto& = "EnemyAction";
+		static constexpr const auto& name = "EnemyAction";
 	};
 	// Integer
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::kind> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "kind";
+		static constexpr const auto& name = "kind";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -145,7 +145,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::basic> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "basic";
+		static constexpr const auto& name = "basic";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -154,7 +154,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::skill_id> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "skill_id";
+		static constexpr const auto& name = "skill_id";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -163,7 +163,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::enemy_id> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "enemy_id";
+		static constexpr const auto& name = "enemy_id";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -172,7 +172,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_type> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "condition_type";
+		static constexpr const auto& name = "condition_type";
 		static constexpr const int id = 0x05;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 1;
@@ -181,7 +181,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_param1> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "condition_param1";
+		static constexpr const auto& name = "condition_param1";
 		static constexpr const int id = 0x06;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -190,7 +190,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::condition_param2> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "condition_param2";
+		static constexpr const auto& name = "condition_param2";
 		static constexpr const int id = 0x07;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -199,7 +199,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_id> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_id";
+		static constexpr const auto& name = "switch_id";
 		static constexpr const int id = 0x08;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -208,7 +208,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,bool,&EnemyAction::switch_on> {
 		using struct_t = EnemyAction;
 		using type_t = bool;
-		static constexpr const auto& name[] = "switch_on";
+		static constexpr const auto& name = "switch_on";
 		static constexpr const int id = 0x09;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -217,7 +217,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_on_id> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_on_id";
+		static constexpr const auto& name = "switch_on_id";
 		static constexpr const int id = 0x0A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -226,7 +226,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,bool,&EnemyAction::switch_off> {
 		using struct_t = EnemyAction;
 		using type_t = bool;
-		static constexpr const auto& name[] = "switch_off";
+		static constexpr const auto& name = "switch_off";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -235,7 +235,7 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::switch_off_id> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "switch_off_id";
+		static constexpr const auto& name = "switch_off_id";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -244,11 +244,29 @@ namespace rpg {
 	template <> struct ReflectMember<EnemyAction,int32_t,&EnemyAction::rating> {
 		using struct_t = EnemyAction;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "rating";
+		static constexpr const auto& name = "rating";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,EnemyAction>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.kind, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, kind)());
+		v(s, s.basic, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, basic)());
+		v(s, s.skill_id, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, skill_id)());
+		v(s, s.enemy_id, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, enemy_id)());
+		v(s, s.condition_type, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, condition_type)());
+		v(s, s.condition_param1, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, condition_param1)());
+		v(s, s.condition_param2, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, condition_param2)());
+		v(s, s.switch_id, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, switch_id)());
+		v(s, s.switch_on, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, switch_on)());
+		v(s, s.switch_on_id, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, switch_on_id)());
+		v(s, s.switch_off, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, switch_off)());
+		v(s, s.switch_off_id, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, switch_off_id)());
+		v(s, s.rating, LCF_REFL_S(EnemyAction)(), LCF_REFL_M(EnemyAction, rating)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

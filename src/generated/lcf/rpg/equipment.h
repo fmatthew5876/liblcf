@@ -49,13 +49,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Equipment> {
 		using type_t = Equipment;
-		static constexpr const auto& = "Equipment";
+		static constexpr const auto& name = "Equipment";
 	};
 	// 
 	template <> struct ReflectMember<Equipment,int16_t,&Equipment::weapon_id> {
 		using struct_t = Equipment;
 		using type_t = int16_t;
-		static constexpr const auto& name[] = "weapon_id";
+		static constexpr const auto& name = "weapon_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -64,7 +64,7 @@ namespace rpg {
 	template <> struct ReflectMember<Equipment,int16_t,&Equipment::shield_id> {
 		using struct_t = Equipment;
 		using type_t = int16_t;
-		static constexpr const auto& name[] = "shield_id";
+		static constexpr const auto& name = "shield_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -73,7 +73,7 @@ namespace rpg {
 	template <> struct ReflectMember<Equipment,int16_t,&Equipment::armor_id> {
 		using struct_t = Equipment;
 		using type_t = int16_t;
-		static constexpr const auto& name[] = "armor_id";
+		static constexpr const auto& name = "armor_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -82,7 +82,7 @@ namespace rpg {
 	template <> struct ReflectMember<Equipment,int16_t,&Equipment::helmet_id> {
 		using struct_t = Equipment;
 		using type_t = int16_t;
-		static constexpr const auto& name[] = "helmet_id";
+		static constexpr const auto& name = "helmet_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -91,11 +91,21 @@ namespace rpg {
 	template <> struct ReflectMember<Equipment,int16_t,&Equipment::accessory_id> {
 		using struct_t = Equipment;
 		using type_t = int16_t;
-		static constexpr const auto& name[] = "accessory_id";
+		static constexpr const auto& name = "accessory_id";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Equipment>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.weapon_id, LCF_REFL_S(Equipment)(), LCF_REFL_M(Equipment, weapon_id)());
+		v(s, s.shield_id, LCF_REFL_S(Equipment)(), LCF_REFL_M(Equipment, shield_id)());
+		v(s, s.armor_id, LCF_REFL_S(Equipment)(), LCF_REFL_M(Equipment, armor_id)());
+		v(s, s.helmet_id, LCF_REFL_S(Equipment)(), LCF_REFL_M(Equipment, helmet_id)());
+		v(s, s.accessory_id, LCF_REFL_S(Equipment)(), LCF_REFL_M(Equipment, accessory_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

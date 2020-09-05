@@ -204,13 +204,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<EventCommand> {
 		using type_t = EventCommand;
-		static constexpr const auto& = "EventCommand";
+		static constexpr const auto& name = "EventCommand";
 	};
 	// 
 	template <> struct ReflectMember<EventCommand,int32_t,&EventCommand::code> {
 		using struct_t = EventCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "code";
+		static constexpr const auto& name = "code";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -219,7 +219,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventCommand,int32_t,&EventCommand::indent> {
 		using struct_t = EventCommand;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "indent";
+		static constexpr const auto& name = "indent";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -228,7 +228,7 @@ namespace rpg {
 	template <> struct ReflectMember<EventCommand,DBString,&EventCommand::string> {
 		using struct_t = EventCommand;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "string";
+		static constexpr const auto& name = "string";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -237,11 +237,20 @@ namespace rpg {
 	template <> struct ReflectMember<EventCommand,DBArray<int32_t>,&EventCommand::parameters> {
 		using struct_t = EventCommand;
 		using type_t = DBArray<int32_t>;
-		static constexpr const auto& name[] = "parameters";
+		static constexpr const auto& name = "parameters";
 		static constexpr const int id = 0x00;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,EventCommand>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.code, LCF_REFL_S(EventCommand)(), LCF_REFL_M(EventCommand, code)());
+		v(s, s.indent, LCF_REFL_S(EventCommand)(), LCF_REFL_M(EventCommand, indent)());
+		v(s, s.string, LCF_REFL_S(EventCommand)(), LCF_REFL_M(EventCommand, string)());
+		v(s, s.parameters, LCF_REFL_S(EventCommand)(), LCF_REFL_M(EventCommand, parameters)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

@@ -64,13 +64,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<SaveTitle> {
 		using type_t = SaveTitle;
-		static constexpr const auto& = "SaveTitle";
+		static constexpr const auto& name = "SaveTitle";
 	};
 	// double - timestamp in Delphi's TDateTime format
 	template <> struct ReflectMember<SaveTitle,double,&SaveTitle::timestamp> {
 		using struct_t = SaveTitle;
 		using type_t = double;
-		static constexpr const auto& name[] = "timestamp";
+		static constexpr const auto& name = "timestamp";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -79,7 +79,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,std::string,&SaveTitle::hero_name> {
 		using struct_t = SaveTitle;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "hero_name";
+		static constexpr const auto& name = "hero_name";
 		static constexpr const int id = 0x0B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -88,7 +88,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::hero_level> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hero_level";
+		static constexpr const auto& name = "hero_level";
 		static constexpr const int id = 0x0C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -97,7 +97,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::hero_hp> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "hero_hp";
+		static constexpr const auto& name = "hero_hp";
 		static constexpr const int id = 0x0D;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -106,7 +106,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,std::string,&SaveTitle::face1_name> {
 		using struct_t = SaveTitle;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "face1_name";
+		static constexpr const auto& name = "face1_name";
 		static constexpr const int id = 0x15;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -115,7 +115,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::face1_id> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "face1_id";
+		static constexpr const auto& name = "face1_id";
 		static constexpr const int id = 0x16;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -124,7 +124,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,std::string,&SaveTitle::face2_name> {
 		using struct_t = SaveTitle;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "face2_name";
+		static constexpr const auto& name = "face2_name";
 		static constexpr const int id = 0x17;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -133,7 +133,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::face2_id> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "face2_id";
+		static constexpr const auto& name = "face2_id";
 		static constexpr const int id = 0x18;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -142,7 +142,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,std::string,&SaveTitle::face3_name> {
 		using struct_t = SaveTitle;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "face3_name";
+		static constexpr const auto& name = "face3_name";
 		static constexpr const int id = 0x19;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -151,7 +151,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::face3_id> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "face3_id";
+		static constexpr const auto& name = "face3_id";
 		static constexpr const int id = 0x1A;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -160,7 +160,7 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,std::string,&SaveTitle::face4_name> {
 		using struct_t = SaveTitle;
 		using type_t = std::string;
-		static constexpr const auto& name[] = "face4_name";
+		static constexpr const auto& name = "face4_name";
 		static constexpr const int id = 0x1B;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -169,11 +169,28 @@ namespace rpg {
 	template <> struct ReflectMember<SaveTitle,int32_t,&SaveTitle::face4_id> {
 		using struct_t = SaveTitle;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "face4_id";
+		static constexpr const auto& name = "face4_id";
 		static constexpr const int id = 0x1C;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,SaveTitle>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.timestamp, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, timestamp)());
+		v(s, s.hero_name, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, hero_name)());
+		v(s, s.hero_level, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, hero_level)());
+		v(s, s.hero_hp, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, hero_hp)());
+		v(s, s.face1_name, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face1_name)());
+		v(s, s.face1_id, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face1_id)());
+		v(s, s.face2_name, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face2_name)());
+		v(s, s.face2_id, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face2_id)());
+		v(s, s.face3_name, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face3_name)());
+		v(s, s.face3_id, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face3_id)());
+		v(s, s.face4_name, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face4_name)());
+		v(s, s.face4_id, LCF_REFL_S(SaveTitle)(), LCF_REFL_M(SaveTitle, face4_id)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

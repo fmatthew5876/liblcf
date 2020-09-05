@@ -132,7 +132,7 @@ namespace rpg {
 
 	template <> struct ReflectStruct<{{ struct_name }}> {
 		using type_t = {{ struct_name }};
-		static constexpr const auto& = "{{ struct_name }}";
+		static constexpr const auto& name = "{{ struct_name }}";
 	};
 
 	{%- for field in fields[struct_name]|field_is_used %}
@@ -149,13 +149,31 @@ namespace rpg {
 	{%- else %}
 		using type_t = {{ field.type|cpp_type(prefix=False) }};
 	{%- endif %}
-		static constexpr const auto& name[] = "{{ field.name }}";
+		static constexpr const auto& name = "{{ field.name }}";
 		static constexpr const int id = 0x{{ "%02X"|format(field.code) }};
 		static constexpr const bool is2k3 = {{ field.is2k3 }};
 		static constexpr const bool present_if_default = {{ field.presentifdefault }};
 	};
 	{%- endif %}
 	{%- endfor %}
+
+	template <typename T, typename Visitor, EnableIfStruct<T,{{ struct_name }}>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+	{%- for field in fields[struct_name]|field_is_used %}
+	{%- if not field.size %}
+		v(s, s.{{ field.name }}, LCF_REFL_S({{ struct_name }})(), LCF_REFL_M({{ struct_name }}, {{field.name }})());
+		{%- if field.type is is_struct %}
+		ForEachMember(s.{{ field.name }}, v);
+		{%- endif %}
+		{%- if field.type is is_struct_array %}
+		for (auto&& e: s.{{field.name}}) {
+			ForEachMember(e, v);
+		}
+		{%- endif %}
+	{%- endif %}
+	{%- endfor %}
+	}
+
 } // namespace rpg
 } // namespace lcf
 

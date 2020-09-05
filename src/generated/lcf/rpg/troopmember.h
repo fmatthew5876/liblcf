@@ -48,13 +48,13 @@ namespace rpg {
 
 	template <> struct ReflectStruct<TroopMember> {
 		using type_t = TroopMember;
-		static constexpr const auto& = "TroopMember";
+		static constexpr const auto& name = "TroopMember";
 	};
 	// Integer
 	template <> struct ReflectMember<TroopMember,int32_t,&TroopMember::enemy_id> {
 		using struct_t = TroopMember;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "enemy_id";
+		static constexpr const auto& name = "enemy_id";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -63,7 +63,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopMember,int32_t,&TroopMember::x> {
 		using struct_t = TroopMember;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "x";
+		static constexpr const auto& name = "x";
 		static constexpr const int id = 0x02;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -72,7 +72,7 @@ namespace rpg {
 	template <> struct ReflectMember<TroopMember,int32_t,&TroopMember::y> {
 		using struct_t = TroopMember;
 		using type_t = int32_t;
-		static constexpr const auto& name[] = "y";
+		static constexpr const auto& name = "y";
 		static constexpr const int id = 0x03;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
@@ -81,11 +81,20 @@ namespace rpg {
 	template <> struct ReflectMember<TroopMember,bool,&TroopMember::invisible> {
 		using struct_t = TroopMember;
 		using type_t = bool;
-		static constexpr const auto& name[] = "invisible";
+		static constexpr const auto& name = "invisible";
 		static constexpr const int id = 0x04;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,TroopMember>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.enemy_id, LCF_REFL_S(TroopMember)(), LCF_REFL_M(TroopMember, enemy_id)());
+		v(s, s.x, LCF_REFL_S(TroopMember)(), LCF_REFL_M(TroopMember, x)());
+		v(s, s.y, LCF_REFL_S(TroopMember)(), LCF_REFL_M(TroopMember, y)());
+		v(s, s.invisible, LCF_REFL_S(TroopMember)(), LCF_REFL_M(TroopMember, invisible)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 

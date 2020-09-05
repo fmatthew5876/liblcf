@@ -42,17 +42,23 @@ namespace rpg {
 
 	template <> struct ReflectStruct<Variable> {
 		using type_t = Variable;
-		static constexpr const auto& = "Variable";
+		static constexpr const auto& name = "Variable";
 	};
 	// String
 	template <> struct ReflectMember<Variable,DBString,&Variable::name> {
 		using struct_t = Variable;
 		using type_t = DBString;
-		static constexpr const auto& name[] = "name";
+		static constexpr const auto& name = "name";
 		static constexpr const int id = 0x01;
 		static constexpr const bool is2k3 = 0;
 		static constexpr const bool present_if_default = 0;
 	};
+
+	template <typename T, typename Visitor, EnableIfStruct<T,Variable>* = nullptr>
+	void ForEachMember(T&& s, const Visitor& v) {
+		v(s, s.name, LCF_REFL_S(Variable)(), LCF_REFL_M(Variable, name)());
+	}
+
 } // namespace rpg
 } // namespace lcf
 
